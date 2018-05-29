@@ -1,0 +1,38 @@
+syntax = "proto2";
+
+import "OnlineService.proto";
+package D3.Broadcast;
+
+option java_package = "D3.Broadcast";
+option java_outer_classname = "BroadcastProto";
+
+message SeasonalFirst {
+  required uint64 leaderboard_id = 1;
+  required uint64 game_account_id = 2;
+  optional string battle_tag = 3;
+}
+
+message ProductCatalogUpdate {
+  optional uint64 new_catalog_version = 1;
+  optional bytes new_catalog_digest = 2;
+  optional int64 new_catalog_newest_product_time = 3;
+}
+
+message BenefactedLicenseUpdate {
+  repeated uint64 license_ids = 1;
+}
+
+message AchievementsStaticDataFileUpdated {
+  optional string build_version = 1;
+  optional .D3.OnlineService.ContentHandle content_handle = 2;
+}
+
+message NewClientAvailable {
+  required uint32 client_build_number = 1;
+}
+
+message SyncedXVarUpdate {
+  optional string cmd_line = 1;
+}
+
+

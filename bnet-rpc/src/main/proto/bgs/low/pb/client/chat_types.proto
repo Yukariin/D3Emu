@@ -1,0 +1,20 @@
+syntax = "proto2";
+
+import "bgs/low/pb/client/channel_types.proto";
+package bgs.protocol.channel.v1;
+
+option java_package = "bnet.protocol.channel.v1";
+option java_outer_classname = "ChatTypesProto";
+option optimize_for = CODE_SIZE;
+
+message ChatChannelState {
+  optional string identity = 1;
+  optional fixed32 locale = 3;
+  optional bool public = 4 [default = false];
+  optional uint32 bucket_index = 5;
+  extend .bgs.protocol.channel.v1.ChannelState {
+    optional .bgs.protocol.channel.v1.ChatChannelState channel_state = 100;
+  }
+}
+
+

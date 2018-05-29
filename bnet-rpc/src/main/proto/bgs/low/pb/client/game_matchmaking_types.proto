@@ -1,0 +1,97 @@
+syntax = "proto2";
+
+import "bgs/low/pb/client/rpc_types.proto";
+import "bgs/low/pb/client/client/v2/attribute_types_v2.proto";
+import "bgs/low/pb/client/account_types.proto";
+package bgs.protocol.matchmaking.v1;
+
+option java_package = "bnet.protocol.matchmaking.v1";
+option java_outer_classname = "GameMatchmakingTypesProto";
+option optimize_for = CODE_SIZE;
+
+message HostProxyPair {
+  optional .bgs.protocol.ProcessId host = 1;
+  optional .bgs.protocol.ProcessId proxy = 2;
+}
+
+message MatchmakerAttributeInfo {
+  optional string name = 1;
+  optional fixed32 program = 2;
+  repeated .bgs.protocol.v2.Attribute attribute = 3;
+}
+
+message MatchmakerControlProperties {
+  optional bool accept_new_entries = 1 [default = true];
+}
+
+message GameMatchmakerFilter {
+  repeated .bgs.protocol.v2.Attribute attribute = 1;
+}
+
+message Player {
+  optional .bgs.protocol.account.v1.GameAccountHandle game_account = 1;
+  repeated .bgs.protocol.v2.Attribute attribute = 2;
+}
+
+message RequestId {
+  optional fixed64 id = 1;
+}
+
+message GameCreationProperties {
+  repeated .bgs.protocol.v2.Attribute attribute = 1;
+}
+
+message GameMatchmakingOptions {
+  optional .bgs.protocol.matchmaking.v1.GameMatchmakerFilter matchmaker_filter = 1;
+  optional .bgs.protocol.matchmaking.v1.GameCreationProperties creation_properties = 2;
+  repeated .bgs.protocol.matchmaking.v1.Player player = 3;
+}
+
+message GameMatchmakingEntry {
+  optional .bgs.protocol.matchmaking.v1.GameMatchmakingOptions options = 1;
+  optional .bgs.protocol.matchmaking.v1.RequestId request_id = 2;
+}
+
+message ConnectInfo {
+  optional .bgs.protocol.Address address = 1;
+  repeated .bgs.protocol.v2.Attribute attribute = 2;
+}
+
+message MatchmakerHandle {
+  optional .bgs.protocol.matchmaking.v1.HostProxyPair addr = 1;
+  optional fixed32 id = 2;
+}
+
+message GameHandle {
+  optional .bgs.protocol.matchmaking.v1.MatchmakerHandle matchmaker = 1;
+  optional .bgs.protocol.matchmaking.v1.HostProxyPair game_server = 2;
+  optional fixed32 game_instance_id = 3;
+}
+
+message CreateGameResultNotification {
+  optional .bgs.protocol.matchmaking.v1.GameHandle game_handle = 1;
+  optional fixed32 error_id = 2;
+}
+
+message AddPlayersResultNotification {
+  optional .bgs.protocol.matchmaking.v1.GameHandle game_handle = 1;
+  repeated .bgs.protocol.account.v1.GameAccountHandle game_account = 2;
+  optional fixed32 error_id = 3;
+}
+
+message UpdateGameOptions {
+  optional .bgs.protocol.matchmaking.v1.GameHandle game_handle = 1;
+  repeated .bgs.protocol.v2.Attribute attribute = 2;
+  optional bool replace_attributes = 3 [default = true];
+}
+
+message RemovePlayerOptions {
+  optional .bgs.protocol.matchmaking.v1.GameHandle game_handle = 1;
+  optional .bgs.protocol.account.v1.GameAccountHandle game_account = 2;
+}
+
+message RemoveGameOptions {
+  optional .bgs.protocol.matchmaking.v1.GameHandle game_handle = 1;
+}
+
+

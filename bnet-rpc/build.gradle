@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+    id 'application'
+    
+    id 'com.google.protobuf' version '0.8.5'
+}
+
+mainClassName = 'com.d3emu.bnet.rpc.App'
+
+dependencies {
+    compile 'com.google.guava:guava:23.0'
+    compile 'com.google.protobuf:protobuf-java:3.5.1'
+    compile 'io.netty:netty-all:4.1.22.Final'
+}
+
+// Exclude all .proto files from .jar
+processResources {
+    exclude('**/*.proto')
+}

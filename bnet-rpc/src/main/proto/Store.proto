@@ -1,0 +1,286 @@
+syntax = "proto2";
+
+import "OnlineServiceServer.proto";
+package D3.Store;
+
+option java_package = "D3.Store";
+option java_outer_classname = "StoreProto";
+
+message ProductPrice {
+  optional int32 currency = 1;
+  optional sint64 fixed_point_cost = 4;
+  optional sint64 fixed_point_retail_price = 5;
+}
+
+message ProductEntitlement {
+  optional int32 gbid = 1;
+  optional uint32 content_license_id = 2;
+  optional uint64 platinum_amount = 3;
+  optional uint32 max_stack_count = 5;
+}
+
+message ContentLicenseRestriction {
+  optional uint32 content_license_id = 1;
+  optional uint32 count = 2;
+}
+
+message Product {
+  repeated .D3.Store.ProductEntitlement entitlements = 2;
+  repeated .D3.Store.ProductPrice prices = 3;
+  optional int32 category = 4;
+  optional int64 available_from = 5;
+  optional uint32 featured = 6;
+  optional uint64 duration_secs = 7;
+  repeated .D3.Store.ContentLicenseRestriction min_contentlicenses_required = 8;
+  repeated .D3.Store.ContentLicenseRestriction max_contentlicenses_allowed = 9;
+  optional string bundle_label = 10;
+  optional bool not_for_sale = 11;
+  optional uint32 product_id = 12;
+}
+
+message ProductCategory {
+  optional int32 category = 1;
+  optional int64 newest_product_time = 2;
+}
+
+message Risk {
+  optional int32 risk_type = 1;
+  optional string transaction_id = 2;
+  optional string challenge_id = 3;
+  optional string challenge_url = 4;
+}
+
+message Wallet {
+  optional sint64 wallet_id = 1;
+  optional string wallet_name = 2;
+  optional bool primary = 4;
+  optional int32 wallet_type = 5;
+  optional string wallet_expiration_date = 6;
+  optional .D3.Store.Risk risk = 7;
+  optional int64 fixed_point_balance = 9;
+}
+
+message Order {
+  optional uint32 status = 1;
+  optional uint64 transaction_id = 2;
+  optional uint32 error_code = 3;
+  optional bool acknowledged = 4;
+}
+
+message GetProductList {
+  optional int32 category = 1;
+  optional uint64 catalog_version = 2;
+}
+
+message GetProductListResponse {
+  repeated .D3.Store.Product products = 1;
+  optional uint32 valid_for_secs = 2;
+}
+
+message GetProduct {
+  optional uint32 product_id = 2;
+}
+
+message GetProductResponse {
+  optional .D3.Store.Product product = 1;
+}
+
+message GetProductCategories {
+  optional uint64 catalog_version = 1;
+}
+
+message GetProductCategoriesResponse {
+  repeated .D3.Store.ProductCategory categories = 1;
+}
+
+message GetPrimaryCurrency {
+}
+
+message GetPrimaryCurrencyResponse {
+  optional int32 currency = 1;
+}
+
+message GetPaymentMethods {
+  optional int32 currency = 1;
+}
+
+message GetPaymentMethodsResponse {
+  repeated .D3.Store.Wallet wallets = 1;
+}
+
+message DetermineRisk {
+  optional sint64 wallet_id = 2;
+  optional int32 currency = 3;
+  optional string device_id = 4;
+  optional uint32 product_id = 5;
+}
+
+message DetermineRiskResponse {
+  optional .D3.Store.Risk risk = 1;
+  optional sint64 wallet_id = 2;
+}
+
+message PlaceOrder {
+  optional sint64 wallet_id = 2;
+  optional int32 currency = 3;
+  optional string risk_transaction_id = 5;
+  optional string challenge_id = 6;
+  optional string device_id = 7;
+  optional uint32 product_id = 8;
+  optional int64 fixed_point_expected_price = 9;
+}
+
+message PlaceOrderResponse {
+  optional uint64 transaction_id = 1;
+}
+
+message EntitlementUpdate {
+  optional .D3.Store.ProductEntitlement entitlement = 1;
+  optional int64 expire_time = 2;
+}
+
+message OrderStatus {
+  optional .D3.Store.Order order = 1;
+  repeated .D3.Store.EntitlementUpdate limited_entitlements = 3;
+  optional sint64 creation_time = 4;
+  optional uint32 product_id = 5;
+}
+
+message MissingEntitlement {
+  optional .D3.Store.ProductEntitlement definition = 1;
+  optional uint64 acknowledge_id = 2;
+  optional bool expired = 3;
+}
+
+message MissingEntitlements {
+  repeated .D3.Store.MissingEntitlement entitlement = 1;
+}
+
+message AcknowledgeOrder {
+  optional uint64 transaction_id = 1;
+  optional uint32 error_code = 2;
+}
+
+message AcknowledgeMissingLicenses {
+  repeated uint64 acknowledge_id = 1;
+}
+
+message AcknowledgeOrderResponse {
+}
+
+message CheckOrderStatus {
+  optional uint64 transaction_id = 1;
+}
+
+message CheckOrderStatusResponse {
+  optional uint64 transaction_id = 1;
+}
+
+message StoreStatus {
+  optional int32 store_status = 1;
+  optional uint64 store_status_changed_time = 2;
+}
+
+message GetBalance {
+  optional int32 currency = 1;
+}
+
+message GetBalanceResponse {
+  optional int64 fixed_point_balance = 2;
+}
+
+message InternalOrder {
+  optional .D3.Store.Order order = 1;
+  optional string order_id = 2;
+  optional uint64 account_id = 3;
+  optional uint64 game_account_id = 4;
+  optional sint64 creation_time = 6;
+  optional bool under_manual_review = 8;
+  optional sint64 bootstrap_time = 9;
+  optional uint32 product_id = 10;
+}
+
+message InternalProduct {
+  optional .D3.Store.Product product = 1;
+  repeated uint64 license_ids = 2;
+  optional bool free_in_igr = 3;
+  optional string earliest_valid_version = 4;
+}
+
+message InternalPlaceOrderResponse {
+  optional string order_id = 1;
+}
+
+message ModifyLicense {
+  optional uint64 account_license_id = 1;
+  optional int32 status = 2;
+}
+
+message ModifyLicenseResponse {
+}
+
+message BPayOrderStatus {
+  optional int32 status = 1;
+  repeated .D3.Store.EntitlementUpdate entitlements = 3;
+  repeated .D3.Store.ConsumableLicense consumables = 4;
+  repeated .D3.OnlineServiceServer.License licenses = 5;
+  optional bool revoked = 6;
+  optional string order_id = 7;
+  optional uint32 product_id = 8;
+}
+
+message GetCurrency {
+}
+
+message GetCurrencyResponse {
+  optional int32 currency = 1;
+}
+
+message ConsumableLicense {
+  optional uint64 licenseid = 1;
+  optional uint64 license_instance_id = 2;
+  optional int64 amount = 3;
+  optional int32 type = 4;
+  optional bool consumed = 5;
+}
+
+message LicenseInstance {
+  optional .D3.OnlineServiceServer.License license = 1;
+  optional int32 state = 2;
+}
+
+message LicenseAttributes {
+  optional uint64 licenseid = 1;
+  optional uint64 platinum_amount = 2;
+  optional int32 gbid = 3;
+  repeated int32 content_license_id = 4;
+  optional uint32 max_stack_count = 5;
+}
+
+message ProductCatalog {
+  required uint32 proto_version = 1;
+  repeated .D3.Store.InternalProduct products = 2;
+  repeated .D3.Store.LicenseAttributes license_attributes = 3;
+  optional bytes digest = 4;
+  optional int64 version = 5;
+}
+
+message CountryInformation {
+  optional string country_name = 1;
+  optional int32 currency = 2;
+}
+
+message CountryConfig {
+  repeated .D3.Store.CountryInformation country_info = 1;
+}
+
+message CheckGTAPPStatusResponse {
+  optional uint32 status = 1;
+}
+
+message GetGTAPPBalance {
+  optional sint64 balance = 1;
+  optional sint64 held_balance = 2;
+}
+
+

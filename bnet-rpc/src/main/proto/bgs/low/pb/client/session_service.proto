@@ -1,0 +1,162 @@
+syntax = "proto2";
+
+import "bgs/low/pb/client/account_types.proto";
+import "bgs/low/pb/client/rpc_types.proto";
+import "bgs/low/pb/client/session_types.proto";
+package bgs.protocol.session.v1;
+
+option java_package = "bnet.protocol.session.v1";
+option java_outer_classname = "SessionServiceProto";
+option optimize_for = CODE_SIZE;
+option cc_generic_services = false;
+option java_generic_services = true;
+
+message CreateSessionRequest {
+  optional .bgs.protocol.account.v1.Identity identity = 1;
+  optional fixed32 platform = 2;
+  optional fixed32 locale = 3;
+  optional string client_address = 4;
+  optional int32 application_version = 5;
+  optional string user_agent = 6;
+  optional bytes session_key = 7;
+  optional .bgs.protocol.session.v1.SessionOptions options = 8;
+  optional bool requires_mark_alive = 9 [default = false];
+}
+
+message CreateSessionResponse {
+  optional string session_id = 1;
+}
+
+message UpdateSessionRequest {
+  optional .bgs.protocol.account.v1.Identity identity = 1;
+  optional .bgs.protocol.session.v1.SessionOptions options = 2;
+}
+
+message DestroySessionRequest {
+  optional .bgs.protocol.account.v1.Identity identity = 1;
+  optional string session_id = 2;
+}
+
+message GetSessionCapacityRequest {
+}
+
+message GetSessionCapacityResponse {
+  optional uint32 sessions_available = 1;
+  optional uint32 time_frame_seconds = 2;
+}
+
+message GetSessionsByBenefactorRequest {
+  optional .bgs.protocol.account.v1.GameAccountHandle benefactor_game_account = 1;
+  optional bool include_billing_disabled = 2 [default = false];
+}
+
+message GetSessionsByBenefactorResponse {
+  optional .bgs.protocol.account.v1.GameAccountHandle benefactor_game_account = 1;
+  repeated .bgs.protocol.session.v1.ActiveSession session = 2;
+}
+
+message MarkSessionsAliveRequest {
+  repeated .bgs.protocol.session.v1.SessionIdentifier session = 1;
+}
+
+message MarkSessionsAliveResponse {
+  repeated .bgs.protocol.session.v1.SessionIdentifier failed_session = 1;
+}
+
+message GetSessionRequest {
+  optional .bgs.protocol.account.v1.GameAccountHandle game_account = 1;
+  optional bool include_billing_disabled = 2 [default = false];
+}
+
+message GetSessionResponse {
+  optional .bgs.protocol.account.v1.GameAccountHandle game_account = 1;
+  optional .bgs.protocol.session.v1.ActiveSession session = 2;
+}
+
+message SessionCreatedNotification {
+  optional .bgs.protocol.account.v1.Identity identity = 1;
+  optional uint32 reason = 2;
+  optional string session_id = 3;
+}
+
+message SessionDestroyedNotification {
+  optional .bgs.protocol.account.v1.Identity identity = 1;
+  optional uint32 reason = 2;
+  optional string session_id = 3;
+}
+
+message SessionUpdatedNotification {
+  optional .bgs.protocol.account.v1.Identity identity = 1;
+  optional uint32 reason = 2;
+  optional string session_id = 3;
+}
+
+service SessionListener {
+  option (.bgs.protocol.service_options) = {
+    descriptor_name: "bnet.protocol.session.SessionListener"
+  };
+  option (.bgs.protocol.sdk_service_options) = {
+    inbound: true
+  };
+  rpc OnSessionCreated(.bgs.protocol.session.v1.SessionCreatedNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 1
+    };
+  }
+  rpc OnSessionDestroyed(.bgs.protocol.session.v1.SessionDestroyedNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 2
+    };
+  }
+  rpc OnSessionUpdated(.bgs.protocol.session.v1.SessionUpdatedNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 3
+    };
+  }
+}
+
+service SessionService {
+  option (.bgs.protocol.service_options) = {
+    descriptor_name: "bnet.protocol.session.SessionService"
+  };
+  option (.bgs.protocol.sdk_service_options) = {
+    outbound: true
+  };
+  rpc CreateSession(.bgs.protocol.session.v1.CreateSessionRequest) returns (.bgs.protocol.session.v1.CreateSessionResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 1
+    };
+  }
+  rpc DestroySession(.bgs.protocol.session.v1.DestroySessionRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 2
+    };
+  }
+  rpc UpdateSession(.bgs.protocol.session.v1.UpdateSessionRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 5
+    };
+  }
+  rpc GetSessionCapacity(.bgs.protocol.session.v1.GetSessionCapacityRequest) returns (.bgs.protocol.session.v1.GetSessionCapacityResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 6
+    };
+  }
+  rpc GetSessionsByBenefactor(.bgs.protocol.session.v1.GetSessionsByBenefactorRequest) returns (.bgs.protocol.session.v1.GetSessionsByBenefactorResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 7
+    };
+  }
+  rpc MarkSessionsAlive(.bgs.protocol.session.v1.MarkSessionsAliveRequest) returns (.bgs.protocol.session.v1.MarkSessionsAliveResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 8
+    };
+  }
+  rpc GetSession(.bgs.protocol.session.v1.GetSessionRequest) returns (.bgs.protocol.session.v1.GetSessionResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 9
+    };
+  }
+}
+
+

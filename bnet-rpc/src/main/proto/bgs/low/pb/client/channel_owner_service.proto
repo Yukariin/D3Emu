@@ -1,0 +1,101 @@
+syntax = "proto2";
+
+import "bgs/low/pb/client/entity_types.proto";
+import "bgs/low/pb/client/channel_types.proto";
+import "bgs/low/pb/client/rpc_types.proto";
+package bgs.protocol.channel.v1;
+
+option java_package = "bnet.protocol.channel.v1";
+option java_outer_classname = "ChannelOwnerServiceProto";
+option optimize_for = CODE_SIZE;
+option cc_generic_services = false;
+option java_generic_services = true;
+
+message CreateChannelRequest {
+  optional .bgs.protocol.Identity agent_identity = 1;
+  optional .bgs.protocol.channel.v1.ChannelState channel_state = 3;
+  optional .bgs.protocol.EntityId channel_id = 4;
+  optional uint64 object_id = 5;
+}
+
+message CreateChannelResponse {
+  required uint64 object_id = 1;
+  optional .bgs.protocol.EntityId channel_id = 2;
+}
+
+message JoinChannelRequest {
+  optional .bgs.protocol.Identity agent_identity = 1;
+  required .bgs.protocol.EntityId channel_id = 3;
+  required uint64 object_id = 4;
+}
+
+message JoinChannelResponse {
+  optional uint64 object_id = 1;
+  optional bool already_member = 4 [default = false];
+  optional .bgs.protocol.EntityId member_id = 5;
+}
+
+message SubscribeChannelRequest {
+  optional .bgs.protocol.EntityId agent_id = 1;
+  required .bgs.protocol.EntityId channel_id = 2;
+  required uint64 object_id = 3;
+  optional .bgs.protocol.Identity agent_identity = 4;
+}
+
+message SubscribeChannelResponse {
+  optional uint64 object_id = 1;
+}
+
+message ListChannelsRequest {
+  optional .bgs.protocol.Identity agent_identity = 1;
+  required .bgs.protocol.channel.v1.ListChannelsOptions options = 2;
+}
+
+message ListChannelsResponse {
+  repeated .bgs.protocol.channel.v1.ChannelDescription channel = 1;
+}
+
+message GetChannelInfoRequest {
+  optional .bgs.protocol.EntityId agent_id = 1;
+  required .bgs.protocol.EntityId channel_id = 2;
+}
+
+message GetChannelInfoResponse {
+  optional .bgs.protocol.channel.v1.ChannelInfo channel_info = 1;
+}
+
+service ChannelOwnerService {
+  option (.bgs.protocol.service_options) = {
+    descriptor_name: "bnet.protocol.channel.ChannelOwner"
+  };
+  option (.bgs.protocol.sdk_service_options) = {
+    outbound: true
+  };
+  rpc CreateChannel(.bgs.protocol.channel.v1.CreateChannelRequest) returns (.bgs.protocol.channel.v1.CreateChannelResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 2
+    };
+  }
+  rpc JoinChannel(.bgs.protocol.channel.v1.JoinChannelRequest) returns (.bgs.protocol.channel.v1.JoinChannelResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 3
+    };
+  }
+  rpc ListChannels(.bgs.protocol.channel.v1.ListChannelsRequest) returns (.bgs.protocol.channel.v1.ListChannelsResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 4
+    };
+  }
+  rpc GetChannelInfo(.bgs.protocol.channel.v1.GetChannelInfoRequest) returns (.bgs.protocol.channel.v1.GetChannelInfoResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 5
+    };
+  }
+  rpc SubscribeChannel(.bgs.protocol.channel.v1.SubscribeChannelRequest) returns (.bgs.protocol.channel.v1.SubscribeChannelResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 6
+    };
+  }
+}
+
+

@@ -1,0 +1,18 @@
+syntax = "proto2";
+
+import "bgs/low/pb/client/attribute_types.proto";
+package bgs.protocol.games.v1;
+
+option java_package = "bnet.protocol.games.v1";
+option java_outer_classname = "GameFactoryProto";
+option optimize_for = SPEED;
+
+message GameProperties {
+  repeated .bgs.protocol.Attribute creation_attributes = 1;
+  optional .bgs.protocol.AttributeFilter filter = 2;
+  optional bool create = 3 [default = false];
+  optional bool open = 4 [default = true];
+  optional fixed32 program = 5;
+}
+
+

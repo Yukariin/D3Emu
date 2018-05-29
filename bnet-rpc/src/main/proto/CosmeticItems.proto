@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+import "GameBalance.proto";
+package D3.CosmeticItems;
+
+option java_package = "D3.CosmeticItems";
+option java_outer_classname = "CosmeticItemsProto";
+
+message CosmeticItem {
+  optional sfixed32 gbid = 1;
+  optional int64 expiration_time = 2;
+}
+
+message CosmeticItems {
+  repeated .D3.CosmeticItems.CosmeticItem cosmetic_items = 1;
+}
+
+message CosmeticItemSavedData {
+  optional .D3.GameBalance.BitPackedGbidArray cosmetic_items = 1;
+}
+
+

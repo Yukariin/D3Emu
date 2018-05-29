@@ -1,0 +1,73 @@
+syntax = "proto2";
+
+import "GameMessage.proto";
+import "Account.proto";
+import "Guild.proto";
+import "Leaderboard.proto";
+import "Settings.proto";
+import "Store.proto";
+import "OnlineService.proto";
+package D3.Notification;
+
+option java_package = "D3.Notification";
+option java_outer_classname = "NotificationProto";
+
+message GuildInvitesListUpdate {
+  required bool is_removed = 1;
+  required uint64 guild_id = 2;
+  optional .D3.Guild.InviteInfo invite = 3;
+}
+
+message EraInfo {
+  required uint32 id = 1;
+  optional string name_deprecated = 2;
+  optional uint64 epoch = 3;
+}
+
+message InitialLoginData {
+  required .D3.Client.GameAccountSettings game_account_settings = 1;
+  required .D3.GameMessage.HeroDigestListResponse hero_digests = 2;
+  required .D3.Account.Digest account_digest = 3;
+  required .D3.Guild.GuildInfoList guilds = 4;
+  required .D3.Guild.InviteInfoList guild_invites = 5;
+  required bytes seen_tutorials = 6;
+  required string matchmaking_pool = 7;
+  repeated .D3.Notification.EraInfo eras = 8;
+  optional uint64 logon_time = 9;
+  optional .D3.OnlineService.ContentLicenses content_licenses = 10;
+  optional uint32 session_flags = 11;
+  optional .D3.Store.Order outstanding_order = 12;
+  repeated .D3.Store.OrderStatus unacknowledged_orders = 13;
+  optional .D3.Store.MissingEntitlements missing_entitlements = 14;
+  optional .D3.OnlineService.ContentHandle achievements_content_handle = 15;
+  repeated uint32 program_blacklist_fourccs = 16;
+  optional int32 chat_restriction_content_license_id = 17 [default = -1];
+  optional string synced_vars = 18;
+}
+
+message InitialLoginDataResponse {
+  required uint32 error_code = 1;
+  required uint32 service_id = 2;
+  optional .D3.Notification.InitialLoginData login_data = 3;
+}
+
+message InitialLoginDataHeartbeat {
+  required uint32 service_id = 1;
+}
+
+message NewPersonalBest {
+  required .D3.Leaderboard.Score score = 1;
+  optional int32 rank = 2;
+  optional uint64 old_score = 3;
+}
+
+message AccountMigrationAltLevel {
+  required uint32 partition_id = 1;
+  required uint32 alt_level = 2;
+}
+
+message AccountMigrationCompleted {
+  repeated .D3.Notification.AccountMigrationAltLevel alt_levels = 1;
+}
+
+

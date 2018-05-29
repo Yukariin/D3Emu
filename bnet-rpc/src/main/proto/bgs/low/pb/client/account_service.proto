@@ -1,0 +1,385 @@
+syntax = "proto2";
+
+import "bgs/low/pb/client/account_types.proto";
+import "bgs/low/pb/client/entity_types.proto";
+import "bgs/low/pb/client/rpc_types.proto";
+package bgs.protocol.account.v1;
+
+option java_package = "bnet.protocol.account.v1";
+option java_outer_classname = "AccountServiceProto";
+option optimize_for = CODE_SIZE;
+option cc_generic_services = false;
+option java_generic_services = true;
+
+message GetAccountRequest {
+  option (.bgs.protocol.message_options) = {
+    custom_select_shard: true
+  };
+  optional .bgs.protocol.account.v1.AccountReference ref = 1;
+  optional bool reload = 2 [default = false];
+  optional bool fetch_all = 10 [default = false];
+  optional bool fetch_blob = 11 [default = false];
+  optional bool fetch_id = 12 [default = false];
+  optional bool fetch_email = 13 [default = false];
+  optional bool fetch_battle_tag = 14 [default = false];
+  optional bool fetch_full_name = 15 [default = false];
+  optional bool fetch_links = 16 [default = false];
+  optional bool fetch_parental_controls = 17 [default = false];
+  optional bool fetch_cais_id = 18 [default = false];
+}
+
+message GetAccountResponse {
+  optional .bgs.protocol.account.v1.AccountBlob blob = 11;
+  optional .bgs.protocol.account.v1.AccountId id = 12;
+  repeated string email = 13;
+  optional string battle_tag = 14;
+  optional string full_name = 15;
+  repeated .bgs.protocol.account.v1.GameAccountLink links = 16;
+  optional .bgs.protocol.account.v1.ParentalControlInfo parental_control_info = 17;
+  optional string cais_id = 18;
+}
+
+message CreateGameAccountRequest {
+  optional .bgs.protocol.account.v1.AccountId account = 1;
+  optional uint32 region = 2;
+  optional fixed32 program = 3;
+  optional uint32 realm_permissions = 4 [default = 0];
+  optional uint32 account_region = 5;
+  optional fixed32 platform = 6;
+}
+
+message CreateGameAccountResponse {
+  optional .bgs.protocol.account.v1.GameAccountHandle game_account = 1;
+}
+
+message CacheExpireRequest {
+  repeated .bgs.protocol.account.v1.AccountId account = 1;
+  repeated .bgs.protocol.account.v1.GameAccountHandle game_account = 2;
+  repeated string email = 3;
+}
+
+message CredentialUpdateRequest {
+  required .bgs.protocol.account.v1.AccountId account = 1;
+  repeated .bgs.protocol.account.v1.AccountCredential old_credentials = 2;
+  repeated .bgs.protocol.account.v1.AccountCredential new_credentials = 3;
+  optional uint32 region = 4;
+}
+
+message CredentialUpdateResponse {
+}
+
+message AccountFlagUpdateRequest {
+  optional .bgs.protocol.account.v1.AccountId account = 1;
+  optional uint32 region = 2;
+  optional uint64 flag = 3;
+  optional bool active = 4;
+}
+
+message GameAccountFlagUpdateRequest {
+  optional .bgs.protocol.account.v1.GameAccountHandle game_account = 1;
+  optional uint64 flag = 2;
+  optional bool active = 3;
+}
+
+message SubscriptionUpdateRequest {
+  repeated .bgs.protocol.account.v1.SubscriberReference ref = 2;
+}
+
+message SubscriptionUpdateResponse {
+  repeated .bgs.protocol.account.v1.SubscriberReference ref = 1;
+}
+
+message IsIgrAddressRequest {
+  optional string client_address = 1;
+  optional uint32 region = 2;
+}
+
+message AccountServiceRegion {
+  required uint32 id = 1;
+  required string shard = 2;
+}
+
+message AccountServiceConfig {
+  repeated .bgs.protocol.account.v1.AccountServiceRegion region = 1;
+}
+
+message GetAccountStateRequest {
+  optional .bgs.protocol.EntityId entity_id = 1 [(.bgs.protocol.field_options) = {
+    shard_key: true
+  }];
+  optional uint32 program = 2;
+  optional uint32 region = 3;
+  optional .bgs.protocol.account.v1.AccountFieldOptions options = 10;
+  optional .bgs.protocol.account.v1.AccountFieldTags tags = 11;
+}
+
+message GetAccountStateResponse {
+  optional .bgs.protocol.account.v1.AccountState state = 1;
+  optional .bgs.protocol.account.v1.AccountFieldTags tags = 2;
+}
+
+message GetGameAccountStateRequest {
+  optional .bgs.protocol.EntityId account_id = 1 [deprecated = true];
+  optional .bgs.protocol.EntityId game_account_id = 2;
+  optional .bgs.protocol.account.v1.GameAccountFieldOptions options = 10;
+  optional .bgs.protocol.account.v1.GameAccountFieldTags tags = 11;
+}
+
+message GetGameAccountStateResponse {
+  optional .bgs.protocol.account.v1.GameAccountState state = 1;
+  optional .bgs.protocol.account.v1.GameAccountFieldTags tags = 2;
+}
+
+message GetLicensesRequest {
+  optional .bgs.protocol.EntityId target_id = 1 [(.bgs.protocol.field_options) = {
+    shard_key: true
+  }];
+  optional bool fetch_account_licenses = 2;
+  optional bool fetch_game_account_licenses = 3;
+  optional bool fetch_dynamic_account_licenses = 4;
+  optional fixed32 program = 5;
+  optional bool exclude_unknown_program = 6 [default = false];
+}
+
+message GetLicensesResponse {
+  repeated .bgs.protocol.account.v1.AccountLicense licenses = 1;
+}
+
+message GetGameSessionInfoRequest {
+  optional .bgs.protocol.EntityId entity_id = 1;
+}
+
+message GetGameSessionInfoResponse {
+  optional .bgs.protocol.account.v1.GameSessionInfo session_info = 2;
+}
+
+message GetGameTimeRemainingInfoRequest {
+  optional .bgs.protocol.EntityId game_account_id = 1;
+  optional .bgs.protocol.EntityId account_id = 2;
+}
+
+message GetGameTimeRemainingInfoResponse {
+  optional .bgs.protocol.account.v1.GameTimeRemainingInfo game_time_remaining_info = 1;
+}
+
+message GetCAISInfoRequest {
+  optional .bgs.protocol.EntityId entity_id = 1;
+}
+
+message GetCAISInfoResponse {
+  optional .bgs.protocol.account.v1.CAIS cais_info = 1;
+}
+
+message ForwardCacheExpireRequest {
+  optional .bgs.protocol.EntityId entity_id = 1;
+}
+
+message GetAuthorizedDataRequest {
+  optional .bgs.protocol.EntityId entity_id = 1;
+  repeated string tag = 2;
+  optional bool privileged_network = 3;
+}
+
+message GetAuthorizedDataResponse {
+  repeated .bgs.protocol.account.v1.AuthorizedData data = 1;
+}
+
+message UpdateParentalControlsAndCAISRequest {
+  optional .bgs.protocol.account.v1.AccountId account = 1;
+  optional .bgs.protocol.account.v1.ParentalControlInfo parental_control_info = 2;
+  optional string cais_id = 3;
+  optional uint64 session_start_time = 4;
+  optional uint64 start_time = 5;
+  optional uint64 end_time = 6;
+}
+
+message QueueDeductRecordRequest {
+  optional .bgs.protocol.account.v1.DeductRecord deduct_record = 1;
+}
+
+message GetGameAccountRequest {
+  optional .bgs.protocol.account.v1.GameAccountHandle game_account = 1;
+  optional bool reload = 2 [default = false];
+}
+
+message GetGameAccountResponse {
+  optional .bgs.protocol.account.v1.GameAccountBlob blob = 1;
+}
+
+message AccountStateNotification {
+  optional .bgs.protocol.account.v1.AccountState account_state = 1;
+  optional uint64 subscriber_id = 2;
+  optional .bgs.protocol.account.v1.AccountFieldTags account_tags = 3;
+  optional bool subscription_completed = 4;
+}
+
+message GameAccountStateNotification {
+  optional .bgs.protocol.account.v1.GameAccountState game_account_state = 1;
+  optional uint64 subscriber_id = 2;
+  optional .bgs.protocol.account.v1.GameAccountFieldTags game_account_tags = 3;
+  optional bool subscription_completed = 4;
+}
+
+message GameAccountNotification {
+  repeated .bgs.protocol.account.v1.GameAccountList game_accounts = 1;
+  optional uint64 subscriber_id = 2;
+  optional .bgs.protocol.account.v1.AccountFieldTags account_tags = 3;
+}
+
+message GameAccountSessionNotification {
+  optional .bgs.protocol.account.v1.GameAccountHandle game_account = 1;
+  optional .bgs.protocol.account.v1.GameSessionUpdateInfo session_info = 2;
+}
+
+service AccountService {
+  option (.bgs.protocol.service_options) = {
+    descriptor_name: "bnet.protocol.account.AccountService"
+  };
+  option (.bgs.protocol.sdk_service_options) = {
+    outbound: true
+  };
+  rpc GetGameAccountBlob(.bgs.protocol.account.v1.GameAccountHandle) returns (.bgs.protocol.account.v1.GameAccountBlob) {
+    option (.bgs.protocol.method_options) = {
+      id: 12
+    };
+  }
+  rpc GetAccount(.bgs.protocol.account.v1.GetAccountRequest) returns (.bgs.protocol.account.v1.GetAccountResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 13
+    };
+  }
+  rpc CreateGameAccount(.bgs.protocol.account.v1.CreateGameAccountRequest) returns (.bgs.protocol.account.v1.GameAccountHandle) {
+    option (.bgs.protocol.method_options) = {
+      id: 14
+    };
+  }
+  rpc IsIgrAddress(.bgs.protocol.account.v1.IsIgrAddressRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 15
+    };
+  }
+  rpc CacheExpire(.bgs.protocol.account.v1.CacheExpireRequest) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 20
+    };
+  }
+  rpc CredentialUpdate(.bgs.protocol.account.v1.CredentialUpdateRequest) returns (.bgs.protocol.account.v1.CredentialUpdateResponse) {
+    option deprecated = true;
+    option (.bgs.protocol.method_options) = {
+      id: 21
+    };
+  }
+  rpc Subscribe(.bgs.protocol.account.v1.SubscriptionUpdateRequest) returns (.bgs.protocol.account.v1.SubscriptionUpdateResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 25
+    };
+  }
+  rpc Unsubscribe(.bgs.protocol.account.v1.SubscriptionUpdateRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 26
+    };
+  }
+  rpc GetAccountState(.bgs.protocol.account.v1.GetAccountStateRequest) returns (.bgs.protocol.account.v1.GetAccountStateResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 30
+    };
+  }
+  rpc GetGameAccountState(.bgs.protocol.account.v1.GetGameAccountStateRequest) returns (.bgs.protocol.account.v1.GetGameAccountStateResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 31
+    };
+  }
+  rpc GetLicenses(.bgs.protocol.account.v1.GetLicensesRequest) returns (.bgs.protocol.account.v1.GetLicensesResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 32
+    };
+  }
+  rpc GetGameTimeRemainingInfo(.bgs.protocol.account.v1.GetGameTimeRemainingInfoRequest) returns (.bgs.protocol.account.v1.GetGameTimeRemainingInfoResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 33
+    };
+  }
+  rpc GetGameSessionInfo(.bgs.protocol.account.v1.GetGameSessionInfoRequest) returns (.bgs.protocol.account.v1.GetGameSessionInfoResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 34
+    };
+  }
+  rpc GetCAISInfo(.bgs.protocol.account.v1.GetCAISInfoRequest) returns (.bgs.protocol.account.v1.GetCAISInfoResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 35
+    };
+  }
+  rpc ForwardCacheExpire(.bgs.protocol.account.v1.ForwardCacheExpireRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 36
+    };
+  }
+  rpc GetAuthorizedData(.bgs.protocol.account.v1.GetAuthorizedDataRequest) returns (.bgs.protocol.account.v1.GetAuthorizedDataResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 37
+    };
+  }
+  rpc AccountFlagUpdate(.bgs.protocol.account.v1.AccountFlagUpdateRequest) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 38
+    };
+  }
+  rpc GameAccountFlagUpdate(.bgs.protocol.account.v1.GameAccountFlagUpdateRequest) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 39
+    };
+  }
+  rpc UpdateParentalControlsAndCAIS(.bgs.protocol.account.v1.UpdateParentalControlsAndCAISRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 40
+    };
+  }
+  rpc CreateGameAccount2(.bgs.protocol.account.v1.CreateGameAccountRequest) returns (.bgs.protocol.account.v1.CreateGameAccountResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 41
+    };
+  }
+  rpc GetGameAccount(.bgs.protocol.account.v1.GetGameAccountRequest) returns (.bgs.protocol.account.v1.GetGameAccountResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 42
+    };
+  }
+  rpc QueueDeductRecord(.bgs.protocol.account.v1.QueueDeductRecordRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 43
+    };
+  }
+}
+
+service AccountListener {
+  option (.bgs.protocol.service_options) = {
+    descriptor_name: "bnet.protocol.account.AccountNotify"
+  };
+  option (.bgs.protocol.sdk_service_options) = {
+    inbound: true
+  };
+  rpc OnAccountStateUpdated(.bgs.protocol.account.v1.AccountStateNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 1
+    };
+  }
+  rpc OnGameAccountStateUpdated(.bgs.protocol.account.v1.GameAccountStateNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 2
+    };
+  }
+  rpc OnGameAccountsUpdated(.bgs.protocol.account.v1.GameAccountNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option deprecated = true;
+    option (.bgs.protocol.method_options) = {
+      id: 3
+    };
+  }
+  rpc OnGameSessionUpdated(.bgs.protocol.account.v1.GameAccountSessionNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option deprecated = true;
+    option (.bgs.protocol.method_options) = {
+      id: 4
+    };
+  }
+}
+
+

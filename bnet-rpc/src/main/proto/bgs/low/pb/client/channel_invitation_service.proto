@@ -1,0 +1,144 @@
+syntax = "proto2";
+
+import "bgs/low/pb/client/account_types.proto";
+import "bgs/low/pb/client/channel_invitation_types.proto";
+import "bgs/low/pb/client/entity_types.proto";
+import "bgs/low/pb/client/invitation_types.proto";
+import "bgs/low/pb/client/rpc_types.proto";
+package bgs.protocol.channel.v1;
+
+option java_package = "bnet.protocol.channel.v1";
+option java_outer_classname = "ChannelInvitationServiceProto";
+option optimize_for = CODE_SIZE;
+option cc_generic_services = false;
+option java_generic_services = true;
+
+message SendInvitationRequest {
+  required .bgs.protocol.EntityId target_id = 2;
+  required .bgs.protocol.InvitationParams params = 3;
+}
+
+message AcceptInvitationRequest {
+  required fixed64 invitation_id = 3;
+  required uint64 object_id = 4;
+}
+
+message AcceptInvitationResponse {
+  required uint64 object_id = 1;
+}
+
+message DeclineInvitationRequest {
+  required fixed64 invitation_id = 3;
+}
+
+message SubscribeRequest {
+  optional .bgs.protocol.EntityId agent_id = 1;
+  required uint64 object_id = 2;
+  optional .bgs.protocol.EntityId account_id = 3;
+}
+
+message SuggestInvitationRequest {
+  required .bgs.protocol.EntityId channel_id = 2;
+  required .bgs.protocol.EntityId target_id = 3;
+  optional .bgs.protocol.EntityId approval_id = 4;
+}
+
+message RevokeInvitationRequest {
+  required fixed64 invitation_id = 3;
+  required .bgs.protocol.EntityId channel_id = 4;
+}
+
+message ListChannelCountRequest {
+  required .bgs.protocol.EntityId member_id = 1;
+  required uint32 service_type = 2;
+}
+
+message ListChannelCountResponse {
+  repeated .bgs.protocol.channel.v1.ChannelCount channel = 1;
+}
+
+message InvitationAddedNotification {
+  required .bgs.protocol.Invitation invitation = 1;
+  optional .bgs.protocol.account.v1.Identity subscriber = 2;
+}
+
+message InvitationRemovedNotification {
+  required .bgs.protocol.Invitation invitation = 1;
+  optional uint32 reason = 2;
+  optional .bgs.protocol.account.v1.Identity subscriber = 3;
+}
+
+message SuggestionAddedNotification {
+  required .bgs.protocol.channel.v1.InvitationSuggestion suggestion = 1;
+  optional .bgs.protocol.account.v1.Identity subscriber = 2;
+}
+
+service ChannelInvitationService {
+  option (.bgs.protocol.service_options) = {
+    descriptor_name: "bnet.protocol.channel_invitation.ChannelInvitationService"
+  };
+  option (.bgs.protocol.sdk_service_options) = {
+    outbound: true
+  };
+  rpc Subscribe(.bgs.protocol.channel.v1.SubscribeRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 1
+    };
+  }
+  rpc SendInvitation(.bgs.protocol.channel.v1.SendInvitationRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 3
+    };
+  }
+  rpc AcceptInvitation(.bgs.protocol.channel.v1.AcceptInvitationRequest) returns (.bgs.protocol.channel.v1.AcceptInvitationResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 4
+    };
+  }
+  rpc DeclineInvitation(.bgs.protocol.channel.v1.DeclineInvitationRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 5
+    };
+  }
+  rpc RevokeInvitation(.bgs.protocol.channel.v1.RevokeInvitationRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 6
+    };
+  }
+  rpc SuggestInvitation(.bgs.protocol.channel.v1.SuggestInvitationRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 7
+    };
+  }
+  rpc ListChannelCount(.bgs.protocol.channel.v1.ListChannelCountRequest) returns (.bgs.protocol.channel.v1.ListChannelCountResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 11
+    };
+  }
+}
+
+service ChannelInvitationListener {
+  option (.bgs.protocol.service_options) = {
+    descriptor_name: "bnet.protocol.channel_invitation.ChannelInvitationNotify"
+  };
+  option (.bgs.protocol.sdk_service_options) = {
+    inbound: true
+  };
+  rpc OnReceivedInvitationAdded(.bgs.protocol.channel.v1.InvitationAddedNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 1
+    };
+  }
+  rpc OnReceivedInvitationRemoved(.bgs.protocol.channel.v1.InvitationRemovedNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 2
+    };
+  }
+  rpc OnReceivedSuggestionAdded(.bgs.protocol.channel.v1.SuggestionAddedNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 3
+    };
+  }
+}
+
+

@@ -1,0 +1,437 @@
+syntax = "proto2";
+
+import "bgs/low/pb/client/attribute_types.proto";
+import "bgs/low/pb/client/entity_types.proto";
+import "bgs/low/pb/client/game_factory_types.proto";
+import "bgs/low/pb/client/game_master_types.proto";
+import "bgs/low/pb/client/client/v2/game_master_types_v2.proto";
+import "bgs/low/pb/client/rpc_types.proto";
+import "bgs/low/pb/client/account_types.proto";
+package bgs.protocol.games.v1;
+
+option java_package = "bnet.protocol.games.v1";
+option java_outer_classname = "GameMasterServiceProto";
+option optimize_for = SPEED;
+option cc_generic_services = false;
+option java_generic_services = true;
+
+enum PrivacyLevel {
+  PRIVACY_LEVEL_OPEN = 1;
+  PRIVACY_LEVEL_CLOSED = 2;
+}
+
+message JoinGameRequest {
+  required .bgs.protocol.games.v1.GameHandle game_handle = 1;
+  repeated .bgs.protocol.games.v1.Player player = 2;
+}
+
+message JoinGameResponse {
+  optional fixed64 request_id = 1;
+  optional bool queued = 2 [default = false];
+  repeated .bgs.protocol.games.v1.ConnectInfo connect_info = 3;
+}
+
+message ListFactoriesRequest {
+  required .bgs.protocol.AttributeFilter filter = 1;
+  optional uint32 start_index = 2 [default = 0];
+  optional uint32 max_results = 3 [default = 100];
+}
+
+message ListFactoriesResponse {
+  repeated .bgs.protocol.games.v1.GameFactoryDescription description = 1;
+  optional uint32 total_results = 2;
+}
+
+message FindGameRequest {
+  repeated .bgs.protocol.games.v1.Player player = 1;
+  optional fixed64 factory_id = 2;
+  optional .bgs.protocol.games.v1.GameProperties properties = 3;
+  optional fixed64 request_id = 5;
+}
+
+message FindGameResponse {
+  optional fixed64 request_id = 1;
+  optional fixed64 factory_id = 2;
+  optional bool queued = 3 [default = false];
+}
+
+message GameEndedNotification {
+  required .bgs.protocol.games.v1.GameHandle game_handle = 1;
+  optional uint32 reason = 2 [default = 0];
+}
+
+message PlayerLeftNotification {
+  required .bgs.protocol.games.v1.GameHandle game_handle = 1;
+  required .bgs.protocol.EntityId game_account_id = 2;
+  optional uint32 reason = 3 [default = 1];
+}
+
+message RegisterServerRequest {
+  repeated .bgs.protocol.Attribute attribute = 1;
+  required fixed32 program = 3;
+  optional uint32 cost = 4 [default = 0];
+}
+
+message UnregisterServerRequest {
+}
+
+message RegisterUtilitiesRequest {
+  repeated .bgs.protocol.Attribute attribute = 1;
+  required fixed32 program = 3;
+}
+
+message UnregisterUtilitiesRequest {
+}
+
+message SubscribeRequest {
+  required uint64 object_id = 1;
+}
+
+message SubscribeResponse {
+  optional uint64 subscription_id = 1;
+}
+
+message UnsubscribeRequest {
+  required uint64 subscription_id = 1;
+}
+
+message ChangeGameRequest {
+  required .bgs.protocol.games.v1.GameHandle game_handle = 1;
+  optional bool open = 2;
+  repeated .bgs.protocol.Attribute attribute = 3;
+  optional bool replace = 4 [default = false];
+}
+
+message GetFactoryInfoRequest {
+  required fixed64 factory_id = 1;
+}
+
+message GetFactoryInfoResponse {
+  repeated .bgs.protocol.Attribute attribute = 1;
+  repeated .bgs.protocol.games.v1.GameStatsBucket stats_bucket = 2;
+}
+
+message GetGameStatsRequest {
+  required fixed64 factory_id = 1;
+  required .bgs.protocol.AttributeFilter filter = 2;
+}
+
+message GetGameStatsResponse {
+  repeated .bgs.protocol.games.v1.GameStatsBucket stats_bucket = 1;
+}
+
+message SetGameSlotsRequest {
+  optional uint32 game_slots = 1;
+  optional uint32 create_game_rate = 2;
+}
+
+message GameCreatedNotification {
+  optional .bgs.protocol.games.v1.GameHandle game_handle = 1;
+  optional uint32 error_id = 2;
+  repeated .bgs.protocol.games.v1.ConnectInfo connect_info = 3;
+}
+
+message GameRequestEntry {
+  optional fixed64 factory_id = 1;
+  optional uint32 num_games = 2;
+  optional uint32 server_cost = 3;
+}
+
+message GameRequestServerEntry {
+  optional .bgs.protocol.games.v1.HostRoute host = 1;
+  repeated .bgs.protocol.games.v1.GameRequestEntry game_requests = 2;
+}
+
+message RequestGamesRequest {
+  repeated .bgs.protocol.games.v1.GameRequestServerEntry game_requests_per_server = 1;
+}
+
+message GameResponseEntry {
+  optional fixed64 factory_id = 1;
+  optional float popularity = 2;
+}
+
+message RequestGamesResponse {
+  repeated .bgs.protocol.games.v1.GameResponseEntry game_response = 1;
+}
+
+message GetFindGameRequestsRequest {
+  optional fixed64 factory_id = 1;
+  optional uint32 num_players = 2;
+}
+
+message GetFindGameRequestsResponse {
+  repeated .bgs.protocol.games.v1.FindGameRequest find_game_request = 1;
+  optional uint32 queue_depth = 2;
+}
+
+message GetGameStatsBucketsRequest {
+  optional .bgs.protocol.AttributeFilter factory_filter = 1;
+  optional .bgs.protocol.AttributeFilter game_filter = 2;
+}
+
+message GetGameStatsBucketsResponse {
+  repeated .bgs.protocol.games.v1.GameStatsBucket stats_bucket = 1;
+}
+
+message FactoryUpdateNotification {
+  enum Operation {
+    ADD = 1;
+    REMOVE = 2;
+    CHANGE = 3;
+  }
+  required .bgs.protocol.games.v1.FactoryUpdateNotification.Operation op = 1;
+  required .bgs.protocol.games.v1.GameFactoryDescription description = 2;
+  optional fixed32 program = 3;
+  repeated .bgs.protocol.games.v1.HostRoute hosts = 4;
+}
+
+message PlayerJoinNotification {
+  optional .bgs.protocol.games.v2.GameHandle game_handle = 1;
+  optional .bgs.protocol.games.v2.Assignment assignment = 2;
+}
+
+message PlayerLeaveNotification {
+  optional .bgs.protocol.games.v2.GameHandle game_handle = 1;
+  optional .bgs.protocol.games.v2.Assignment assignment = 2;
+  optional .bgs.protocol.games.v2.PlayerLeaveReason reason = 3 [default = PLAYER_LEAVE_REASON_PLAYER_REMOVED_BY_GAME_SERVER];
+}
+
+message GamePrivacyChangeNotification {
+  optional .bgs.protocol.games.v2.GameHandle game_handle = 1;
+  optional .bgs.protocol.games.v1.PrivacyLevel privacy_level = 2;
+}
+
+message GameEndNotification {
+  optional .bgs.protocol.games.v2.GameHandle game_handle = 1;
+  optional .bgs.protocol.games.v1.GameEndedReason reason = 2;
+}
+
+message QueueEntryNotification {
+  optional .bgs.protocol.games.v2.FindGameRequestId request_id = 1;
+  optional .bgs.protocol.games.v2.QueueUpdate update_info = 2;
+  optional .bgs.protocol.account.v1.GameAccountHandle request_initiator = 3;
+}
+
+message QueueUpdateNotification {
+  optional .bgs.protocol.games.v2.FindGameRequestId request_id = 1;
+  optional .bgs.protocol.games.v2.QueueUpdate update_info = 2;
+  optional bool matchmaking = 3;
+  optional uint32 matchmaker_result = 4;
+}
+
+message QueueExitNotification {
+  optional .bgs.protocol.games.v2.FindGameRequestId request_id = 1;
+  optional uint32 result = 2;
+}
+
+message QueueLeftNotification {
+  optional .bgs.protocol.games.v2.FindGameRequestId request_id = 1;
+  optional uint32 result = 2;
+  repeated .bgs.protocol.account.v1.GameAccountHandle quitter = 3;
+}
+
+message GameResultNotification {
+  optional .bgs.protocol.games.v2.FindGameRequestId request_id = 1;
+  optional uint32 result = 2;
+  optional .bgs.protocol.games.v1.ConnectInfo connect_info = 3;
+  optional .bgs.protocol.games.v2.GameHandle game_handle = 4;
+}
+
+message EnterGameNotification {
+  optional .bgs.protocol.games.v2.GameHandle game_handle = 1;
+  optional .bgs.protocol.games.v1.PrivacyLevel privacy_level = 2;
+  repeated .bgs.protocol.games.v2.Assignment assignments = 3;
+}
+
+message ExitGameNotification {
+  optional .bgs.protocol.games.v2.GameHandle game_handle = 1;
+  optional .bgs.protocol.account.v1.GameAccountHandle game_account = 2;
+  optional .bgs.protocol.games.v2.PlayerLeaveReason reason = 3;
+}
+
+service GameMasterService {
+  option (.bgs.protocol.service_options) = {
+    descriptor_name: "bnet.protocol.game_master.GameMaster"
+  };
+  option (.bgs.protocol.sdk_service_options) = {
+    outbound: true
+  };
+  rpc JoinGame(.bgs.protocol.games.v1.JoinGameRequest) returns (.bgs.protocol.games.v1.JoinGameResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 1
+    };
+  }
+  rpc ListFactories(.bgs.protocol.games.v1.ListFactoriesRequest) returns (.bgs.protocol.games.v1.ListFactoriesResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 2
+    };
+  }
+  rpc FindGame(.bgs.protocol.games.v1.FindGameRequest) returns (.bgs.protocol.games.v1.FindGameResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 3
+    };
+  }
+  rpc CancelGameEntry(.bgs.protocol.games.v1.CancelGameEntryRequest) returns (.bgs.protocol.games.v1.CancelGameEntryResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 4
+    };
+  }
+  rpc GameEnded(.bgs.protocol.games.v1.GameEndedNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 5
+    };
+  }
+  rpc PlayerLeft(.bgs.protocol.games.v1.PlayerLeftNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 6
+    };
+  }
+  rpc RegisterServer(.bgs.protocol.games.v1.RegisterServerRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 7
+    };
+  }
+  rpc UnregisterServer(.bgs.protocol.games.v1.UnregisterServerRequest) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 8
+    };
+  }
+  rpc RegisterUtilities(.bgs.protocol.games.v1.RegisterUtilitiesRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 9
+    };
+  }
+  rpc UnregisterUtilities(.bgs.protocol.games.v1.UnregisterUtilitiesRequest) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 10
+    };
+  }
+  rpc Subscribe(.bgs.protocol.games.v1.SubscribeRequest) returns (.bgs.protocol.games.v1.SubscribeResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 11
+    };
+  }
+  rpc Unsubscribe(.bgs.protocol.games.v1.UnsubscribeRequest) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 12
+    };
+  }
+  rpc ChangeGame(.bgs.protocol.games.v1.ChangeGameRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 13
+    };
+  }
+  rpc GetFactoryInfo(.bgs.protocol.games.v1.GetFactoryInfoRequest) returns (.bgs.protocol.games.v1.GetFactoryInfoResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 14
+    };
+  }
+  rpc GetGameStats(.bgs.protocol.games.v1.GetGameStatsRequest) returns (.bgs.protocol.games.v1.GetGameStatsResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 15
+    };
+  }
+  rpc SetGameSlots(.bgs.protocol.games.v1.SetGameSlotsRequest) returns (.bgs.protocol.NoData) {
+    option (.bgs.protocol.method_options) = {
+      id: 16
+    };
+  }
+  rpc OnGameCreated(.bgs.protocol.games.v1.GameCreatedNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 17
+    };
+  }
+  rpc RequestGames(.bgs.protocol.games.v1.RequestGamesRequest) returns (.bgs.protocol.games.v1.RequestGamesResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 18
+    };
+  }
+  rpc GetFindGameRequests(.bgs.protocol.games.v1.GetFindGameRequestsRequest) returns (.bgs.protocol.games.v1.GetFindGameRequestsResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 19
+    };
+  }
+  rpc GetGameStatsBuckets(.bgs.protocol.games.v1.GetGameStatsBucketsRequest) returns (.bgs.protocol.games.v1.GetGameStatsBucketsResponse) {
+    option (.bgs.protocol.method_options) = {
+      id: 20
+    };
+  }
+}
+
+service GameFactorySubscriber {
+  option (.bgs.protocol.service_options) = {
+    descriptor_name: "bnet.protocol.games.GameFactorySubscriber"
+  };
+  rpc OnFactoryUpdate(.bgs.protocol.games.v1.FactoryUpdateNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 1
+    };
+  }
+}
+
+service GameMasterListener {
+  option (.bgs.protocol.service_options) = {
+    descriptor_name: "bnet.protocol.games.GameMasterListener"
+  };
+  option (.bgs.protocol.sdk_service_options) = {
+    inbound: true
+  };
+  rpc OnPlayerJoin(.bgs.protocol.games.v1.PlayerJoinNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 1
+    };
+  }
+  rpc OnPlayerLeave(.bgs.protocol.games.v1.PlayerLeaveNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 2
+    };
+  }
+  rpc OnGamePrivacyChange(.bgs.protocol.games.v1.GamePrivacyChangeNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 3
+    };
+  }
+  rpc OnGameEnd(.bgs.protocol.games.v1.GameEndNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 4
+    };
+  }
+  rpc OnQueueEntry(.bgs.protocol.games.v1.QueueEntryNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 5
+    };
+  }
+  rpc OnQueueUpdate(.bgs.protocol.games.v1.QueueUpdateNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 6
+    };
+  }
+  rpc OnGameResult(.bgs.protocol.games.v1.GameResultNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 7
+    };
+  }
+  rpc OnEnterGame(.bgs.protocol.games.v1.EnterGameNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 8
+    };
+  }
+  rpc OnExitGame(.bgs.protocol.games.v1.ExitGameNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 9
+    };
+  }
+  rpc OnQueueExit(.bgs.protocol.games.v1.QueueExitNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 10
+    };
+  }
+  rpc OnQueueLeft(.bgs.protocol.games.v1.QueueLeftNotification) returns (.bgs.protocol.NO_RESPONSE) {
+    option (.bgs.protocol.method_options) = {
+      id: 11
+    };
+  }
+}
+
+

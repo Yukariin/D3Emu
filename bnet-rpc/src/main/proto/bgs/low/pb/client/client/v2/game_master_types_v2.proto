@@ -1,0 +1,58 @@
+syntax = "proto2";
+
+import "bgs/low/pb/client/account_types.proto";
+import "bgs/low/pb/client/attribute_types.proto";
+import "bgs/low/pb/client/rpc_types.proto";
+package bgs.protocol.games.v2;
+
+option java_package = "bnet.protocol.games.v2";
+option java_outer_classname = "GameMasterTypesProto";
+option optimize_for = SPEED;
+
+enum PlayerLeaveReason {
+  PLAYER_LEAVE_REASON_PLAYER_REMOVED_BY_GAME_SERVER = 0;
+  PLAYER_LEAVE_REASON_GAME_ENDED_BY_GAME_SERVER = 1;
+  PLAYER_LEAVE_REASON_PLAYER_DISCONNECTED_FROM_GAME_SERVER = 2;
+  PLAYER_LEAVE_REASON_GAME_SERVER_DISCONNECTED_FROM_SERVICE = 3;
+  PLAYER_LEAVE_REASON_PLAYER_HOST_DISCONNECTED_FROM_SERVICE = 4;
+  PLAYER_LEAVE_REASON_GAME_MASTER_DISCONNECTED_FROM_SERVICE = 5;
+  PLAYER_LEAVE_REASON_NONE = 6;
+}
+
+message ConnectInfo {
+  optional .bgs.protocol.Address address = 1;
+  optional bytes token = 2;
+  repeated .bgs.protocol.Attribute attribute = 3;
+}
+
+message GameId {
+  optional fixed32 id = 1;
+  optional .bgs.protocol.ProcessId server_id = 2;
+}
+
+message FactoryId {
+  optional fixed64 id = 1;
+}
+
+message GameHandle {
+  optional .bgs.protocol.games.v2.FactoryId factory_id = 1;
+  optional .bgs.protocol.games.v2.GameId game_id = 2;
+}
+
+message FindGameRequestId {
+  optional fixed64 id = 1;
+}
+
+message QueueUpdate {
+  optional int32 min_wait = 1;
+  optional int32 max_wait = 2;
+  optional int32 avg_wait = 3;
+  optional int32 std_dev_wait = 4;
+}
+
+message Assignment {
+  optional .bgs.protocol.account.v1.GameAccountHandle game_account = 1;
+  optional uint32 team_index = 2;
+}
+
+
