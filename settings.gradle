@@ -1,4 +1,5 @@
 rootProject.name = 'D3Emu'
 
 include 'bnet-rpc'
+include 'compiler'
 include 'game'

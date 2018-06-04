@@ -1,0 +1,32 @@
+plugins {
+    id 'cpp'
+}
+
+model {
+    components {
+        java_plugin(NativeExecutableSpec) {
+            baseName 'protoc-gen-bnet'
+        }
+    }
+
+    binaries {
+        all {
+            if (toolChain in Gcc || toolChain in Clang) {
+                cppCompiler.args '--std=c++0x'
+
+                linker.args '-lprotoc', '-lprotobuf',
+                            '-s'
+            }
+        }
+    }
+}
+
+def artifactStagingPath = "$buildDir/artifacts" as File
+
+task buildArtifacts(type: Copy) {
+    dependsOn 'java_pluginExecutable'
+    from("$buildDir/exe") {
+        rename 'protoc-gen-bnet', '$0.exe'
+    }
+    into artifactStagingPath
+}
