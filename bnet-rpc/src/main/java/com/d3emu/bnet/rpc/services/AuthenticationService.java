@@ -9,6 +9,8 @@ import bnet.protocol.challenge.v1.ChallengeServiceProto.ChallengeExternalRequest
 import bnet.protocol.EntityProto.EntityId;
 import bnet.protocol.RpcProto.NoData;
 
+import com.d3emu.bnet.rpc.Config;
+
 import com.google.protobuf.ByteString;
 import com.google.protobuf.RpcCallback;
 
@@ -39,7 +41,7 @@ public final class AuthenticationService extends bnet.protocol.authentication.v1
             // TODO: add logon queue with notifications?
             ChallengeExternalRequest.Builder builder = ChallengeExternalRequest.newBuilder();
             builder.setPayloadType("web_auth_url");
-            builder.setPayload(ByteString.copyFromUtf8("https://192.168.1.181:4114/bnet/login"));  // FIXME: add to config
+            builder.setPayload(ByteString.copyFromUtf8(String.format("https://%s:%d/bnet/login", Config.WEB_AUTH_ADDRESS, Config.WEB_AUTH_PORT)));
 
             ChallengeListener.newStub().onExternalChallenge(ctx, builder.build());
         }
