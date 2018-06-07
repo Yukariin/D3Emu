@@ -1,5 +1,6 @@
 package com.d3emu.bnet.rpc.services; 
 
+import java.lang.Deprecated;
 import java.util.logging.Logger;
 
 import bnet.protocol.account.v1.AccountServiceProto.*;
@@ -24,6 +25,7 @@ public final class AccountService extends bnet.protocol.account.v1.AccountServic
 
     public final void cacheExpire(ChannelHandlerContext ctx, CacheExpireRequest request) {}
 
+    @Deprecated
     public final void credentialUpdate(ChannelHandlerContext ctx, CredentialUpdateRequest request, RpcCallback<CredentialUpdateResponse> done) {}
 
     public final void subscribe(ChannelHandlerContext ctx, SubscriptionUpdateRequest request, RpcCallback<SubscriptionUpdateResponse> done) {}

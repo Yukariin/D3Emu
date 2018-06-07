@@ -1,5 +1,6 @@
 package com.d3emu.bnet.rpc.services;
 
+import java.lang.Deprecated;
 import java.util.logging.Logger;
 
 import bnet.protocol.authentication.v1.AuthenticationListener;
@@ -47,14 +48,18 @@ public final class AuthenticationService extends bnet.protocol.authentication.v1
         }
     }
 
+    @Deprecated
     public final void moduleNotify(ChannelHandlerContext ctx, ModuleNotification request, RpcCallback<NoData> done) {}
 
+    @Deprecated
     public final void moduleMessage(ChannelHandlerContext ctx, ModuleMessageRequest request, RpcCallback<NoData> done) {}
 
+    @Deprecated
     public final void selectGameAccountDEPRECATED(ChannelHandlerContext ctx, EntityId request, RpcCallback<NoData> done) {}
 
     public final void generateSSOToken(ChannelHandlerContext ctx, GenerateSSOTokenRequest request, RpcCallback<GenerateSSOTokenResponse> done) {}
 
+    @Deprecated
     public final void selectGameAccount(ChannelHandlerContext ctx, SelectGameAccountRequest request, RpcCallback<NoData> done) {}
 
     public final void verifyWebCredentials(ChannelHandlerContext ctx, VerifyWebCredentialsRequest request, RpcCallback<NoData> done) {

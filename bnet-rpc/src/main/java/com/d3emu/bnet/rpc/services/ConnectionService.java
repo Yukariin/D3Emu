@@ -1,5 +1,6 @@
 package com.d3emu.bnet.rpc.services; 
 
+import java.lang.Deprecated;
 import java.util.logging.Logger;
 import java.time.Instant;
 
@@ -31,7 +32,8 @@ public final class ConnectionService extends bnet.protocol.connection.v1.Connect
 
         done.run(builder.build());
     }
-    
+
+    @Deprecated
     public final void bind(ChannelHandlerContext ctx, BindRequest request, RpcCallback<BindResponse> done) {
         
     }
@@ -48,6 +50,7 @@ public final class ConnectionService extends bnet.protocol.connection.v1.Connect
         // Nothing to do?
     }
 
+    @Deprecated
     public final void encrypt(ChannelHandlerContext ctx, EncryptRequest request, RpcCallback<NoData> done) {
         
     }

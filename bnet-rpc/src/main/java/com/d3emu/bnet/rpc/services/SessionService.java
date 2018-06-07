@@ -13,7 +13,9 @@ public final class SessionService extends bnet.protocol.session.v1.SessionServic
 
     private static final Logger logger = Logger.getLogger("SessionService");
 
-    public final void createSession(ChannelHandlerContext ctx, CreateSessionRequest request, RpcCallback<CreateSessionResponse> done) {}
+    public final void createSession(ChannelHandlerContext ctx, CreateSessionRequest request, RpcCallback<CreateSessionResponse> done) {
+        logger.info(request.toString());
+    }
 
     public final void destroySession(ChannelHandlerContext ctx, DestroySessionRequest request, RpcCallback<NoData> done) {}
 
