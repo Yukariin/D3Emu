@@ -321,8 +321,12 @@ static void GenerateStub(const ServiceDescriptor* service, io::Printer* p)
         vars["method_id"] = to_string(method->options().GetExtension(bgs::protocol::method_options).id());
         p->Print(vars,
                  "com.d3emu.bnet.rpc.ConnectionHandler handler = (com.d3emu.bnet.rpc.ConnectionHandler)ctx.handler();\n"
-                 "handler.sendRequest(ctx, getHash(), $method_id$, request);\n"
+                 "handler.sendRequest(ctx, getHash(), $method_id$, request"
         );
+        if (method->output_type()->name() == "NO_RESPONSE")
+            p->Print(");\n");
+        else
+            p->Print(", done);\n");
 
         p->Outdent();
         p->Print("}\n");
