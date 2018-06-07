@@ -211,27 +211,17 @@ static void GenerateGetPrototype(const ServiceDescriptor* service, RequestOrResp
     p->Print("}\n\n");
 }
 
-static void GenerateAbstractMethods(const ServiceDescriptor* service, io::Printer* p)
-{
-    for (int i = 0; i < service->method_count(); i++)
-    {
-        const MethodDescriptor* method = service->method(i);
-        WriteMethodDocComment(method, p);
-        GenerateMethodSignature(method, p, true);
-        p->Print(";\n\n");
-    }
-}
-
 static void GenerateMethodSignature(const MethodDescriptor* method, io::Printer* p, bool abstract)
 {
     map<string, string> vars;
+    vars["deprecated"] = method->options().deprecated() ? "@java.lang.Deprecated" : "";
     vars["abstract"] = abstract ? "abstract" : "";
     vars["name"] = UnderscoresToCamelCase(method);
     vars["input"] = java::ClassName(method->input_type());
     vars["output"] = java::ClassName(method->output_type());
 
     p->Print(vars,
-    "public $abstract$ void $name$(\n"
+    "$deprecated$ public $abstract$ void $name$(\n"
     "    io.netty.channel.ChannelHandlerContext ctx,\n"
     "    $input$ request");    
     if (method->output_type()->name() == "NO_RESPONSE")
@@ -243,6 +233,17 @@ static void GenerateMethodSignature(const MethodDescriptor* method, io::Printer*
         p->Print(vars,
                  ",\n"
                  "    com.google.protobuf.RpcCallback<$output$> done)");
+    }
+}
+
+static void GenerateAbstractMethods(const ServiceDescriptor* service, io::Printer* p)
+{
+    for (int i = 0; i < service->method_count(); i++)
+    {
+        const MethodDescriptor* method = service->method(i);
+        WriteMethodDocComment(method, p);
+        GenerateMethodSignature(method, p, true);
+        p->Print(";\n\n");
     }
 }
 
