@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import bnet.protocol.RpcProto.Header;
+import bnet.protocol.RpcProto.NoData;
 
 import com.d3emu.bnet.rpc.services.*;
 
@@ -36,7 +37,7 @@ public class ConnectionHandler extends SimpleChannelInboundHandler<BNetPacket> {
         printHeader(header);
 
         if (msg.getHeader().getServiceId() == RESPONSE_SERVICE_ID) {
-            // FIXME: add prper response handling
+            // FIXME: add proper response handling
         } else {
             Service s = ServiceRegistry.getService(header.getServiceHash());
             if (s != null) {
@@ -80,6 +81,11 @@ public class ConnectionHandler extends SimpleChannelInboundHandler<BNetPacket> {
         logger.info(text);
     }
 
+    public void sendRequest(ChannelHandlerContext ctx, int serviceHash, int methodId, Message request, RpcCallback done) {
+        // FIXME: store callback
+        sendRequest(ctx, serviceHash, methodId, request);
+    }
+
     public void sendRequest(ChannelHandlerContext ctx, int serviceHash, int methodId, Message request) {
         sendRequest(ctx, serviceHash, methodId, requestToken.incrementAndGet(), request);
     }
@@ -102,6 +108,15 @@ public class ConnectionHandler extends SimpleChannelInboundHandler<BNetPacket> {
         builder.setSize(response.getSerializedSize());
 
         ctx.channel().writeAndFlush(new BNetPacket(builder.build(), response));
+    }
+
+    public static void sendResponse(ChannelHandlerContext ctx, int token, int status) {
+        Header.Builder builder = Header.newBuilder();
+        builder.setServiceId(RESPONSE_SERVICE_ID);
+        builder.setToken(token);
+        builder.setStatus(status);
+
+        ctx.channel().writeAndFlush(new BNetPacket(builder.build(), NoData.getDefaultInstance()));
     }
 
     public static Header createHeader(int serviceId, int methodId, int objectId, int token, int size) {
