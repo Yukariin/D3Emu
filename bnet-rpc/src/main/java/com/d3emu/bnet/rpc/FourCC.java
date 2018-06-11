@@ -6,6 +6,8 @@ public class FourCC {
 
     private int value;
 
+    public FourCC() {}
+
     public FourCC(int value) {
         this.value = value;
     }
