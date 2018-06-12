@@ -26,12 +26,15 @@ public final class AuthenticationService extends bnet.protocol.authentication.v1
 
         if (!request.getProgram().equals("D3")) {
             logger.severe("Unsupported program detected!");
+            // TODO: return proper error code
         }
         if (!request.getPlatform().equals("Win")) {
             logger.severe("Unsupported platform detected!");
+            // TODO: return proper error code
         }
         if (!request.getLocale().equals("enUS")) {
             logger.severe("Unsupported locale detected!");
+            // TODO: return proper error code
         }
 
         done.run(NoData.getDefaultInstance());
@@ -65,7 +68,7 @@ public final class AuthenticationService extends bnet.protocol.authentication.v1
     public final void verifyWebCredentials(ChannelHandlerContext ctx, VerifyWebCredentialsRequest request, RpcCallback<NoData> done) {
         logger.info(request.toString());
 
-        // FIXME: add token verification
+        // FIXME: add web token verification
 
         done.run(NoData.getDefaultInstance());
 
@@ -73,7 +76,7 @@ public final class AuthenticationService extends bnet.protocol.authentication.v1
         builder.setErrorCode(0);
         builder.setAccountId(EntityId.newBuilder().setLow(1).setHigh(0x100000000000000L));  // FIXME: properly set BNet account id
         builder.addGameAccountId(EntityId.newBuilder().setLow(1).setHigh(0x200000100004433L));  // FIXME: properly set D3 account id
-        // TODO: set sess key?
+        // TODO: set web session key?
         AuthenticationListener.newStub().onLogonComplete(ctx, builder.build());
     }
 
