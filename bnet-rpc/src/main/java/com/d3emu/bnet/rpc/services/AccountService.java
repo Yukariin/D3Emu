@@ -34,6 +34,41 @@ public final class AccountService extends bnet.protocol.account.v1.AccountServic
 
     public final void getAccountState(ChannelHandlerContext ctx, GetAccountStateRequest request, RpcCallback<GetAccountStateResponse> done) {
         logger.info(request.toString());
+
+        GetAccountStateResponse.Builder builder = GetAccountStateResponse.newBuilder();
+        if (request.getOptions().getFieldAccountLevelInfo()) {
+            AccountLevelInfo.Builder level = AccountLevelInfo.newBuilder();
+            level.addLicenses(AccountLicense.newBuilder().setId(100))
+                .addLicenses(AccountLicense.newBuilder().setId(110))  // WoW?
+                .addLicenses(AccountLicense.newBuilder().setId(111))
+                .addLicenses(AccountLicense.newBuilder().setId(168))  // D3(Vanilla)???
+                .addLicenses(AccountLicense.newBuilder().setId(213))
+                .addLicenses(AccountLicense.newBuilder().setId(249))  // WoW?
+                .addLicenses(AccountLicense.newBuilder().setId(263))  // D3(RoS)???
+                .addLicenses(AccountLicense.newBuilder().setId(265))  // WTCG
+                .addLicenses(AccountLicense.newBuilder().setId(268))
+                .addLicenses(AccountLicense.newBuilder().setId(274))
+                .addLicenses(AccountLicense.newBuilder().setId(384))
+                .addLicenses(AccountLicense.newBuilder().setId(434))
+                .addLicenses(AccountLicense.newBuilder().setId(440))
+                .addLicenses(AccountLicense.newBuilder().setId(10107))  // Hero?
+                .addLicenses(AccountLicense.newBuilder().setId(10431))
+                .addLicenses(AccountLicense.newBuilder().setId(10432))  // Hero?
+                .addLicenses(AccountLicense.newBuilder().setId(10442))  // WTCG?
+                .addLicenses(AccountLicense.newBuilder().setId(10686))  // WTCG?
+                .addLicenses(AccountLicense.newBuilder().setId(10856))  // Hero?
+                .addLicenses(AccountLicense.newBuilder().setId(10869))  // Hero?
+                .addLicenses(AccountLicense.newBuilder().setId(16062))
+                .addLicenses(AccountLicense.newBuilder().setId(16064));
+            level.setPreferredRegion(1)  // US
+                .setBattleTag("Tag#1")
+                .setAccountPaidAny(true)
+                .setHeadlessAccount(false);
+            builder.setState(AccountState.newBuilder().setAccountLevelInfo(level));
+            builder.setTags(AccountFieldTags.newBuilder().setAccountLevelInfoTag(0xDE80C3B7));
+        }
+
+        done.run(builder.build());
     }
 
     public final void getGameAccountState(ChannelHandlerContext ctx, GetGameAccountStateRequest request, RpcCallback<GetGameAccountStateResponse> done) {}
