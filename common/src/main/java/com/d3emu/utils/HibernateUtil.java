@@ -3,7 +3,7 @@ package com.d3emu.utils;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public final class HibernateUtils {
+public final class HibernateUtil {
 
     private static SessionFactory sessionFactory;
 
