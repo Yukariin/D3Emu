@@ -3,8 +3,6 @@ package com.d3emu.bnet.rpc;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import bnet.protocol.RpcProto.Header;
 import bnet.protocol.RpcProto.NoData;
@@ -20,15 +18,21 @@ import io.netty.handler.codec.http.*;
 import io.netty.handler.codec.http.websocketx.*;
 import io.netty.util.CharsetUtil;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class ConnectionHandler extends SimpleChannelInboundHandler<BNetPacket> {
 
-    private static final Logger logger = Logger.getLogger("ConnectionHandler");
+    private static final Logger logger = LoggerFactory.getLogger(ConnectionHandler.class);
 
+    // This is not actually request Id
     private static final int REQUEST_SERVICE_ID = 0;
 
     private static final int RESPONSE_SERVICE_ID = 254;
 
     private AtomicInteger requestToken = new AtomicInteger();
+
+    private Map<Integer, RpcCallback> pendingResponses = new HashMap<Integer, RpcCallback>();
 
     @Override
     public void channelRead0(ChannelHandlerContext ctx, BNetPacket msg) throws Exception {
@@ -37,7 +41,22 @@ public class ConnectionHandler extends SimpleChannelInboundHandler<BNetPacket> {
         printHeader(header);
 
         if (msg.getHeader().getServiceId() == RESPONSE_SERVICE_ID) {
-            // FIXME: add proper response handling
+            RpcCallback done = pendingResponses.get(header.getToken());
+            if (done != null) {
+                Service s = ServiceRegistry.getService(header.getServiceHash());
+                if (s != null) {
+                    Message proto = s.getResponsePrototype(header.getMethodId());
+                    Message message = proto.getParserForType().parseFrom(payload);
+
+                    done.run(message);
+                    pendingResponses.remove(header.getToken());
+                } else {
+                    logger.warn(String.format(
+                        "Incoming Response: Unable to identify service (id: %d, hash: 0x%04X)",
+                        header.getServiceId(), header.getServiceHash()
+                        ));
+                }
+            }
         } else {
             Service s = ServiceRegistry.getService(header.getServiceHash());
             if (s != null) {
@@ -48,8 +67,8 @@ public class ConnectionHandler extends SimpleChannelInboundHandler<BNetPacket> {
                     (Message m) -> { sendResponse(ctx, header.getToken(), m); }
                 );
             } else {
-                logger.severe(String.format(
-                    "Client Requested an Unsupported (Service id: %d, hash: 0x%04X  Method id: %d)",
+                logger.warn(String.format(
+                    "Client Requested an unsupported service (id: %d, hash: 0x%04X  Method id: %d)",
                     header.getServiceId(), header.getServiceHash(), header.getMethodId()
                 ));
             }
@@ -63,7 +82,7 @@ public class ConnectionHandler extends SimpleChannelInboundHandler<BNetPacket> {
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        logger.log(Level.SEVERE, cause.getMessage(), cause);
+        logger.error(cause.getMessage(), cause);
 
         ctx.close();
     }
@@ -78,16 +97,16 @@ public class ConnectionHandler extends SimpleChannelInboundHandler<BNetPacket> {
             h.getStatus()
         );
         
-        logger.info(text);
+        logger.debug(text);
     }
 
     public void sendRequest(ChannelHandlerContext ctx, int serviceHash, int methodId, Message request, RpcCallback done) {
-        // FIXME: store callback
+        pendingResponses.put(requestToken.get(), done);
         sendRequest(ctx, serviceHash, methodId, request);
     }
 
     public void sendRequest(ChannelHandlerContext ctx, int serviceHash, int methodId, Message request) {
-        sendRequest(ctx, serviceHash, methodId, requestToken.incrementAndGet(), request);
+        sendRequest(ctx, serviceHash, methodId, requestToken.getAndIncrement(), request);
     }
 
     public static void sendRequest(ChannelHandlerContext ctx, int serviceHash, int methodId, int token, Message request) {

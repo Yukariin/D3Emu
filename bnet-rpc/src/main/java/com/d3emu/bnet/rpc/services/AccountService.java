@@ -1,7 +1,6 @@
 package com.d3emu.bnet.rpc.services; 
 
 import java.lang.Deprecated;
-import java.util.logging.Logger;
 
 import bnet.protocol.account.v1.AccountServiceProto.*;
 import bnet.protocol.account.v1.AccountTypesProto.*;
@@ -11,9 +10,12 @@ import com.google.protobuf.RpcCallback;
 
 import io.netty.channel.ChannelHandlerContext;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public final class AccountService extends bnet.protocol.account.v1.AccountService {
 
-    private static final Logger logger = Logger.getLogger("AccountService");
+    private static final Logger logger = LoggerFactory.getLogger(AccountService.class);
 
     public final void getGameAccountBlob(ChannelHandlerContext ctx, GameAccountHandle request, RpcCallback<GameAccountBlob> done) {}
 
@@ -33,7 +35,7 @@ public final class AccountService extends bnet.protocol.account.v1.AccountServic
     public final void unsubscribe(ChannelHandlerContext ctx, SubscriptionUpdateRequest request, RpcCallback<NoData> done) {}
 
     public final void getAccountState(ChannelHandlerContext ctx, GetAccountStateRequest request, RpcCallback<GetAccountStateResponse> done) {
-        logger.info(request.toString());
+        logger.debug(request.toString());
 
         GetAccountStateResponse.Builder builder = GetAccountStateResponse.newBuilder();
         if (request.getOptions().getFieldAccountLevelInfo()) {

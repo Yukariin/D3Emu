@@ -8,12 +8,48 @@ plugins {
 mainClassName = 'com.d3emu.bnet.rpc.App'
 
 dependencies {
-    compile 'com.google.guava:guava:23.0'
+    compile project(':common')
+
+    compile 'org.slf4j:slf4j-api:1.7.25'
+    compile 'ch.qos.logback:logback-classic:1.2.3'
+    compile 'ch.qos.logback:logback-core:1.2.3'
+
     compile 'com.google.protobuf:protobuf-java:3.5.1'
-    compile 'io.netty:netty-all:4.1.22.Final'
+    compile 'io.netty:netty-all:4.1.25.Final'
 }
 
 // Exclude all .proto files from .jar
 processResources {
     exclude('**/*.proto')
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': "$mainClassName",
+                   'Created-By': "Gradle ${gradle.gradleVersion}",
+                   'Built-By': System.properties['user.name'],
+                   'Build-Date': new Date().format('yyyy-MM-dd HH:mm:ss')
+    }
+
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.5.1-1'
+    }
+
+    plugins {
+        bnet {
+            path = "$rootDir/compiler/build/exe/java_plugin/protoc-gen-bnet"
+        }
+    }
+
+    generateProtoTasks {
+        all()*.plugins {
+            bnet {}
+        }
+    }
 }

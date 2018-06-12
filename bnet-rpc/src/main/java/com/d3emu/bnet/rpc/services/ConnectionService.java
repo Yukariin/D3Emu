@@ -1,7 +1,6 @@
 package com.d3emu.bnet.rpc.services; 
 
 import java.lang.Deprecated;
-import java.util.logging.Logger;
 import java.time.Instant;
 
 import bnet.protocol.connection.v1.ConnectionServiceProto.*;
@@ -12,12 +11,15 @@ import com.google.protobuf.RpcCallback;
 
 import io.netty.channel.ChannelHandlerContext;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public final class ConnectionService extends bnet.protocol.connection.v1.ConnectionService {
 
-    private static final Logger logger = Logger.getLogger("ConnectionService");
+    private static final Logger logger = LoggerFactory.getLogger(ConnectionService.class);
 
     public final void connect(ChannelHandlerContext ctx, ConnectRequest request, RpcCallback<ConnectResponse> done) {
-        logger.info(request.toString());
+        logger.debug(request.toString());
         ConnectResponse.Builder builder = ConnectResponse.newBuilder();
 
         builder.setServerId(ProcessId.newBuilder().setLabel(12345).setEpoch(1527969963));  // FIXME: properly generate server id and start time
@@ -56,7 +58,7 @@ public final class ConnectionService extends bnet.protocol.connection.v1.Connect
     }
 
     public final void requestDisconnect(ChannelHandlerContext ctx, DisconnectRequest request) {
-        logger.info(request.toString());
+        logger.debug(request.toString());
         // TODO: proper disconnection procedure?
         ctx.disconnect();
     }

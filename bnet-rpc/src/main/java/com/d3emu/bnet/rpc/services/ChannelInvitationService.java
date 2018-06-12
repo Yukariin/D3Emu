@@ -5,15 +5,20 @@ import bnet.protocol.channel.v1.ChannelInvitationServiceProto.*;
 import com.google.protobuf.RpcCallback;
 import io.netty.channel.ChannelHandlerContext;
 
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class ChannelInvitationService extends bnet.protocol.channel.v1.ChannelInvitationService {
 
-    private static final Logger logger = Logger.getLogger("ChannelInvitationService");
+    private static final Logger logger = LoggerFactory.getLogger(ChannelInvitationService.class);
 
     @Override
     public void subscribe(ChannelHandlerContext ctx, SubscribeRequest request, RpcCallback<NoData> done) {
-        logger.info(request.toString());
+        logger.debug(request.toString());
+
+        // TODO: implement subscription mechanism
+
+        done.run(NoData.getDefaultInstance());
     }
 
     @Override

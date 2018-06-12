@@ -2,18 +2,21 @@ package com.d3emu.bnet.rpc.services;
 
 import bnet.protocol.RpcProto.NoData;
 import bnet.protocol.presence.v1.PresenceServiceProto.*;
+
 import com.google.protobuf.RpcCallback;
+
 import io.netty.channel.ChannelHandlerContext;
 
-import java.util.logging.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class PresenceService extends bnet.protocol.presence.v1.PresenceService {
 
-    private static final Logger logger = Logger.getLogger("PresenceService");
+    private static final Logger logger = LoggerFactory.getLogger(PresenceService.class);
 
     @Override
     public void subscribe(ChannelHandlerContext ctx, SubscribeRequest request, RpcCallback<NoData> done) {
-        logger.info(request.toString());
+        logger.debug(request.toString());
     }
 
     @Override
@@ -23,7 +26,7 @@ public final class PresenceService extends bnet.protocol.presence.v1.PresenceSer
 
     @Override
     public void update(ChannelHandlerContext ctx, UpdateRequest request, RpcCallback<NoData> done) {
-        logger.info(request.toString());
+        logger.debug(request.toString());
     }
 
     @Override

@@ -1,7 +1,6 @@
 package com.d3emu.bnet.rpc.services;
 
 import java.lang.Deprecated;
-import java.util.logging.Logger;
 
 import bnet.protocol.authentication.v1.AuthenticationListener;
 import bnet.protocol.authentication.v1.AuthenticationServiceProto.*;
@@ -17,23 +16,26 @@ import com.google.protobuf.RpcCallback;
 
 import io.netty.channel.ChannelHandlerContext;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public final class AuthenticationService extends bnet.protocol.authentication.v1.AuthenticationService {
 
-    private static final Logger logger = Logger.getLogger("AuthenticationService");
+    private static final Logger logger = LoggerFactory.getLogger(AuthenticationService.class);
 
     public final void logon(ChannelHandlerContext ctx, LogonRequest request, RpcCallback<NoData> done) {
-        logger.info(request.toString());
+        logger.debug(request.toString());
 
         if (!request.getProgram().equals("D3")) {
-            logger.severe("Unsupported program detected!");
+            logger.error("Unsupported program detected!");
             // TODO: return proper error code
         }
         if (!request.getPlatform().equals("Win")) {
-            logger.severe("Unsupported platform detected!");
+            logger.error("Unsupported platform detected!");
             // TODO: return proper error code
         }
         if (!request.getLocale().equals("enUS")) {
-            logger.severe("Unsupported locale detected!");
+            logger.error("Unsupported locale detected!");
             // TODO: return proper error code
         }
 
@@ -66,7 +68,7 @@ public final class AuthenticationService extends bnet.protocol.authentication.v1
     public final void selectGameAccount(ChannelHandlerContext ctx, SelectGameAccountRequest request, RpcCallback<NoData> done) {}
 
     public final void verifyWebCredentials(ChannelHandlerContext ctx, VerifyWebCredentialsRequest request, RpcCallback<NoData> done) {
-        logger.info(request.toString());
+        logger.debug(request.toString());
 
         // FIXME: add web token verification
 

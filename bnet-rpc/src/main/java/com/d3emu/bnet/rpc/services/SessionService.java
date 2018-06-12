@@ -1,7 +1,5 @@
 package com.d3emu.bnet.rpc.services;
 
-import java.util.logging.Logger;
-
 import bnet.protocol.account.v1.AccountTypesProto.*;
 import bnet.protocol.session.v1.SessionListener;
 import bnet.protocol.session.v1.SessionServiceProto.*;
@@ -13,12 +11,15 @@ import com.google.protobuf.RpcCallback;
 
 import io.netty.channel.ChannelHandlerContext;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public final class SessionService extends bnet.protocol.session.v1.SessionService {
 
-    private static final Logger logger = Logger.getLogger("SessionService");
+    private static final Logger logger = LoggerFactory.getLogger(SessionService.class);
 
     public final void createSession(ChannelHandlerContext ctx, CreateSessionRequest request, RpcCallback<CreateSessionResponse> done) {
-        logger.info(request.toString());
+        logger.debug(request.toString());
 
         String session = "A7B5C8B0593FFEC100000000000BCABD";  // FIXME: properly generate session
         // TODO: store and expire generated sessions?
@@ -28,14 +29,10 @@ public final class SessionService extends bnet.protocol.session.v1.SessionServic
         done.run(builder.build());
         
         SessionCreatedNotification.Builder n = SessionCreatedNotification.newBuilder();
-        AccountId.Builder a = AccountId.newBuilder();
-        GameAccountHandle.Builder ga = GameAccountHandle.newBuilder();
-        a.setId(1);  // FIXME: properly set BNet account id
-        ga.setId(1)  // FIXME: properly set D3 account id
-          .setProgram(BNetProgramId.DIABLO3.getValue())
-          .setRegion(1);  // US
-        n.setIdentity(Identity.newBuilder().setAccount(a).setGameAccount(ga));
-        n.setReason(0).setSessionId(session);
+        n.setIdentity(request.getIdentity())
+         .setReason(0)
+         .setSessionId(session);
+
         SessionListener.newStub().onSessionCreated(ctx, n.build());
     }
 
