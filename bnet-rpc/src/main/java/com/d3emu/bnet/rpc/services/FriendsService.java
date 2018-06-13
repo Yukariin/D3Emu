@@ -18,6 +18,12 @@ public final class FriendsService extends bnet.protocol.friends.v1.FriendsServic
     @Override
     public void subscribe(ChannelHandlerContext ctx, SubscribeRequest request, RpcCallback<SubscribeResponse> done) {
         logger.debug(request.toString());
+
+        // TODO: implement subscription mechanism
+
+        SubscribeResponse.Builder builder = SubscribeResponse.newBuilder();
+
+        done.run(builder.build());
     }
 
     @Override
