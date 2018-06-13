@@ -15,6 +15,7 @@ import com.google.protobuf.RpcCallback;
 
 import D3.GameMessage.GameMessageProto.*;
 import D3.Notification.NotificationProto.*;
+import D3.OnlineService.OnlineServiceProto.*;
 
 import io.netty.channel.ChannelHandlerContext;
 
@@ -35,14 +36,24 @@ public final class GameUtilitiesService extends bnet.protocol.game_utilities.v1.
 
         int messageId = (int)request.getAttribute(1).getValue().getIntValue();
         switch (messageId) {
+            case 0:  // HeroDigestListRequest -> HeroDigestListResponse???
+                ByteString digest = onHeroDigestListRequest(ctx, request.getAttribute(2).getValue().getMessageValue());
+                attr.setValue(Variant.newBuilder().setMessageValue(digest));
+                break;
+            case 1:  // HeroCreateParams -> CreateHeroResponse
+                ByteString hero = onHeroCreateParams(ctx, request.getAttribute(2).getValue().getMessageValue());
+                attr.setValue(Variant.newBuilder().setMessageValue(hero));
+                break;
             case 6:  // InitialLoginDataRequest -> InitialLoginDataQueuedResponse
-                ByteString res = onInitialLoginDataRequest(ctx, request.getAttribute(2).getValue().getMessageValue());
-                attr.setValue(Variant.newBuilder().setMessageValue(res));
+                ByteString loginData = onInitialLoginDataRequest(ctx, request.getAttribute(2).getValue().getMessageValue());
+                attr.setValue(Variant.newBuilder().setMessageValue(loginData));
                 break;
             case 7:  // CancelLoginDataRequest -> Empty Message
                 // TODO: implement cancel mechanism
                 attr.setValue(Variant.newBuilder().setMessageValue(ByteString.EMPTY));
                 break;
+            case 16:  // GetAccountDigest??? -> ???
+            case 32:  // ??? -> ???
             default:
                 logger.warn("Unknown CustomMessageId {}: {}",
                             messageId,
@@ -72,6 +83,36 @@ public final class GameUtilitiesService extends bnet.protocol.game_utilities.v1.
     public final void getAchievementsFile(ChannelHandlerContext ctx, GetAchievementsFileRequest request, RpcCallback<GetAchievementsFileResponse> done) {}
 
     public final void getAllValuesForAttribute(ChannelHandlerContext ctx, GetAllValuesForAttributeRequest request,RpcCallback<GetAllValuesForAttributeResponse> done) {}
+
+    private ByteString onHeroDigestListRequest(ChannelHandlerContext ctx, ByteString data) {
+        try {
+            HeroDigestListRequest req = HeroDigestListRequest.parseFrom(data);
+            logger.debug(req.toString());
+        } catch (Exception e) {
+            logger.warn("Invalid CustomMessage received", e);
+            return ByteString.EMPTY;
+        }
+
+        HeroDigestListResponse.Builder res = HeroDigestListResponse.newBuilder();
+        // FIXME: get real digest
+
+        return res.build().toByteString();
+    }
+
+    private ByteString onHeroCreateParams(ChannelHandlerContext ctx, ByteString data) {
+        try {
+            HeroCreateParams req = HeroCreateParams.parseFrom(data);
+            logger.debug(req.toString());
+        } catch (Exception e) {
+            logger.warn("Invalid CustomMessage received", e);
+            return ByteString.EMPTY;
+        }
+
+        CreateHeroResponse.Builder res = CreateHeroResponse.newBuilder();
+        res.setHeroId(123);  // FIXME: properly create hero
+
+        return res.build().toByteString();
+    }
 
     private ByteString onInitialLoginDataRequest(ChannelHandlerContext ctx, ByteString data) {
         try {
@@ -104,6 +145,7 @@ public final class GameUtilitiesService extends bnet.protocol.game_utilities.v1.
             InitialLoginDataResponse.Builder res = InitialLoginDataResponse.newBuilder();
             res.setErrorCode(0)
                .setServiceId(1);  // TODO: fix service id?
+            // TODO: set initial login data
 
             Notification.Builder builder = Notification.newBuilder();
             builder.setSenderId(EntityId.newBuilder().setHigh(0).setLow(0));  // Server Id
