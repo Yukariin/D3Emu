@@ -18,11 +18,19 @@ public final class NotificationService extends bnet.protocol.notification.v1.Not
     @Override
     public void sendNotification(ChannelHandlerContext ctx, Notification request, RpcCallback<NoData> done) {
         logger.debug(request.toString());
+
+        // TODO: implement subscription mechanism
+
+        done.run(NoData.getDefaultInstance());
     }
 
     @Override
     public void subscribe(ChannelHandlerContext ctx, SubscribeRequest request, RpcCallback<NoData> done) {
+        logger.debug(request.toString());
 
+        // TODO: implement subscription mechanism
+
+        done.run(NoData.getDefaultInstance());
     }
 
     @Override
