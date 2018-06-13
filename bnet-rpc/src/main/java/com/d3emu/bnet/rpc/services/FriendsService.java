@@ -1,5 +1,6 @@
 package com.d3emu.bnet.rpc.services;
 
+import bnet.protocol.RoleTypesProto.Role;
 import bnet.protocol.RpcProto.NoData;
 import bnet.protocol.friends.v1.FriendsServiceProto.*;
 import bnet.protocol.friends.v1.FriendsTypesProto.SubscribeResponse;
@@ -22,6 +23,13 @@ public final class FriendsService extends bnet.protocol.friends.v1.FriendsServic
         // TODO: implement subscription mechanism
 
         SubscribeResponse.Builder builder = SubscribeResponse.newBuilder();
+        builder.setMaxFriends(200)
+               .setMaxReceivedInvitations(200)
+               .setMaxSentInvitations(200)
+               .addRole(Role.newBuilder().setId(1).setName("battle_tag_friend"))
+               .addRole(Role.newBuilder().setId(2).setName("real_id_friend"));
+
+        // TODO: add friends and invitations
 
         done.run(builder.build());
     }
