@@ -13,6 +13,7 @@ import bnet.protocol.RpcProto.NoData;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.RpcCallback;
 
+import D3.Client.SettingsProto.*;
 import D3.GameMessage.GameMessageProto.*;
 import D3.Notification.NotificationProto.*;
 import D3.OnlineService.OnlineServiceProto.*;
@@ -52,7 +53,10 @@ public final class GameUtilitiesService extends bnet.protocol.game_utilities.v1.
                 // TODO: implement cancel mechanism
                 attr.setValue(Variant.newBuilder().setMessageValue(ByteString.EMPTY));
                 break;
-            case 16:  // GetAccountDigest??? -> ???
+            case 16:  // GetAccountPrefs -> (D3.Client.)Preferences
+                ByteString prefs = onGetAccountPrefs(ctx);
+                attr.setValue(Variant.newBuilder().setMessageValue(prefs));
+                break;
             case 32:  // ??? -> ???
             default:
                 logger.warn("Unknown CustomMessageId {}: {}",
@@ -129,6 +133,14 @@ public final class GameUtilitiesService extends bnet.protocol.game_utilities.v1.
         InitialLoginDataQueuedResponse.Builder res = InitialLoginDataQueuedResponse.newBuilder();
         res.setServiceId(1)  // TODO: fix service id?
            .setTimeoutTickInterval(2000);
+
+        return res.build().toByteString();
+    }
+    
+    private ByteString onGetAccountPrefs(ChannelHandlerContext ctx) {
+        Preferences.Builder res = Preferences.newBuilder();
+
+        // TODO: set real prefs
 
         return res.build().toByteString();
     }
