@@ -5,8 +5,6 @@ import bnet.protocol.session.v1.SessionListener;
 import bnet.protocol.session.v1.SessionServiceProto.*;
 import bnet.protocol.RpcProto.NoData;
 
-import com.d3emu.bnet.rpc.BNetProgramId;
-
 import com.google.protobuf.RpcCallback;
 
 import io.netty.channel.ChannelHandlerContext;
