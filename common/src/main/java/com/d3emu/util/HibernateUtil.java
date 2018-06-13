@@ -1,4 +1,4 @@
-package com.d3emu.utils;
+package com.d3emu.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -10,6 +10,10 @@ public final class HibernateUtil {
     private static SessionFactory buildSessionFactory() {
         Configuration c = new Configuration();
         c.configure();
+
+        //c.addAnnotatedClass();
+
+        //c.setProperty();
 
         return c.buildSessionFactory();
     }
