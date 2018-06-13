@@ -33,4 +33,32 @@ public class Account {
     @Type(type = "inet")
     @Column(name = "last_ip", columnDefinition = "inet")
     private InetAddress lastIp;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public InetAddress getLastIp() {
+        return lastIp;
+    }
+
+    public void setEmail(InetAddress address) {
+        lastIp = address;
+    }
 }
