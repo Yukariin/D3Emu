@@ -17,6 +17,10 @@ public final class PresenceService extends bnet.protocol.presence.v1.PresenceSer
     @Override
     public void subscribe(ChannelHandlerContext ctx, SubscribeRequest request, RpcCallback<NoData> done) {
         logger.debug(request.toString());
+
+        // TODO: implement subscription mechanism
+
+        done.run(NoData.getDefaultInstance());
     }
 
     @Override
@@ -27,6 +31,10 @@ public final class PresenceService extends bnet.protocol.presence.v1.PresenceSer
     @Override
     public void update(ChannelHandlerContext ctx, UpdateRequest request, RpcCallback<NoData> done) {
         logger.debug(request.toString());
+
+        // TODO: implement subscription mechanism
+
+        done.run(NoData.getDefaultInstance());
     }
 
     @Override
