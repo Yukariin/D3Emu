@@ -8,29 +8,19 @@ import org.hibernate.annotations.TypeDefs;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Set;
 import java.net.InetAddress;
 
 @Entity
-@Table(name = "accounts")
+@Table(name = "game_accounts")
 @TypeDefs(value = {
         @TypeDef(name = "inet", typeClass = InetAddressType.class)
 })
-public class Account {
+public class GameAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false, updatable = false)
     private Long id;
-
-    @Column(name = "full_name")
-    private String fullName;
-
-    @Column(name = "email", nullable = false, unique = true)
-    private String email;
-
-    @Column(name = "password_digest", nullable = false)
-    private String passwordDigest;
 
     @Type(type = "inet")
     @Column(name = "last_ip", columnDefinition = "inet")
@@ -44,27 +34,12 @@ public class Account {
     @Column(name = "created", nullable = false)
     private Date created = new Date();
 
-    @OneToMany(mappedBy="account", fetch = FetchType.LAZY)
-    private Set<GameAccount> gameAccounts;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="account_id", nullable=false)
+    private Account account;
 
     public Long getId() {
         return id;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public InetAddress getLastIp() {
@@ -83,11 +58,11 @@ public class Account {
         lastLogin = date;
     }
 
-    public Set<GameAccount> getGameAccounts() {
-        return gameAccounts;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setGameAccounts(Set<GameAccount> gameAccounts) {
-        this.gameAccounts = gameAccounts;
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }
