@@ -7,6 +7,7 @@ import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.TypeDefs;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.net.InetAddress;
 
 @Entity
@@ -27,12 +28,20 @@ public class Account {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "pass_hash", nullable = false, unique = true)
-    private String passHash;
+    @Column(name = "password_digest", nullable = false)
+    private String passwordDigest;
 
     @Type(type = "inet")
     @Column(name = "last_ip", columnDefinition = "inet")
     private InetAddress lastIp;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "last_login", nullable = false)
+    private Date lastLogin = new Date();
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created", nullable = false)
+    private Date created = new Date();
 
     public Long getId() {
         return id;
@@ -58,7 +67,15 @@ public class Account {
         return lastIp;
     }
 
-    public void setEmail(InetAddress address) {
+    public void setLastIp(InetAddress address) {
         lastIp = address;
+    }
+
+    public Date getLastLogin() {
+        return lastLogin;
+    }
+
+    public void setLastLogin(Date date) {
+        lastLogin = date;
     }
 }
