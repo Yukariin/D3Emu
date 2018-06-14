@@ -21,7 +21,7 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false, updatable = false)
-    private Long id;
+    private Integer id;
 
     @Column(name = "full_name")
     private String fullName;
@@ -47,7 +47,7 @@ public class Account {
     @OneToMany(mappedBy="account", fetch = FetchType.LAZY)
     private Set<GameAccount> gameAccounts;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 

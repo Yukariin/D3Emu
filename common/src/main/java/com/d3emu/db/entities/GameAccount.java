@@ -20,7 +20,7 @@ public class GameAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false, updatable = false)
-    private Long id;
+    private Integer id;
 
     @Type(type = "inet")
     @Column(name = "last_ip", columnDefinition = "inet")
@@ -38,7 +38,7 @@ public class GameAccount {
     @JoinColumn(name="account_id", nullable=false)
     private Account account;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
