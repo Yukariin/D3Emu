@@ -14,7 +14,7 @@ model {
             if (toolChain in Gcc || toolChain in Clang) {
                 cppCompiler.args '--std=c++0x'
 
-                linker.args '-lprotoc', '-lprotobuf',
+                linker.args '-lprotoc', '-lprotobuf', '-lpthread',
                             '-s'
             }
         }
