@@ -381,7 +381,7 @@ void JavaBnetGenerator::GenerateService(const ServiceDescriptor* service,
     vars["Deprecated"] = "java.lang.Deprecated";
     vars["Override"] = "java.lang.Override";
     vars["Iterator"] = "java.util.Iterator";
-    vars["Generated"] = "javax.annotation.Generated";
+    vars["Generated"] = "javax.annotation.processing.Generated";
 
     io::Printer printer(out, '$');
 
