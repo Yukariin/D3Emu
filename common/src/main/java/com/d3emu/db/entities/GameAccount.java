@@ -8,6 +8,7 @@ import org.hibernate.annotations.TypeDefs;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 import java.net.InetAddress;
 
 @Entity
@@ -23,7 +24,7 @@ public class GameAccount {
     private Integer id;
 
     @Type(type = "inet")
-    @Column(name = "last_ip", columnDefinition = "inet")
+    @Column(name = "last_ip", columnDefinition = "INET")
     private InetAddress lastIp;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -37,6 +38,9 @@ public class GameAccount {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="account_id", nullable=false)
     private Account account;
+
+    @OneToMany(mappedBy="gameAccount", fetch = FetchType.LAZY)
+    private Set<Toon> toons;
 
     public Integer getId() {
         return id;
@@ -64,5 +68,9 @@ public class GameAccount {
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    public Set<Toon> getToons() {
+        return toons;
     }
 }
