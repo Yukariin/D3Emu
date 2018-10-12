@@ -7,15 +7,19 @@ import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.TypeDefs;
 
 import javax.persistence.*;
+import java.net.InetAddress;
 import java.util.Date;
 import java.util.Set;
-import java.net.InetAddress;
 
-@Entity
-@Table(name = "accounts")
 @TypeDefs(value = {
         @TypeDef(name = "inet", typeClass = InetAddressType.class)
 })
+@NamedQueries({
+        @NamedQuery(name = "get_account_by_ticket",
+                    query = "select a from Account a where webLoginTicket = :ticket")
+})
+@Entity
+@Table(name = "accounts")
 public class Account {
 
     @Id
@@ -33,7 +37,7 @@ public class Account {
     private String passwordDigest;
 
     @Type(type = "inet")
-    @Column(name = "last_ip", columnDefinition = "inet")
+    @Column(name = "last_ip", columnDefinition = "INET")
     private InetAddress lastIp;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -43,6 +47,9 @@ public class Account {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created", nullable = false)
     private Date created = new Date();
+
+    @Column(name = "web_login_ticket", length = 64)
+    private String webLoginTicket;
 
     @OneToMany(mappedBy="account", fetch = FetchType.LAZY)
     private Set<GameAccount> gameAccounts;
