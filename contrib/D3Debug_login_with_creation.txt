@@ -1,0 +1,1010 @@
+User defined symbols path: C:\Program Files (x86)\Diablo III
+2017.07.15 11:19:43.890097000	Diablo III Release (No Assertions) running under Windows 7-64 SP1 (Version 6.1.7601)
+2017.07.15 11:19:43.892527700	<BUILD>2.6.0.46006 (131039-1586959)</BUILD>
+2017.07.15 11:19:43.892664000	Cheats: DISABLED
+2017.07.15 11:19:43.892849300	CPU Vendor: GenuineIntel
+2017.07.15 11:19:43.892987300	CPU Details: Intel(R) Core(TM)2 Duo CPU     E6850  @ 3.00GHz
+2017.07.15 11:19:43.893120000	CPU Processors: 1
+2017.07.15 11:19:43.893264300	CPU Cores: 2
+2017.07.15 11:19:43.893394300	CPU Threads: 2
+2017.07.15 11:19:43.893788000	2047.11 MB of total physical memory
+2017.07.15 11:19:43.893919000	OS Language: English
+2017.07.15 11:19:43.894048700	Application Path: C:\Program Files (x86)\Diablo III\
+2017.07.15 11:19:43.897519700	--- OS memory stats -----
+2017.07.15 11:19:43.897684700	Virtual size: 536.00 Mb
+2017.07.15 11:19:43.897818300	Total free: 3543.00 Mb
+2017.07.15 11:19:43.897945300	Largest free block: 2047.00 Mb
+2017.07.15 11:19:43.898069300	--- OS memory stats end-----
+2017.07.15 11:19:43.898191700	--- Main memory stats ---
+2017.07.15 11:19:43.898319700	Total size: 404.00 Mb
+2017.07.15 11:19:43.898445300	Total free: 359.72 Mb
+2017.07.15 11:19:43.898571700	Largest free block: 359.72 Mb
+2017.07.15 11:19:43.898697300	Total small size: 42.00 Mb
+2017.07.15 11:19:43.898824300	Total small free: 41.98 Mb
+2017.07.15 11:19:43.898949700	Largest small free block: 41.98 Mb
+2017.07.15 11:19:43.899073000	--- Main memory stats end ---
+2017.07.15 11:19:43.899196000	----------------------------------------------
+
+2017.07.15 11:19:43.899587000	Command Line: -launch
+2017.07.15 11:19:43.902013300	Monitor BPP: 32
+2017.07.15 11:19:43.902156700	Lowest monitor BPP: 32
+2017.07.15 11:19:44.324198700	Clock freq = 2935175
+2017.07.15 11:19:44.324446000	Adjusted initial working directory: C:\Program Files (x86)\Diablo III
+2017.07.15 11:19:44.324673700	NGDP detected
+2017.07.15 11:19:44.333320300	WinSock started successfully!
+2017.07.15 11:19:45.904629300	Detecting first installed locale.
+2017.07.15 11:19:45.919699300	Detected: enUS
+2017.07.15 11:19:48.938677700	Agent is successfully started or running already.
+2017.07.15 11:19:48.960765000	AgentManagerImpl::GetStatus - bResult: 1, StatusCode: 200
+2017.07.15 11:19:48.960892300	Agent is not reporting speed - this is a problem.
+2017.07.15 11:19:48.960983000	Detecting installed locales:
+2017.07.15 11:19:48.961099300	    Found: enUS
+2017.07.15 11:19:49.489639300	Agent selected locale: enUS
+2017.07.15 11:19:49.489850300	FileSystemGetLocale, AgentSettings: 1
+2017.07.15 11:19:49.489986300	FileSystemGetLocale, using agent locale: enUS
+2017.07.15 11:19:49.490113700	FileSystemGetLocale, returned locale: enUS
+2017.07.15 11:19:49.551635300	SNOFilesInitialize('Data_D3', PC, enUS)
+2017.07.15 11:19:49.625103000	Working Directory: C:\Program Files (x86)\Diablo III
+2017.07.15 11:19:49.737348300	--- OS memory stats -----
+2017.07.15 11:19:49.737561300	Virtual size: 568.00 Mb
+2017.07.15 11:19:49.737704000	Total free: 3510.00 Mb
+2017.07.15 11:19:49.737843300	Largest free block: 2047.00 Mb
+2017.07.15 11:19:49.737979700	--- OS memory stats end-----
+2017.07.15 11:19:49.738110700	--- Main memory stats ---
+2017.07.15 11:19:49.738245700	Total size: 404.00 Mb
+2017.07.15 11:19:49.738379700	Total free: 323.63 Mb
+2017.07.15 11:19:49.738518300	Largest free block: 320.70 Mb
+2017.07.15 11:19:49.738653000	Total small size: 42.00 Mb
+2017.07.15 11:19:49.738800300	Total small free: 28.69 Mb
+2017.07.15 11:19:49.738937300	Largest small free block: 28.69 Mb
+2017.07.15 11:19:49.739036300	--- Main memory stats end ---
+2017.07.15 11:19:49.798115000	No NGDP Manifest key found for 'enUS_CoreData.mpq.hash'
+2017.07.15 11:19:49.798330000	SNOFileLoadTextFile: 'Data_D3\Locale\ruRU\declension.txt'
+2017.07.15 11:19:49.798495700	No NGDP Manifest key found for 'Data_D3\Locale\ruRU\declension.txt'
+2017.07.15 11:19:49.798654700	SNOFileLoadTextFile: 'Data_D3\PC\Misc\banned_names.txt'
+2017.07.15 11:19:49.798785300	No NGDP Manifest key found for 'Data_D3\PC\Misc\banned_names.txt'
+2017.07.15 11:19:49.798953000	SNOFileLoadTextFile: 'Data_D3\PC\Misc\enUS_banned_names.txt'
+2017.07.15 11:19:49.799189700	No NGDP Manifest key found for 'Data_D3\PC\Misc\enUS_banned_names.txt'
+2017.07.15 11:19:49.815165300	SNOFilesAsyncInitialize()
+2017.07.15 11:19:49.896286300	--- OS memory stats -----
+2017.07.15 11:19:49.896512700	Virtual size: 569.00 Mb
+2017.07.15 11:19:49.896651700	Total free: 3509.00 Mb
+2017.07.15 11:19:49.896786000	Largest free block: 2047.00 Mb
+2017.07.15 11:19:49.896911300	--- OS memory stats end-----
+2017.07.15 11:19:49.897040700	--- Main memory stats ---
+2017.07.15 11:19:49.897168300	Total size: 404.00 Mb
+2017.07.15 11:19:49.897299000	Total free: 323.61 Mb
+2017.07.15 11:19:49.897426300	Largest free block: 320.70 Mb
+2017.07.15 11:19:49.897557700	Total small size: 42.00 Mb
+2017.07.15 11:19:49.897684700	Total small free: 28.69 Mb
+2017.07.15 11:19:49.897811700	Largest small free block: 28.69 Mb
+2017.07.15 11:19:49.897936000	--- Main memory stats end ---
+2017.07.15 11:19:49.951678300	Found 204483 assets in the TOC!
+2017.07.15 11:19:50.216945300	ParseFileDataToKeyValues - uFileSize: 1388
+2017.07.15 11:19:50.384378700	Client SNOPackHash: 0x707A3838
+2017.07.15 11:20:25.012833300	SNOPreload::InitializeForApp submit required SNOs in 2988533us
+2017.07.15 11:20:34.479185000	SNOPreload::InitializeForApp in 12454880us
+2017.07.15 11:20:34.479495700	GamelessGameGlobalsInit()
+2017.07.15 11:20:34.479605700	CGameGlobalsInit()
+2017.07.15 11:20:34.479711300	CGameGlobals::Init()
+2017.07.15 11:20:34.479802000	Disabling loading screen for 31, 0
+2017.07.15 11:20:34.606661300	[Telemetry] (HTTP): You set 'maxConnections' of HttpRequestHandler to 1. More concurrency is recommended, especially when you want to use the flow control, it is better to set maxConnections at least two.
+2017.07.15 11:20:34.662681000	[Telemetry] (TELE): OS Architecture: intel32
+2017.07.15 11:20:34.662870700	[Telemetry] (TELE): OS Platform    : win
+2017.07.15 11:20:34.663038300	[Telemetry] (TELE): OS Name        : Windows 7 Enterprise
+2017.07.15 11:20:34.663208000	[Telemetry] (TELE): OS Version     : 0.0.7601
+2017.07.15 11:20:34.663404300	[Telemetry] (TELE): Host Name      : Yukarin-PC
+2017.07.15 11:20:34.727774300	>>> initializing Battle.net Game Service SDK v0.0.0 "f6ab1f6651"/192 (Apr 18 2017 15:18:02) win32-i386-vc140-public
+2017.07.15 11:20:34.807412700	Protocol Hash = 0x5D2B0F9A
+2017.07.15 11:20:34.915894300	Build VersionEx: 2.6.0.46006 (131039-1586959)
+2017.07.15 11:20:34.925833300	Initializing graphics subsystem...
+2017.07.15 11:20:34.929429300	dpi = 96 96
+2017.07.15 11:20:35.155288300	*************
+2017.07.15 11:20:35.155457700	Device supports the following modes:
+2017.07.15 11:20:35.181078000		800x600, 56 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.181270000		800x600, 60 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.181362700		800x600, 72 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.183423300		800x600, 75 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.183602700		1024x768, 72 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.183768000		1024x768, 60 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.183932000		1024x768, 70 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.184099300		1024x768, 75 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.184262000		1152x864, 60 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.184425000		1152x864, 75 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.184590300		1280x720, 60 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.184757000		1280x720, 75 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.184921300		1280x768, 60 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.185085700		1280x768, 75 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.185252700		1280x800, 60 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.185461000		1280x800, 75 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.185628000		1280x960, 60 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.185803700		1280x960, 75 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.185972000		1280x1024, 60 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.186167300		1280x1024, 75 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.186336700		1360x768, 60 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.186535700		1360x768, 59 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.186705000		1366x768, 60 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.186877300		1366x768, 59 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.187044000		1600x900, 60 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.187212000		1600x900, 59 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.187380000		1600x1024, 60 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.187547000		1600x1024, 59 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.187738300		1600x1200, 60 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.187906300		1680x1050, 60 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.188081300		1680x1050, 59 Hz, 32 bits, Format = 22
+2017.07.15 11:20:35.188243000	End GetValidDisplayModes *************
+2017.07.15 11:20:35.189250000	*************
+2017.07.15 11:20:35.189425700	Device supports the following texture formats:
+2017.07.15 11:20:35.189589000		Usage = 0, Format = 0
+2017.07.15 11:20:35.189752300		Usage = 1, Format = 0
+2017.07.15 11:20:35.189912300		Usage = 0, Format = 2
+2017.07.15 11:20:35.190073000		Usage = 1, Format = 2
+2017.07.15 11:20:35.190235300		Usage = 0, Format = 3
+2017.07.15 11:20:35.190394700		Usage = 0, Format = 4
+2017.07.15 11:20:35.190558300		Usage = 0, Format = 5
+2017.07.15 11:20:35.190719000		Usage = 1, Format = 5
+2017.07.15 11:20:35.190881000		Usage = 0, Format = 6
+2017.07.15 11:20:35.191039700		Usage = 1, Format = 6
+2017.07.15 11:20:35.191219000		Usage = 0, Format = 7
+2017.07.15 11:20:35.191381000		Usage = 1, Format = 7
+2017.07.15 11:20:35.191540700		Usage = 0, Format = 9
+2017.07.15 11:20:35.191700300		Usage = 0, Format = 10
+2017.07.15 11:20:35.191866700		Usage = 0, Format = 11
+2017.07.15 11:20:35.192028700		Usage = 0, Format = 12
+2017.07.15 11:20:35.192187700		Usage = 0, Format = 23
+2017.07.15 11:20:35.192347300		Usage = 1, Format = 23
+2017.07.15 11:20:35.192510300		Usage = 0, Format = 24
+2017.07.15 11:20:35.192669700		Usage = 1, Format = 24
+2017.07.15 11:20:35.192829700		Usage = 0, Format = 25
+2017.07.15 11:20:35.192989300		Usage = 1, Format = 25
+2017.07.15 11:20:35.193243700		Usage = 0, Format = 26
+2017.07.15 11:20:35.193406700		Usage = 1, Format = 26
+2017.07.15 11:20:35.193568300		Usage = 0, Format = 30
+2017.07.15 11:20:35.193731700		Usage = 2, Format = 30
+2017.07.15 11:20:35.193891700		Usage = 0, Format = 31
+2017.07.15 11:20:35.194052000		Usage = 2, Format = 31
+2017.07.15 11:20:35.194212300		Usage = 0, Format = 36
+2017.07.15 11:20:35.194375000		Usage = 2, Format = 36
+2017.07.15 11:20:35.194553700		Usage = 0, Format = 37
+2017.07.15 11:20:35.194715000		Usage = 2, Format = 37
+2017.07.15 11:20:35.194879000		Usage = 0, Format = 38
+2017.07.15 11:20:35.195063700		Usage = 1, Format = 38
+2017.07.15 11:20:35.195223700		Usage = 0, Format = 39
+2017.07.15 11:20:35.195384000		Usage = 1, Format = 39
+2017.07.15 11:20:35.195547700		Usage = 0, Format = 40
+2017.07.15 11:20:35.195707000		Usage = 1, Format = 40
+2017.07.15 11:20:35.195866300		Usage = 0, Format = 43
+2017.07.15 11:20:35.196028300	*************
+2017.07.15 11:20:35.205765700	--- OS memory stats -----
+2017.07.15 11:20:35.206145300	Virtual size: 700.00 Mb
+2017.07.15 11:20:35.206327700	Total free: 3378.00 Mb
+2017.07.15 11:20:35.206503000	Largest free block: 2047.00 Mb
+2017.07.15 11:20:35.206666300	--- OS memory stats end-----
+2017.07.15 11:20:35.206828700	--- Main memory stats ---
+2017.07.15 11:20:35.206998300	Total size: 404.00 Mb
+2017.07.15 11:20:35.207162300	Total free: 187.05 Mb
+2017.07.15 11:20:35.207356700	Largest free block: 135.32 Mb
+2017.07.15 11:20:35.207522300	Total small size: 42.00 Mb
+2017.07.15 11:20:35.207689700	Total small free: 27.85 Mb
+2017.07.15 11:20:35.207854300	Largest small free block: 27.84 Mb
+2017.07.15 11:20:35.208015700	--- Main memory stats end ---
+2017.07.15 11:20:35.220173700	ACTIVATE APP 1 iconic 0
+2017.07.15 11:20:35.224339300	Opening Direct3D in 1576x901 window.
+2017.07.15 11:20:35.224830000	Desktop mode w = 1680, h = 1050, format = 22 refresh = 60.
+2017.07.15 11:20:35.225149300	VSync: Enabled
+2017.07.15 11:20:35.225289700	****** Graphics Device Info ******
+2017.07.15 11:20:35.225383700	nvd3dum.dll
+NVIDIA GeForce GTX 285
+\\.\DISPLAY1
+2017.07.15 11:20:35.225479300	Driver Version 21.21.13.4201
+2017.07.15 11:20:35.225568300	VendorID = 0x10de, DeviceID = 0x5e3
+2017.07.15 11:20:35.225656000	****** Graphics Device Caps ******
+2017.07.15 11:20:35.225750300	Max Vertex Shader Consts = 256
+2017.07.15 11:20:35.225839300	Max Texture Blend Stages = 8
+2017.07.15 11:20:35.225933700	Max Tex Dimensions = 8192 x 8192
+2017.07.15 11:20:35.226024300	Max SimultaneousTextures = 8
+2017.07.15 11:20:35.226115300	Max Streams = 16
+2017.07.15 11:20:35.226203700	Max Render Targets = 4
+2017.07.15 11:20:35.226291300	Max Active Lights = 8
+2017.07.15 11:20:35.226379700	VertexShaderVersion = 3.0
+2017.07.15 11:20:35.226473300	PixelShaderVersion = 3.0
+2017.07.15 11:20:35.226563700	Supports Gamma Control : TRUE
+2017.07.15 11:20:35.226652000	Supports Depth Bias : TRUE
+2017.07.15 11:20:35.226742000	Supports Scissoring : TRUE
+2017.07.15 11:20:35.226832700	Supports Auto MipMap Generation : TRUE
+2017.07.15 11:20:35.226921300	Supports Per-Stage Constant Color : TRUE
+2017.07.15 11:20:35.227010700	Supports Temp Register : TRUE
+2017.07.15 11:20:35.227102700	Supports Separate Alpha Blend : TRUE
+2017.07.15 11:20:35.227193300	Supports Frame Buffer Blend Op: TRUE
+2017.07.15 11:20:35.227307700	Supports Anisotropic Filtering : TRUE
+2017.07.15 11:20:35.227471700	Supports StretchRect From Textures : TRUE
+2017.07.15 11:20:35.385057300	Est. Available Texture Memory = 1765 MB
+2017.07.15 11:20:35.385235300	****** Graphics Query Support ******
+2017.07.15 11:20:35.385369000	FRAMEQUERY_EVENT: Yes
+2017.07.15 11:20:35.385459300	FRAMEQUERY_BANDWIDTH: No
+2017.07.15 11:20:35.385630300	FRAMEQUERY_CACHEUTILIZATION: No
+2017.07.15 11:20:35.385723000	FRAMEQUERY_INTERFACETIMINGS: No
+2017.07.15 11:20:35.385816000	FRAMEQUERY_PIPELINETIMINGS: No
+2017.07.15 11:20:35.385905700	FRAMEQUERY_VERTEXSTATS: No
+2017.07.15 11:20:35.385995300	FRAMEQUERY_VERTEXTIMINGS: No
+2017.07.15 11:20:35.386087700	FRAMEQUERY_RESOURCEMANAGER: No
+2017.07.15 11:20:35.386184000	Direct3D window opened...0D2F7940
+2017.07.15 11:20:35.437381700	Video Card: NVIDIA GeForce GTX 285
+2017.07.15 11:20:35.437559700	Video Driver: 21.21.13.4201
+2017.07.15 11:20:35.437650700	Video RAM: 1009 MB
+2017.07.15 11:20:35.437744300	PCI Vendor and Device: 10DE, 5E3
+2017.07.15 11:20:35.437838000	HW Class = 5
+2017.07.15 11:20:35.450600000	Initializing input subsystem...
+2017.07.15 11:20:35.469448300	Initializing sound subsystem...
+2017.07.15 11:20:35.479289000	****** Sound Device Caps ******
+2017.07.15 11:20:35.621466300	Found 1 sound drivers:
+2017.07.15 11:20:35.622330300	Driver 0: 'CABLE Input (VB-Audio Virtual Cable)'
+2017.07.15 11:20:35.622515300	 Min Freq: 44100, Max Freq: 44100
+2017.07.15 11:20:35.622674300	 Speaker Mode: Stereo
+2017.07.15 11:20:35.622842300	 Driver Capabilities:
+2017.07.15 11:20:35.622987000	  Device can output to 8bit integer PCM.
+2017.07.15 11:20:35.623157300	  Device can output to 16bit integer PCM.
+2017.07.15 11:20:35.623328300	  Device can output to 24bit integer PCM.
+2017.07.15 11:20:35.623466700	  Device can output to 32bit integer PCM.
+2017.07.15 11:20:35.623603000	  Device can output to 32bit floating point PCM.
+2017.07.15 11:20:35.623888300	Selecting driver 0 (CABLE Input (VB-Audio Virtual Cable))
+2017.07.15 11:20:35.624056000	Speaker Mode: Stereo
+2017.07.15 11:20:35.624193300	Initializing sound with 32 channels
+2017.07.15 11:20:35.668413700	--- OS memory stats -----
+2017.07.15 11:20:35.668632300	Virtual size: 910.00 Mb
+2017.07.15 11:20:35.668733700	Total free: 3169.00 Mb
+2017.07.15 11:20:35.668818700	Largest free block: 2047.00 Mb
+2017.07.15 11:20:35.668898700	--- OS memory stats end-----
+2017.07.15 11:20:35.668998000	--- Main memory stats ---
+2017.07.15 11:20:35.669122700	Total size: 404.00 Mb
+2017.07.15 11:20:35.669239000	Total free: 186.95 Mb
+2017.07.15 11:20:35.669335700	Largest free block: 135.32 Mb
+2017.07.15 11:20:35.669426000	Total small size: 42.00 Mb
+2017.07.15 11:20:35.669516700	Total small free: 27.84 Mb
+2017.07.15 11:20:35.669606700	Largest small free block: 27.84 Mb
+2017.07.15 11:20:35.669721700	--- Main memory stats end ---
+2017.07.15 11:20:35.689424700	GameDisposeGames()
+2017.07.15 11:20:35.689610700	STARTING Menu
+2017.07.15 11:20:35.689722300	CGameGlobalsInit()
+2017.07.15 11:20:35.689819000	CGameGlobals::Init()
+2017.07.15 11:20:35.689911700	Disabling loading screen for 31, 0
+2017.07.15 11:20:35.841979000	SNOPreload::InitializeForGame submit required SNOs in 151697us
+2017.07.15 11:20:40.344154700	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:20:41.143928000	SNOPreload::InitializeForGame in 5453646us
+2017.07.15 11:20:42.704656700	Setting depth texture, fmt = 36
+2017.07.15 11:20:42.718012700	PostFXGfxInit() success
+2017.07.15 11:20:42.719037000	SubObjectGfxInit() 1
+2017.07.15 11:20:42.757680000	Initializing client world BattleNet_Act1Screen...
+2017.07.15 11:20:43.702161300	Disposing UI for World
+2017.07.15 11:20:43.723959700	Client Disposed world.
+2017.07.15 11:20:43.724144000	Initializing client world BattleNet_MainScreen...
+2017.07.15 11:20:44.369183700	EndScene hooked to 74C4279F
+2017.07.15 11:20:59.788557000	===== Battle.net Platform : Connect =====
+2017.07.15 11:20:59.836748300	I 07:21:01.523640 [BGS] |event=cert_bundle_from_user_is_ready|cert_bundle_info=version(1455065214),whitelist_size(48),trusted_certs_size(6),root_ca_hash_size(0) (src\low\network\network_connection.cpp:267)
+2017.07.15 11:21:01.057191000	I 07:21:02.770712 [BGS] |event=Connection metering enabled.|connection_id=1 (src\low\core\connection_handler.cpp:244)
+2017.07.15 11:21:01.057402300	I 07:21:02.771712 [BGS] |event=Connection to Battle.net ready.|connection_id=1|address=us.actual.battle.net|port=1119 (src\low\core\connection_handler.cpp:264)
+2017.07.15 11:21:01.057716300	===== Battle.net Platform : Connected to Battle.net =====
+2017.07.15 11:21:01.058252300	===== Battle.net Platform : Authentication.Logon  =====
+2017.07.15 11:21:01.618482000	>>> Logon Queue: 0 or less time remaining: endTime=1500103259s 131822mu now=1500103263s 344744mu
+2017.07.15 11:21:10.841707700	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:21:16.694337000	>>> (no hero selected) InvokeAccountLevelInfoUpdated
+2017.07.15 11:21:16.694531000	>>> Yukarin#2444 BnetRID::GameAccountLogon id={id=125921086, program=D3, region=1}
+2017.07.15 11:21:17.101097300	>>> Yukarin#2444 BnetRID::GameAccountLogon_SelectGameAccountCallback code=0
+2017.07.15 11:21:17.111309300	SendCustom hero:(no hero selected) id:6 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 6 } } attribute { name: "CustomMessage" value { message_value: "\010\325\244\001\022\0132.6.0.46006" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:0
+2017.07.15 11:21:17.631705000	>>> BnetRID::GameAccountLogon_OnInitialLoginDataQueuedResponse code=0
+2017.07.15 11:21:17.632174300	>>> BnetRID::GameAccountLogon_OnInitialLoginDataQueuedResponse: service_id=1970235160 timeout_tick_interval=1800
+2017.07.15 11:21:18.116035000	>>> BnetRID::OnInitialLoginData: Expected service_id=1970235160 message service_id=1970235160
+2017.07.15 11:21:18.116281300	>>> BnetRID::OnInitialLoginData code=0
+2017.07.15 11:21:18.116487000	MyContentFlags=0 ServerContentFlags=4294967295 ServerPool=Default
+2017.07.15 11:21:18.116667300	>>> BnetRID::OnInitialLoginData: server reported time at logon is 553418476057226000
+2017.07.15 11:21:18.116858000	>>> Yukarin#2444 My Hero List:
+-------- Total: 0 --------
+2017.07.15 11:21:18.117590000	SendCustom hero:(no hero selected) id:32 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 32 } } attribute { name: "CustomMessage" value { message_value: "\010\003" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:0
+2017.07.15 11:21:18.117909700	Loading new achievements static data file. hash: CB24B14BE2630AF9365F35A396437B945D958657813A566EEA35E90F5723175D
+2017.07.15 11:21:18.118443700	SendCustom hero:(no hero selected) id:16 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 16 } } attribute { name: "CustomMessage" value { message_value: "" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:0
+2017.07.15 11:21:18.118643000	Chat System Message: Welcome to Diablo III! (v2.6.0.46006)
+Type /? for a list of available chat commands.
+
+2017.07.15 11:21:18.795893300	Disposing UI for World
+2017.07.15 11:21:18.799413700	Client Disposed world.
+2017.07.15 11:21:18.799622000	Initializing client world BattleNet_Act1Screen...
+2017.07.15 11:21:19.272270000	ptCutscene->m_eCutsceneState: PRELOADING
+2017.07.15 11:21:19.294261700	Ogg logical stream 35d4 is Theora 432x240 24.00 fps 420 236
+2017.07.15 11:21:19.294416300	 4:2:0 video
+2017.07.15 11:21:19.321421700	Ogg logical stream 2fe2 is Vorbis 2 channel 48000 Hz audio.
+2017.07.15 11:21:19.896913300	ptCutscene->m_eCutsceneState: PLAYBACK
+2017.07.15 11:21:19.898847300	OpenOVTStream
+2017.07.15 11:21:19.926870300	PlayOVTStream
+2017.07.15 11:21:21.041791700	Achievements: Static Data attribute: :timestamp: = Tuesday, June 6, 2017 11:24:53 AM
+2017.07.15 11:21:21.042125300	Achievements: Static Data attribute: :seasons_in_cycle: = 12
+2017.07.15 11:21:21.871436700	de activate app 0 iconic 0
+2017.07.15 11:21:24.583043700	ACTIVATE APP 1 iconic 0
+2017.07.15 11:21:26.267561000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:21:26.869245300	StopOVTStream
+2017.07.15 11:21:27.147265300	ptCutscene->m_eCutsceneState: PRELOADING
+2017.07.15 11:21:27.149927700	Ogg logical stream 2373 is Theora 432x240 24.00 fps 420 236
+2017.07.15 11:21:27.150048000	 4:2:0 video
+2017.07.15 11:21:27.151236700	Ogg logical stream 2fdc is Vorbis 2 channel 48000 Hz audio.
+2017.07.15 11:21:27.345146300	ptCutscene->m_eCutsceneState: PLAYBACK
+2017.07.15 11:21:27.346498700	OpenOVTStream
+2017.07.15 11:21:27.346719000	PlayOVTStream
+2017.07.15 11:21:29.026983700	StopOVTStream
+2017.07.15 11:21:29.289309700	ptCutscene->m_eCutsceneState: PRELOADING
+2017.07.15 11:21:29.291877300	Ogg logical stream 3880 is Theora 432x240 24.00 fps 420 236
+2017.07.15 11:21:29.292013300	 4:2:0 video
+2017.07.15 11:21:29.292998300	Ogg logical stream 131d is Vorbis 2 channel 48000 Hz audio.
+2017.07.15 11:21:29.293908700	ptCutscene->m_eCutsceneState: PLAYBACK
+2017.07.15 11:21:29.295063000	OpenOVTStream
+2017.07.15 11:21:29.295267300	PlayOVTStream
+2017.07.15 11:21:30.266767000	StopOVTStream
+2017.07.15 11:21:30.400150700	ptCutscene->m_eCutsceneState: PRELOADING
+2017.07.15 11:21:30.404291000	Ogg logical stream 63a1 is Theora 432x240 24.00 fps 420 236
+2017.07.15 11:21:30.404534700	 4:2:0 video
+2017.07.15 11:21:30.406171700	Ogg logical stream 13e8 is Vorbis 2 channel 48000 Hz audio.
+2017.07.15 11:21:30.489254700	ptCutscene->m_eCutsceneState: PLAYBACK
+2017.07.15 11:21:30.490479300	OpenOVTStream
+2017.07.15 11:21:30.490689700	PlayOVTStream
+2017.07.15 11:21:31.622373300	StopOVTStream
+2017.07.15 11:21:31.741644700	ptCutscene->m_eCutsceneState: PRELOADING
+2017.07.15 11:21:31.746280000	Ogg logical stream 72c3 is Theora 432x240 24.00 fps 420 236
+2017.07.15 11:21:31.746466300	 4:2:0 video
+2017.07.15 11:21:31.748196300	Ogg logical stream 40ed is Vorbis 2 channel 44100 Hz audio.
+2017.07.15 11:21:31.908766700	ptCutscene->m_eCutsceneState: PLAYBACK
+2017.07.15 11:21:31.909884700	OpenOVTStream
+2017.07.15 11:21:31.910111300	PlayOVTStream
+2017.07.15 11:21:32.881849300	StopOVTStream
+2017.07.15 11:21:32.891725000	ptCutscene->m_eCutsceneState: PRELOADING
+2017.07.15 11:21:32.895104000	Ogg logical stream 63a1 is Theora 432x240 24.00 fps 420 236
+2017.07.15 11:21:32.895323300	 4:2:0 video
+2017.07.15 11:21:32.896309700	Ogg logical stream 13e8 is Vorbis 2 channel 48000 Hz audio.
+2017.07.15 11:21:32.897291000	ptCutscene->m_eCutsceneState: PLAYBACK
+2017.07.15 11:21:32.898435000	OpenOVTStream
+2017.07.15 11:21:32.898663000	PlayOVTStream
+2017.07.15 11:21:40.556859300	StopOVTStream
+2017.07.15 11:21:40.866005300	ptCutscene->m_eCutsceneState: PRELOADING
+2017.07.15 11:21:40.868547000	Ogg logical stream 2353 is Theora 432x240 24.00 fps 420 236
+2017.07.15 11:21:40.868665700	 4:2:0 video
+2017.07.15 11:21:40.869702000	Ogg logical stream 42e6 is Vorbis 2 channel 48000 Hz audio.
+2017.07.15 11:21:40.986839700	ptCutscene->m_eCutsceneState: PLAYBACK
+2017.07.15 11:21:40.988084700	OpenOVTStream
+2017.07.15 11:21:40.988283300	PlayOVTStream
+2017.07.15 11:21:42.614834700	StopOVTStream
+2017.07.15 11:21:42.895959000	ptCutscene->m_eCutsceneState: PRELOADING
+2017.07.15 11:21:42.898596700	Ogg logical stream 7c61 is Theora 432x240 24.00 fps 420 236
+2017.07.15 11:21:42.898794000	 4:2:0 video
+2017.07.15 11:21:42.899813700	Ogg logical stream 150a is Vorbis 2 channel 48000 Hz audio.
+2017.07.15 11:21:43.030228300	ptCutscene->m_eCutsceneState: PLAYBACK
+2017.07.15 11:21:43.032043700	OpenOVTStream
+2017.07.15 11:21:43.032319300	PlayOVTStream
+2017.07.15 11:21:44.591099700	StopOVTStream
+2017.07.15 11:21:44.594382000	ptCutscene->m_eCutsceneState: PRELOADING
+2017.07.15 11:21:44.597070300	Ogg logical stream 63a1 is Theora 432x240 24.00 fps 420 236
+2017.07.15 11:21:44.597239700	 4:2:0 video
+2017.07.15 11:21:44.598238300	Ogg logical stream 13e8 is Vorbis 2 channel 48000 Hz audio.
+2017.07.15 11:21:44.599081300	ptCutscene->m_eCutsceneState: PLAYBACK
+2017.07.15 11:21:44.600326000	OpenOVTStream
+2017.07.15 11:21:44.600552300	PlayOVTStream
+2017.07.15 11:21:58.573085000	SendCustom hero:(no hero selected) id:1 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 1 } } attribute { name: "CustomMessage" value { message_value: "\n\010Yukariel\025\025\254=\000\030\000 \001(\000" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:0
+2017.07.15 11:21:58.965000300	>>> (no hero selected) BnetGameAccount::HeroCreate_OnCreateHero heroName=Yukariel code=0
+2017.07.15 11:21:58.975963300	SendCustom hero:(no hero selected) id:0 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 0 } } attribute { name: "CustomMessage" value { message_value: "\n\014\r>g\201\007\0253D\000\000\030\001\020\306\201\345+" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:0
+2017.07.15 11:21:59.214558300	>>> (no hero selected) HeroDigest {version: 905
+hero_id {
+  id_high: 0
+  id_low: 91832518
+}
+hero_name: "Yukariel"
+gbid_class: 4041749
+level: 1
+player_flags: 2
+visual_equipment {
+  visual_item {
+    effect_level: 0
+  }
+  visual_item {
+    effect_level: 0
+  }
+  visual_item {
+    effect_level: 0
+  }
+  visual_item {
+    effect_level: 0
+  }
+  visual_item {
+    gbid: 1236604967
+  }
+  visual_item {
+    effect_level: 0
+  }
+  visual_item {
+    effect_level: 0
+  }
+  visual_item {
+    effect_level: 0
+  }
+  cosmetic_item {
+  }
+  cosmetic_item {
+  }
+  cosmetic_item {
+  }
+  cosmetic_item {
+  }
+}
+last_played_act: 0
+highest_unlocked_act: 0
+last_played_quest: 87700
+last_played_quest_step: -1
+time_played: 0
+create_time: 1500103317
+last_played_time: 1500103317
+pvp_rank: 1
+season_created: 0
+highest_solo_rift_completed: 0
+}
+2017.07.15 11:21:59.215033700	SendCustom hero:(no hero selected) id:3 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 3 } } attribute { name: "CustomMessage" value { message_value: "\010\306\201\345+" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:0
+2017.07.15 11:21:59.568887300	SendCustom hero:Yukariel id:9 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 9 } } attribute { name: "CustomMessage" value { message_value: "\010\306\201\345+" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:0
+2017.07.15 11:21:59.896680000	SendCustom hero:Yukariel id:10 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 10 } } attribute { name: "CustomMessage" value { message_value: "\010\306\201\345+\022\004\010 \020\000" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:0
+2017.07.15 11:22:00.352559300	>>> Yukariel BnetParty::_OnPartyJoined Yukariel partyId=[id:390090,type:1] members:
+ >>> Yukariel >>>     [0] identity { game_account_id { high: 144115192370840627 low: 125921086 } } state { role: 2 privileges: 64439 info { battle_tag: "Yukarin#2444" } } ONLINE_AVAILABLE(1)
+2017.07.15 11:22:00.371380700	StopOVTStream
+2017.07.15 11:22:02.231412700	SendStoreMessage hero:Yukariel id:212 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 212 } } attribute { name: "CustomMessage" value { message_value: "" } } attribute { name: "CustomMessageDestination" value { uint_value: 4 } } count:0
+2017.07.15 11:22:02.303188700	ptCutscene->m_eCutsceneState: PRELOADING
+2017.07.15 11:22:02.305772000	Ogg logical stream 72c3 is Theora 432x240 24.00 fps 420 236
+2017.07.15 11:22:02.305883300	 4:2:0 video
+2017.07.15 11:22:02.307033000	Ogg logical stream 40ed is Vorbis 2 channel 44100 Hz audio.
+2017.07.15 11:22:02.575077300	de activate app 0 iconic 0
+2017.07.15 11:22:02.629715000	ptCutscene->m_eCutsceneState: PLAYBACK
+2017.07.15 11:22:02.630118300	OpenOVTStream
+2017.07.15 11:22:02.630350300	PlayOVTStream
+2017.07.15 11:22:02.983945000	SendStoreMessage hero:Yukariel id:211 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 211 } } attribute { name: "CustomMessage" value { message_value: "\010\004\020\320\346\272\352\212\312\263\326\007" } } attribute { name: "CustomMessageDestination" value { uint_value: 4 } } count:0
+2017.07.15 11:22:27.581803300	ACTIVATE APP 1 iconic 0
+2017.07.15 11:22:34.244848700	StopOVTStream
+2017.07.15 11:22:37.442897300	>>> Settings::SetLastSeenWhatsNewScreen: version: 8
+2017.07.15 11:22:37.471085000	>>> BnetSettings::WriteGameAccountSettings: settings: settings {
+  account_flags: 64
+  viewed_whats_new_version: 8
+}
+
+2017.07.15 11:22:37.471620700	SendCustom hero:Yukariel id:8 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 8 } } attribute { name: "CustomMessage" value { message_value: "\n\006\200\001@\240\001\010" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:0
+2017.07.15 11:22:53.894657300	>>> Yukariel BnetParty::CreateGame params={ Yukariel Private COOP ResumeFromSave act=1 snoQuest=87700 "The Fallen Star" step=-1 handicap=0 }
+2017.07.15 11:22:53.895188300	SendCustom hero:Yukariel id:18 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 18 } } attribute { name: "CustomMessage" value { message_value: "\n0\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\010\000\000\000\000\000\000\000\000\000\000\000\000\000\000" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:0
+2017.07.15 11:22:53.914721000	>>> Yukariel PartyCreateGame::Begin params={ Yukariel Private COOP ResumeFromSave act=1 snoQuest=87700 "The Fallen Star" step=-1 handicap=0 }
+2017.07.15 11:22:53.923108300	>>> Yukariel BnetParty::LockPartyForReason CREATING_GAME(0)
+2017.07.15 11:22:53.923279700	>>> Yukariel BnetParty::SetJoinPermissionPreviousToClose token=1 new=ASK_TO_JOIN(3) old=ASK_TO_JOIN(3) LockPartyForReason_SetAttribute_JoinPermission_PreviousToClose
+2017.07.15 11:22:53.923411700	>>> Yukariel BnetParty::CloseStatusChange_SetJoinPermission newPartyJoinPermission=CLOSED(1) reason=CREATING_GAME(0)
+2017.07.15 11:22:54.123486000	>>> Yukariel PartyCreateGame::CreateGameCallback code=0 requestId=12084785836396132886
+2017.07.15 11:22:54.319954700	>>> Yukariel BnetGames::_OnQueueEntered notification=request_id { id: 12084785836396132886 } wait_times { min_wait: 0 max_wait: 1 avg_wait: 0 std_dev_wait: 0 } member { id: 125921086 program: 17459 region: 1 } request_initiator { id: 125921086 program: 17459 region: 1 }
+2017.07.15 11:22:54.320127300	>>> Yukariel BnetParty::InvokeOnQueueEvent ADDED gameRequestId=12084785836396132886 info={ waitAvgSeconds=0 waitStdDevSeconds=0 }
+2017.07.15 11:22:54.377939700	>>> Yukariel BnetParty::CloseStatusChange_SetPrivacyLevelCallback code=0 old=ASK_TO_JOIN(3) new=CLOSED(1) reason=CREATING_GAME(0)
+2017.07.15 11:22:55.054259000	>>> Yukariel BnetGames::_OnMatchmakingResult requestId=request_id { id: 12084785836396132886 } result: 0 connect_info { address { address: "37.244.30.109" port: 3724 } attribute { name: "GameAccount" value { blob_value: "\r>g\201\007\0253D\000\000\030\001" } } attribute { name: "Token" value { uint_value: 17164573259245689923 } } attribute { name: "SGameId" value { int_value: -1985871822 } } attribute { name: "GameCreateParams" value { blob_value: "\010\002\020\200\200\010\032\037\010\000\025\224V\001\000\030\377\377\377\377\377\377\377\377\377\001\"\007\010\000\020\306\201\345+8\000H\001*\010Yukariel0\001" } } } game_handle { matchmaker { addr { host { label: 1250 epoch: 1499729350 } proxy { label: 2860703705 epoch: 1497363883 } } id: 1 } game_server { host { label: 1277 epoch: 1499729371 } proxy { label: 4111566620 epoch: 1497363865 } } game_instance_id: 12424 }
+2017.07.15 11:22:55.054386300	>>> Yukariel BnetParty::InvokeOnQueueEvent REMOVED gameRequestId=12084785836396132886 removedCode=0
+2017.07.15 11:22:55.054612700	>>> Yukariel PartyCreateGame::InvokeOnEnteredGame requestId=12084785836396132886  [name: "GameAccount" value { blob_value: "\r>g\201\007\0253D\000\000\030\001" }, name: "Token" value { uint_value: 17164573259245689923 }, name: "SGameId" value { int_value: -1985871822 }, name: "GameCreateParams" value { blob_value: "\010\002\020\200\200\010\032\037\010\000\025\224V\001\000\030\377\377\377\377\377\377\377\377\377\001\"\007\010\000\020\306\201\345+8\000H\001*\010Yukariel0\001" }, ] 
+2017.07.15 11:22:55.054768300	>>> Yukariel GameSession::ConnectToGameServer Joining 'Yukariel' game at 37.244.30.109:3724 idSGame=-1985871822 (0x89a20032) heroId=91832518 authToken=17164573259245689923
+2017.07.15 11:22:55.055365300	>>> Yukariel BnetParty::UnlockPartyForReason CREATING_GAME(0)
+2017.07.15 11:22:55.055480000	>>> Yukariel BnetParty::CloseStatusChange_SetJoinPermission newPartyJoinPermission=ASK_TO_JOIN(3) reason=CREATING_GAME(0)
+2017.07.15 11:22:55.055846000	>>> Yukariel BnetParty::SetJoinPermissionPreviousToClose token=3 CLEAR new=OTHER(0) old=ASK_TO_JOIN(3) BnetParty::SetJoinPermission
+2017.07.15 11:22:55.055959300	>>> Yukariel CreateGame::EnterGameBase::Complete code=0
+2017.07.15 11:22:55.069739000	GameDisposeGames()
+2017.07.15 11:22:55.069922300	ENDING GAME
+2017.07.15 11:22:55.070757000	Disposing UI for World
+2017.07.15 11:22:55.073961300	Client Disposed world.
+2017.07.15 11:22:55.425726300	>>> Yukariel OnGameLeft
+2017.07.15 11:22:55.600737300	Disposing UI root!
+2017.07.15 11:22:56.384376700	STARTING NETWORK CLIENT GAME
+2017.07.15 11:22:56.384633000	CGameGlobalsInit()
+2017.07.15 11:22:56.384727700	CGameGlobals::Init()
+2017.07.15 11:22:56.384805000	Disabling loading screen for 31, 0
+2017.07.15 11:22:56.385189700	Enabling loading screen for 1, 1
+2017.07.15 11:22:56.541288300	SNOPreload::InitializeForGame submit required SNOs in 155926us
+2017.07.15 11:22:58.226525700	SNOPreload::InitializeForGame in 1841101us
+2017.07.15 11:22:59.809526300	Setting depth texture, fmt = 36
+2017.07.15 11:22:59.822353000	PostFXGfxInit() success
+2017.07.15 11:22:59.832964000	SubObjectGfxInit() 1
+2017.07.15 11:22:59.871467000	Connecting to 37.244.30.109:3724
+2017.07.15 11:23:00.052655300	de activate app 0 iconic 0
+2017.07.15 11:23:00.207218000	>>> Yukariel BnetParty::CloseStatusChange_SetPrivacyLevelCallback code=0 old=CLOSED(1) new=ASK_TO_JOIN(3) reason=CREATING_GAME(0)
+2017.07.15 11:23:00.427595000	-----------------------------------------------------------------
+2017.07.15 11:23:00.427919000	Server Version Information:
+2017.07.15 11:23:00.428072000	-----------------------------------------------------------------
+2017.07.15 11:23:00.428251000	Server BuildVersion: 2.6.0.46462
+2017.07.15 11:23:00.428381300	Server SNOPackHash: 0x707A3838 (client hash = 0x707A3838)
+2017.07.15 11:23:00.428508300	Server ProtocolHash: 0x5D2B0F9A (client hash = 0x5D2B0F9A)
+2017.07.15 11:23:00.428634300	-----------------------------------------------------------------
+2017.07.15 11:23:00.678730300	Received achievement awarded notification for 125921086
+2017.07.15 11:23:00.786525300	>>> Yukariel OnGamePlayerJoined gameAccount={ 125921086,D3,1 }
+2017.07.15 11:23:03.361110300	Initializing client world trOUT_Town...
+2017.07.15 11:23:05.073951000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:23:06.770480000	>>> Yukariel BnetParty::Games_GameSessionNowInProgressEvent::SetMemberAttribute_GameId game_id { mmHost: 5370208849350 mmProxy: 17659044169722623385 mmId: 1 gsHost: 5486172966363 gsProxy: 17659044169722623385 gameId: 12424 }
+2017.07.15 11:23:10.164725300	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:23:26.807673300	Disabling loading screen for 1, 0
+2017.07.15 11:23:27.984408700	ACTIVATE APP 1 iconic 0
+2017.07.15 11:23:27.985817000	de activate app 0 iconic 0
+2017.07.15 11:23:28.270019300	StopOVTStream
+2017.07.15 11:23:29.109735000	>>> Yukariel GamesListener::_OnGameChannelJoined channelId=type: 1 host { label: 2702622162 epoch: 1497391383 } id: 393016
+2017.07.15 11:23:30.301859700	ACTIVATE APP 1 iconic 0
+2017.07.15 11:23:33.352843700	>>> BnetSettings::WriteGameAccountSettings: settings: settings {
+  account_flags: 64
+  viewed_whats_new_version: 8
+  last_known_number_owned_stash_tabs: 1
+}
+
+2017.07.15 11:23:33.353355000	SendCustom hero:Yukariel id:8 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 8 } } attribute { name: "CustomMessage" value { message_value: "\n\t\200\001@\240\001\010\270\001\001" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:1
+2017.07.15 11:25:07.568413000	Enabling loading screen for 4, 4
+2017.07.15 11:25:07.584835000	Initializing client world trOut_Tristram_Inn...
+2017.07.15 11:25:07.584955000	Enabling loading screen for 4, 4
+2017.07.15 11:25:07.587998300	Disposing UI for World
+2017.07.15 11:25:07.620082700	Disabling loading screen for 1, 4
+2017.07.15 11:25:07.863044300	Disabling loading screen for 2, 4
+2017.07.15 11:25:07.863276700	Disabling loading screen for 4, 0
+2017.07.15 11:25:09.675477300	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:25:24.359613700	Received achievement awarded notification for 125921086
+2017.07.15 11:25:42.457129700	Enabling loading screen for 4, 4
+2017.07.15 11:25:42.457362700	Enabling loading screen for 4, 4
+2017.07.15 11:25:42.458220300	Disposing UI for World
+2017.07.15 11:25:42.472095700	Disabling loading screen for 1, 4
+2017.07.15 11:25:42.539006300	Disabling loading screen for 2, 4
+2017.07.15 11:25:42.539231300	Disabling loading screen for 4, 0
+2017.07.15 11:26:38.317602000	Received achievement awarded notification for 125921086
+2017.07.15 11:27:09.676742000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:29:09.679163300	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:31:04.176258300	Enabling loading screen for 4, 4
+2017.07.15 11:31:04.176481700	Initializing client world trOut_Oldtistram_Cellar_1...
+2017.07.15 11:31:04.176635000	Enabling loading screen for 4, 4
+2017.07.15 11:31:04.177301700	Disposing UI for World
+2017.07.15 11:31:04.196440000	Disabling loading screen for 1, 4
+2017.07.15 11:31:04.461939300	Disabling loading screen for 2, 4
+2017.07.15 11:31:04.462181300	Disabling loading screen for 4, 0
+2017.07.15 11:31:04.788733000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:31:49.321184300	Enabling loading screen for 4, 4
+2017.07.15 11:31:49.321394300	Enabling loading screen for 4, 4
+2017.07.15 11:31:49.322323300	Disposing UI for World
+2017.07.15 11:31:49.348128300	Disabling loading screen for 1, 4
+2017.07.15 11:31:49.361175000	Disabling loading screen for 2, 4
+2017.07.15 11:31:49.361369700	Disabling loading screen for 4, 0
+2017.07.15 11:33:04.790802000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:34:02.100791300	Enabling loading screen for 4, 4
+2017.07.15 11:34:02.229610000	Disabling loading screen for 2, 4
+2017.07.15 11:34:02.229842700	Disabling loading screen for 4, 0
+2017.07.15 11:34:25.534711000	Enabling loading screen for 4, 4
+2017.07.15 11:34:25.573437700	Disabling loading screen for 2, 4
+2017.07.15 11:34:25.573644000	Disabling loading screen for 4, 0
+2017.07.15 11:35:04.792011300	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:35:15.345863000	de activate app 0 iconic 0
+2017.07.15 11:35:38.465526000	ACTIVATE APP 1 iconic 0
+2017.07.15 11:36:01.559098000	Enabling loading screen for 4, 4
+2017.07.15 11:36:01.559310700	Initializing client world trOut_AdriasCellar...
+2017.07.15 11:36:01.559418000	Enabling loading screen for 4, 4
+2017.07.15 11:36:01.561019000	Disposing UI for World
+2017.07.15 11:36:01.578474700	Disabling loading screen for 1, 4
+2017.07.15 11:36:01.703892700	Disabling loading screen for 2, 4
+2017.07.15 11:36:01.704102300	Disabling loading screen for 4, 0
+2017.07.15 11:37:04.799045000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:37:14.847461000	Enabling loading screen for 4, 4
+2017.07.15 11:37:14.847668700	Enabling loading screen for 4, 4
+2017.07.15 11:37:14.848535700	Disposing UI for World
+2017.07.15 11:37:14.862710300	Disabling loading screen for 1, 4
+2017.07.15 11:37:14.951911700	Disabling loading screen for 2, 4
+2017.07.15 11:37:14.952125000	Disabling loading screen for 4, 0
+2017.07.15 11:37:55.337887300	Enabling loading screen for 4, 4
+2017.07.15 11:37:55.338133300	Initializing client world trOut_oldTristram_TreeCave...
+2017.07.15 11:37:55.338237700	Enabling loading screen for 4, 4
+2017.07.15 11:37:55.339108700	Disposing UI for World
+2017.07.15 11:37:55.354272700	Disabling loading screen for 1, 4
+2017.07.15 11:37:56.063373700	Disabling loading screen for 2, 4
+2017.07.15 11:37:56.063600000	Disabling loading screen for 4, 0
+2017.07.15 11:38:16.833063700	Enabling loading screen for 4, 4
+2017.07.15 11:38:16.833271700	Enabling loading screen for 4, 4
+2017.07.15 11:38:16.833739700	Disposing UI for World
+2017.07.15 11:38:16.845815000	Disabling loading screen for 1, 4
+2017.07.15 11:38:16.858586700	Disabling loading screen for 2, 4
+2017.07.15 11:38:16.858844700	Disabling loading screen for 4, 0
+2017.07.15 11:39:04.796054000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:39:04.853208300	Enabling loading screen for 4, 4
+2017.07.15 11:39:04.853575700	Initializing client world a1trDun_Level01...
+2017.07.15 11:39:04.853677000	Enabling loading screen for 4, 4
+2017.07.15 11:39:04.857173300	Disposing UI for World
+2017.07.15 11:39:04.876013300	Disabling loading screen for 1, 4
+2017.07.15 11:39:06.779174700	Disabling loading screen for 2, 4
+2017.07.15 11:39:06.779417000	Disabling loading screen for 4, 0
+2017.07.15 11:39:59.929247000	>>> Yukariel BnetParty::LockPartyForReason GAME_IS_PAUSED(4)
+2017.07.15 11:39:59.929474700	>>> Yukariel BnetParty::SetJoinPermissionPreviousToClose token=4 new=CALLTOARMS_QUICKJOIN(4) old=CALLTOARMS_QUICKJOIN(4) LockPartyForReason_SetAttribute_JoinPermission_PreviousToClose
+2017.07.15 11:39:59.946028300	>>> Yukariel BnetParty::CloseStatusChange_SetJoinPermission newPartyJoinPermission=CLOSED_GAME_PAUSED(2) reason=GAME_IS_PAUSED(4)
+2017.07.15 11:40:00.174974000	>>> Yukariel BnetParty::CloseStatusChange_SetPrivacyLevelCallback code=0 old=CALLTOARMS_QUICKJOIN(4) new=CLOSED_GAME_PAUSED(2) reason=GAME_IS_PAUSED(4)
+2017.07.15 11:40:13.731373300	>>> Yukariel ---------------- ModalNotificationManager::SetOkCancelNotification: Are you sure you want to raise the difficulty? 
+Raise to: Hard
+2017.07.15 11:40:22.082340700	>>> Yukariel BnetParty::LeaveGameByMyself currentGameId=game_id { mmHost: 5370208849350 mmProxy: 17659044169722623385 mmId: 1 gsHost: 5486172966363 gsProxy: 17659044169722623385 gameId: 12424 }
+2017.07.15 11:40:22.082563000	>>> Yukariel SendGameServerMessage_StartLeaveGameCountdown eContext=0
+2017.07.15 11:40:22.082660000	>>> Yukariel BnetParty::LockPartyForReason LEAVING_CURRENT_GAME(3)
+2017.07.15 11:40:22.082761700	>>> Yukariel BnetParty::CloseStatusChange_SetJoinPermission newPartyJoinPermission=CLOSED(1) reason=LEAVING_CURRENT_GAME(3)
+2017.07.15 11:40:22.289753000	>>> Yukariel Party::NotifyLeaveGameCountdownEvent newState=STARTED countSubscribers=2
+2017.07.15 11:40:29.519081700	ChannelHandler::_OnSetPrivacyLevel failure. error=10016 request=state_change { privacy_level: PRIVACY_LEVEL_CLOSED }
+2017.07.15 11:40:29.519248300	>>> Yukariel BnetPartyState::SetDesiredJoinPermission CLOSED(1) token=45 SetPrivacyLevelCallback callback_code=10016
+2017.07.15 11:40:29.519476000	>>> Yukariel BnetParty::CloseStatusChange_SetPrivacyLevelCallback code=0 old=CLOSED_GAME_PAUSED(2) new=CLOSED(1) reason=LEAVING_CURRENT_GAME(3)
+2017.07.15 11:40:29.737840000	>>> Yukariel BnetParty::UnlockPartyForReason GAME_IS_PAUSED(4)
+2017.07.15 11:40:39.735543000	>>> Yukariel SendGameServerMessage_FinishLeaveGame_RequestExitNow 
+2017.07.15 11:40:39.735765300	>>> Yukariel Party::NotifyLeaveGameCountdownEvent newState=FINISHED countSubscribers=2
+2017.07.15 11:40:39.962582700	>>> Yukariel Quit game reason=0
+2017.07.15 11:40:40.027931300	GameDisposeGames()
+2017.07.15 11:40:40.028193300	ENDING GAME
+2017.07.15 11:40:40.067321300	Disposing UI for World
+2017.07.15 11:40:40.077257700	Client Disposed world.
+2017.07.15 11:40:41.103942000	>>> Yukariel OnGameLeft
+2017.07.15 11:40:41.139451300	ClientSocket Disconnect
+2017.07.15 11:40:41.273738300	>>> Yukariel BnetParty::SetJoinPermissionPreviousToClose token=5 new=ASK_TO_JOIN(3) old=CALLTOARMS_QUICKJOIN(4) BnetParty::SetMyGameOpenToFriends PartyIsLocked
+2017.07.15 11:40:41.274025700	>>> Yukariel BnetParty::Service_LeftGameSessionEvent::ClearMemberAttribute_GameId
+2017.07.15 11:40:41.296658700	>>> Yukariel BnetParty::UnlockPartyForReason LEAVING_CURRENT_GAME(3)
+2017.07.15 11:40:41.296824300	>>> Yukariel BnetParty::CloseStatusChange_SetJoinPermission newPartyJoinPermission=ASK_TO_JOIN(3) reason=LEAVING_CURRENT_GAME(3)
+2017.07.15 11:40:42.316483300	SendCustom hero:Yukariel id:0 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 0 } } attribute { name: "CustomMessage" value { message_value: "\n\014\r>g\201\007\0253D\000\000\030\001\020\306\201\345+" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:1
+2017.07.15 11:40:42.418890700	Disposing UI root!
+2017.07.15 11:40:42.696838300	Client Disposed world.
+2017.07.15 11:40:42.697053700	Client Disposed world.
+2017.07.15 11:40:42.697152700	Client Disposed world.
+2017.07.15 11:40:42.697262000	Client Disposed world.
+2017.07.15 11:40:42.697354000	Client Disposed world.
+2017.07.15 11:40:43.524634000	STARTING Menu
+2017.07.15 11:40:43.524860300	CGameGlobalsInit()
+2017.07.15 11:40:43.525001700	CGameGlobals::Init()
+2017.07.15 11:40:43.525136000	Disabling loading screen for 31, 0
+2017.07.15 11:40:49.006274700	SNOPreload::InitializeForGame submit required SNOs in 5480090us
+2017.07.15 11:40:49.789010300	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:41:06.631084300	SNOPreload::InitializeForGame in 23104858us
+2017.07.15 11:41:10.010606300	Setting depth texture, fmt = 36
+2017.07.15 11:41:10.016361300	PostFXGfxInit() success
+2017.07.15 11:41:10.018749700	SubObjectGfxInit() 1
+2017.07.15 11:41:10.120982300	Initializing client world BattleNet_Act1Screen...
+2017.07.15 11:41:14.689437700	de activate app 0 iconic 0
+2017.07.15 11:41:15.004278700	>>> Yukariel BnetParty::CloseStatusChange_SetPrivacyLevelCallback code=0 old=CLOSED(1) new=ASK_TO_JOIN(3) reason=LEAVING_CURRENT_GAME(3)
+2017.07.15 11:41:26.023673700	ACTIVATE APP 1 iconic 0
+2017.07.15 11:41:28.964737300	SendCustom hero:Yukariel id:15 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 15 } } attribute { name: "CustomMessage" value { message_value: "\n\014\r>g\201\007\0253D\000\000\030\001\020\306\201\345+" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:0
+2017.07.15 11:41:28.998286000	SendStoreMessage hero:Yukariel id:211 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 211 } } attribute { name: "CustomMessage" value { message_value: "\010\007\020\320\346\272\352\212\312\263\326\007" } } attribute { name: "CustomMessageDestination" value { uint_value: 4 } } count:1
+2017.07.15 11:41:28.998740300	SendStoreMessage hero:Yukariel id:211 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 211 } } attribute { name: "CustomMessage" value { message_value: "\010\017\020\320\346\272\352\212\312\263\326\007" } } attribute { name: "CustomMessageDestination" value { uint_value: 4 } } count:2
+2017.07.15 11:41:29.012689700	>>> BnetSettings::WriteGameAccountSettings: settings: settings {
+  account_flags: 64
+  viewed_whats_new_version: 8
+  last_known_number_owned_character_slot: 4
+  last_known_number_owned_stash_tabs: 1
+}
+
+2017.07.15 11:41:29.013188000	SendCustom hero:Yukariel id:8 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 8 } } attribute { name: "CustomMessage" value { message_value: "\n\014\200\001@\240\001\010\260\001\004\270\001\001" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:2
+2017.07.15 11:41:31.454998000	ptCutscene->m_eCutsceneState: PRELOADING
+2017.07.15 11:41:31.484791300	Ogg logical stream 35d4 is Theora 432x240 24.00 fps 420 236
+2017.07.15 11:41:31.484933300	 4:2:0 video
+2017.07.15 11:41:31.486103300	Ogg logical stream 2fe2 is Vorbis 2 channel 48000 Hz audio.
+2017.07.15 11:41:31.650354700	ptCutscene->m_eCutsceneState: PLAYBACK
+2017.07.15 11:41:31.651717000	OpenOVTStream
+2017.07.15 11:41:31.651913700	PlayOVTStream
+2017.07.15 11:41:33.128124000	StopOVTStream
+2017.07.15 11:41:33.652275300	ptCutscene->m_eCutsceneState: PRELOADING
+2017.07.15 11:41:33.654850000	Ogg logical stream 2353 is Theora 432x240 24.00 fps 420 236
+2017.07.15 11:41:33.655009300	 4:2:0 video
+2017.07.15 11:41:33.656001700	Ogg logical stream 42e6 is Vorbis 2 channel 48000 Hz audio.
+2017.07.15 11:41:33.804666300	ptCutscene->m_eCutsceneState: PLAYBACK
+2017.07.15 11:41:33.806582700	OpenOVTStream
+2017.07.15 11:41:33.806889700	PlayOVTStream
+2017.07.15 11:41:40.348201000	SendCustom hero:(no hero selected) id:1 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 1 } } attribute { name: "CustomMessage" value { message_value: "\n\010Yuudachi\025\261\201F\035\030\000 \001(\000" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:1
+2017.07.15 11:41:40.756594000	>>> (no hero selected) BnetGameAccount::HeroCreate_OnCreateHero heroName=Yuudachi code=0
+2017.07.15 11:41:40.757059000	SendCustom hero:(no hero selected) id:0 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 0 } } attribute { name: "CustomMessage" value { message_value: "\n\014\r>g\201\007\0253D\000\000\030\001\020\233\205\345+" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:2
+2017.07.15 11:41:40.987619700	>>> (no hero selected) HeroDigest {version: 905
+hero_id {
+  id_high: 0
+  id_low: 91832987
+}
+hero_name: "Yuudachi"
+gbid_class: 491159985
+level: 1
+player_flags: 2
+visual_equipment {
+  visual_item {
+    effect_level: 0
+  }
+  visual_item {
+    effect_level: 0
+  }
+  visual_item {
+    effect_level: 0
+  }
+  visual_item {
+    effect_level: 0
+  }
+  visual_item {
+    gbid: 88665049
+  }
+  visual_item {
+    effect_level: 0
+  }
+  visual_item {
+    effect_level: 0
+  }
+  visual_item {
+    effect_level: 0
+  }
+  cosmetic_item {
+  }
+  cosmetic_item {
+  }
+  cosmetic_item {
+  }
+  cosmetic_item {
+  }
+}
+last_played_act: 0
+highest_unlocked_act: 0
+last_played_quest: 87700
+last_played_quest_step: -1
+time_played: 0
+create_time: 1500104525
+last_played_time: 1500104525
+pvp_rank: 1
+season_created: 0
+highest_solo_rift_completed: 0
+}
+2017.07.15 11:41:40.988057000	SendCustom hero:(no hero selected) id:3 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 3 } } attribute { name: "CustomMessage" value { message_value: "\010\233\205\345+" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:1
+2017.07.15 11:41:41.311193000	SendCustom hero:Yuudachi id:9 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 9 } } attribute { name: "CustomMessage" value { message_value: "\010\233\205\345+" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:1
+2017.07.15 11:41:41.655269000	SendCustom hero:Yuudachi id:10 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 10 } } attribute { name: "CustomMessage" value { message_value: "\010\233\205\345+\022\004\010 \020\000" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:1
+2017.07.15 11:41:42.128574300	StopOVTStream
+2017.07.15 11:41:48.762604000	SendMatchmakingCustom hero:Yuudachi id:250 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 250 } } attribute { name: "CustomMessage" value { message_value: "\n\0132.6.0.46006\020\000\032\007Default \000-\224V\001\0000\000:\010Questing@\001H\003" } } attribute { name: "CustomMessageDestination" value { uint_value: 6 } } attribute { name: "MatchmakerShard" value { string_value: "Default.0" } } count:0
+2017.07.15 11:41:48.763666000	SendStoreMessage hero:Yuudachi id:210 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 210 } } attribute { name: "CustomMessage" value { message_value: "\010\320\346\272\352\212\312\263\326\007" } } attribute { name: "CustomMessageDestination" value { uint_value: 4 } } count:0
+2017.07.15 11:41:49.495743700	SendLeaderboardMessage hero:Yuudachi id:201 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 201 } } attribute { name: "CustomMessage" value { message_value: "\020\001\030\276\316\205< \036(\006" } } attribute { name: "CustomMessageDestination" value { uint_value: 3 } } count:0
+2017.07.15 11:41:49.496201300	SendLeaderboardMessage hero:Yuudachi id:201 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 201 } } attribute { name: "CustomMessage" value { message_value: "\020\001\030\276\316\205< \037(\006" } } attribute { name: "CustomMessageDestination" value { uint_value: 3 } } count:1
+2017.07.15 11:41:49.496578700	SendLeaderboardMessage hero:Yuudachi id:201 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 201 } } attribute { name: "CustomMessage" value { message_value: "\020\001\030\276\316\205<  (\006" } } attribute { name: "CustomMessageDestination" value { uint_value: 3 } } count:2
+2017.07.15 11:41:49.496998000	SendLeaderboardMessage hero:Yuudachi id:201 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 201 } } attribute { name: "CustomMessage" value { message_value: "\020\001\030\276\316\205< !(\006" } } attribute { name: "CustomMessageDestination" value { uint_value: 3 } } count:3
+2017.07.15 11:41:49.990567000	SendCustom hero:Yuudachi id:19 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 19 } } attribute { name: "CustomMessage" value { message_value: "" } } attribute { name: "CustomMessageDestination" value { uint_value: 0 } } count:0
+2017.07.15 11:41:49.992818000	SendLeaderboardMessage hero:Yuudachi id:201 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 201 } } attribute { name: "CustomMessage" value { message_value: "\020\001\030\276\316\205< \036(\006" } } attribute { name: "CustomMessageDestination" value { uint_value: 3 } } count:4
+2017.07.15 11:42:07.494335700	>>> Yuudachi BnetParty::CreateGame params={ Yuudachi Private COOP ResumeFromSave act=1 snoQuest=87700 "The Fallen Star" step=-1 handicap=0 }
+2017.07.15 11:42:07.494572700	>>> Yuudachi PartyCreateGame::Begin params={ Yuudachi Private COOP ResumeFromSave act=1 snoQuest=87700 "The Fallen Star" step=-1 handicap=0 }
+2017.07.15 11:42:07.494682700	>>> Yuudachi BnetParty::LockPartyForReason CREATING_GAME(0)
+2017.07.15 11:42:07.494783000	>>> Yuudachi BnetParty::SetJoinPermissionPreviousToClose token=6 new=ASK_TO_JOIN(3) old=ASK_TO_JOIN(3) LockPartyForReason_SetAttribute_JoinPermission_PreviousToClose
+2017.07.15 11:42:07.494893300	>>> Yuudachi BnetParty::CloseStatusChange_SetJoinPermission newPartyJoinPermission=CLOSED(1) reason=CREATING_GAME(0)
+2017.07.15 11:42:07.731228000	>>> Yuudachi PartyCreateGame::CreateGameCallback code=0 requestId=12084785834616407520
+2017.07.15 11:42:07.902870000	>>> Yuudachi BnetGames::_OnQueueEntered notification=request_id { id: 12084785834616407520 } wait_times { min_wait: 0 max_wait: 1 avg_wait: 0 std_dev_wait: 0 } member { id: 125921086 program: 17459 region: 1 } request_initiator { id: 125921086 program: 17459 region: 1 }
+2017.07.15 11:42:07.902989300	>>> Yuudachi BnetParty::InvokeOnQueueEvent ADDED gameRequestId=12084785834616407520 info={ waitAvgSeconds=0 waitStdDevSeconds=0 }
+2017.07.15 11:42:07.903929700	>>> Yuudachi BnetParty::CloseStatusChange_SetPrivacyLevelCallback code=0 old=ASK_TO_JOIN(3) new=CLOSED(1) reason=CREATING_GAME(0)
+2017.07.15 11:42:08.278797300	>>> Yuudachi BnetGames::_OnQueueUpdate notification=request_id { id: 12084785834616407520 } wait_times { min_wait: 0 max_wait: 1 avg_wait: 0 std_dev_wait: 0 } is_matchmaking: true
+2017.07.15 11:42:08.278927000	>>> Yuudachi _OnMatchmakerStart requestId=12084785834616407520
+2017.07.15 11:42:08.279052000	>>> Yuudachi BnetParty::InvokeOnMatchmakerEvent ADDED gameRequestId=12084785834616407520
+2017.07.15 11:42:08.459772000	>>> Yuudachi BnetGames::_OnMatchmakingResult requestId=request_id { id: 12084785834616407520 } result: 0 connect_info { address { address: "37.244.30.70" port: 3724 } attribute { name: "GameAccount" value { blob_value: "\r>g\201\007\0253D\000\000\030\001" } } attribute { name: "Token" value { uint_value: 6005135359763523911 } } attribute { name: "SGameId" value { int_value: -1988952037 } } attribute { name: "GameCreateParams" value { blob_value: "\010\002\020\200\200\010\032\037\010\000\025\224V\001\000\030\377\377\377\377\377\377\377\377\377\001\"\007\010\000\020\233\205\345+8\000H\001*\010Yuudachi0\001" } } } game_handle { matchmaker { addr { host { label: 1250 epoch: 1499729350 } proxy { label: 2860703705 epoch: 1497363883 } } id: 1 } game_server { host { label: 1994 epoch: 1499729371 } proxy { label: 2792268248 epoch: 1497363874 } } game_instance_id: 12447 }
+2017.07.15 11:42:08.459920300	>>> Yuudachi BnetParty::InvokeOnQueueEvent REMOVED gameRequestId=12084785834616407520 removedCode=0
+2017.07.15 11:42:08.460059700	>>> Yuudachi _OnMatchmakerEnd requestId=12084785834616407520 code=0
+2017.07.15 11:42:08.460157000	>>> Yuudachi BnetParty::InvokeOnMatchmakerEvent REMOVED gameRequestId=12084785834616407520 removedCode=0
+2017.07.15 11:42:08.460328700	>>> Yuudachi PartyCreateGame::InvokeOnEnteredGame requestId=12084785834616407520  [name: "GameAccount" value { blob_value: "\r>g\201\007\0253D\000\000\030\001" }, name: "Token" value { uint_value: 6005135359763523911 }, name: "SGameId" value { int_value: -1988952037 }, name: "GameCreateParams" value { blob_value: "\010\002\020\200\200\010\032\037\010\000\025\224V\001\000\030\377\377\377\377\377\377\377\377\377\001\"\007\010\000\020\233\205\345+8\000H\001*\010Yuudachi0\001" }, ] 
+2017.07.15 11:42:08.460466300	>>> Yuudachi GameSession::ConnectToGameServer Joining 'Yuudachi' game at 37.244.30.70:3724 idSGame=-1988952037 (0x8973001b) heroId=91832987 authToken=6005135359763523911
+2017.07.15 11:42:08.469197000	>>> Yuudachi BnetParty::UnlockPartyForReason CREATING_GAME(0)
+2017.07.15 11:42:08.469320000	>>> Yuudachi BnetParty::CloseStatusChange_SetJoinPermission newPartyJoinPermission=ASK_TO_JOIN(3) reason=CREATING_GAME(0)
+2017.07.15 11:42:08.469695000	>>> Yuudachi BnetParty::SetJoinPermissionPreviousToClose token=8 CLEAR new=OTHER(0) old=ASK_TO_JOIN(3) BnetParty::SetJoinPermission
+2017.07.15 11:42:08.469803300	>>> Yuudachi CreateGame::EnterGameBase::Complete code=0
+2017.07.15 11:42:08.489904300	GameDisposeGames()
+2017.07.15 11:42:08.490095000	ENDING GAME
+2017.07.15 11:42:08.490914700	Disposing UI for World
+2017.07.15 11:42:08.494314000	Client Disposed world.
+2017.07.15 11:42:08.826336300	>>> Yuudachi OnGameLeft
+2017.07.15 11:42:08.989595300	Disposing UI root!
+2017.07.15 11:42:09.751941300	STARTING NETWORK CLIENT GAME
+2017.07.15 11:42:09.752146300	CGameGlobalsInit()
+2017.07.15 11:42:09.752254700	CGameGlobals::Init()
+2017.07.15 11:42:09.752357000	Disabling loading screen for 31, 0
+2017.07.15 11:42:09.752709000	Enabling loading screen for 1, 1
+2017.07.15 11:42:09.908916700	SNOPreload::InitializeForGame submit required SNOs in 156046us
+2017.07.15 11:42:11.494853000	SNOPreload::InitializeForGame in 1741971us
+2017.07.15 11:42:13.781746000	Setting depth texture, fmt = 36
+2017.07.15 11:42:13.784915300	PostFXGfxInit() success
+2017.07.15 11:42:13.785674300	SubObjectGfxInit() 1
+2017.07.15 11:42:13.835298000	Connecting to 37.244.30.70:3724
+2017.07.15 11:42:14.189113000	>>> Yuudachi BnetParty::CloseStatusChange_SetPrivacyLevelCallback code=0 old=CLOSED(1) new=ASK_TO_JOIN(3) reason=CREATING_GAME(0)
+2017.07.15 11:42:14.304644700	-----------------------------------------------------------------
+2017.07.15 11:42:14.304861000	Server Version Information:
+2017.07.15 11:42:14.304998300	-----------------------------------------------------------------
+2017.07.15 11:42:14.305129300	Server BuildVersion: 2.6.0.46462
+2017.07.15 11:42:14.305268300	Server SNOPackHash: 0x707A3838 (client hash = 0x707A3838)
+2017.07.15 11:42:14.305415300	Server ProtocolHash: 0x5D2B0F9A (client hash = 0x5D2B0F9A)
+2017.07.15 11:42:14.305546000	-----------------------------------------------------------------
+2017.07.15 11:42:14.428151700	>>> Yuudachi OnGamePlayerJoined gameAccount={ 125921086,D3,1 }
+2017.07.15 11:42:17.820607700	Initializing client world trOUT_Town...
+2017.07.15 11:42:18.936406000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:42:22.393380300	>>> Yuudachi BnetParty::Games_GameSessionNowInProgressEvent::SetMemberAttribute_GameId game_id { mmHost: 5370208849350 mmProxy: 11992700808316581282 mmId: 1 gsHost: 8565664517595 gsProxy: 11992700808316581282 gameId: 12447 }
+2017.07.15 11:42:24.024221000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:42:34.651426300	Disabling loading screen for 1, 0
+2017.07.15 11:42:35.541414700	ptCutscene->m_eCutsceneState: PRELOADING
+2017.07.15 11:42:35.544413700	Ogg logical stream fe4 is Theora 1280x544 24.00 fps 1280 544
+2017.07.15 11:42:35.544605000	 4:2:0 video
+2017.07.15 11:42:35.547264000	Ogg logical stream 7745 is Vorbis 6 channel 44100 Hz audio.
+2017.07.15 11:42:35.614040000	ptCutscene->m_eCutsceneState: PLAYBACK
+2017.07.15 11:42:35.619051300	OpenOVTStream
+2017.07.15 11:42:35.619590000	PlayOVTStream
+2017.07.15 11:42:36.121566700	>>> Yuudachi GamesListener::_OnGameChannelJoined channelId=type: 1 host { label: 3339710726 epoch: 1497391549 } id: 388357
+2017.07.15 11:42:36.121768300	WARNING: >>> Yuudachi GamesListener::_OnGameChannelJoined overwriting previous channel id type: 1 host { label: 2702622162 epoch: 1497391383 } id: 393016
+2017.07.15 11:42:38.037839700	StopOVTStream
+2017.07.15 11:42:40.814151300	>>> Yuudachi BnetParty::LockPartyForReason GAME_IS_PAUSED(4)
+2017.07.15 11:42:40.814364000	>>> Yuudachi BnetParty::SetJoinPermissionPreviousToClose token=9 new=CALLTOARMS_QUICKJOIN(4) old=CALLTOARMS_QUICKJOIN(4) LockPartyForReason_SetAttribute_JoinPermission_PreviousToClose
+2017.07.15 11:42:40.814491300	>>> Yuudachi BnetParty::CloseStatusChange_SetJoinPermission newPartyJoinPermission=CLOSED_GAME_PAUSED(2) reason=GAME_IS_PAUSED(4)
+2017.07.15 11:42:41.092639000	>>> Yuudachi BnetParty::CloseStatusChange_SetPrivacyLevelCallback code=0 old=CALLTOARMS_QUICKJOIN(4) new=CLOSED_GAME_PAUSED(2) reason=GAME_IS_PAUSED(4)
+2017.07.15 11:42:42.398550000	>>> Yuudachi ---------------- ModalNotificationManager::SetOkCancelNotification: Are you sure you want to raise the difficulty? 
+Raise to: Hard
+2017.07.15 11:42:45.273568000	>>> Yuudachi BnetParty::UnlockPartyForReason GAME_IS_PAUSED(4)
+2017.07.15 11:42:45.273779000	>>> Yuudachi BnetParty::CloseStatusChange_SetJoinPermission newPartyJoinPermission=CALLTOARMS_QUICKJOIN(4) reason=GAME_IS_PAUSED(4)
+2017.07.15 11:42:45.507068700	>>> Yuudachi BnetParty::CloseStatusChange_SetPrivacyLevelCallback code=0 old=CLOSED_GAME_PAUSED(2) new=CALLTOARMS_QUICKJOIN(4) reason=GAME_IS_PAUSED(4)
+2017.07.15 11:44:00.848152300	>>> Yuudachi BnetParty::LockPartyForReason GAME_IS_PAUSED(4)
+2017.07.15 11:44:00.848385300	>>> Yuudachi BnetParty::SetJoinPermissionPreviousToClose token=10 new=CALLTOARMS_QUICKJOIN(4) old=CALLTOARMS_QUICKJOIN(4) LockPartyForReason_SetAttribute_JoinPermission_PreviousToClose
+2017.07.15 11:44:00.848509300	>>> Yuudachi BnetParty::CloseStatusChange_SetJoinPermission newPartyJoinPermission=CLOSED_GAME_PAUSED(2) reason=GAME_IS_PAUSED(4)
+2017.07.15 11:44:01.060884300	>>> Yuudachi BnetParty::CloseStatusChange_SetPrivacyLevelCallback code=0 old=CALLTOARMS_QUICKJOIN(4) new=CLOSED_GAME_PAUSED(2) reason=GAME_IS_PAUSED(4)
+2017.07.15 11:44:01.975429300	>>> Yuudachi BnetParty::UnlockPartyForReason GAME_IS_PAUSED(4)
+2017.07.15 11:44:01.975688700	>>> Yuudachi BnetParty::CloseStatusChange_SetJoinPermission newPartyJoinPermission=CALLTOARMS_QUICKJOIN(4) reason=GAME_IS_PAUSED(4)
+2017.07.15 11:44:02.188462000	>>> Yuudachi BnetParty::CloseStatusChange_SetPrivacyLevelCallback code=0 old=CLOSED_GAME_PAUSED(2) new=CALLTOARMS_QUICKJOIN(4) reason=GAME_IS_PAUSED(4)
+2017.07.15 11:44:20.448691700	Initializing client world PvP_Duel_Small...
+2017.07.15 11:44:20.462952000	Enabling loading screen for 4, 4
+2017.07.15 11:44:20.465708300	Disposing UI for World
+2017.07.15 11:44:20.638135000	Disabling loading screen for 1, 4
+2017.07.15 11:44:23.649592000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:44:24.167068300	Disabling loading screen for 2, 4
+2017.07.15 11:44:24.167314300	Disabling loading screen for 4, 0
+2017.07.15 11:44:36.357979700	Enabling loading screen for 4, 4
+2017.07.15 11:44:36.358193700	Enabling loading screen for 4, 4
+2017.07.15 11:44:36.358964300	Disposing UI for World
+2017.07.15 11:44:36.370554300	Disabling loading screen for 1, 4
+2017.07.15 11:44:36.459213700	Disabling loading screen for 2, 4
+2017.07.15 11:44:36.459451700	Disabling loading screen for 4, 0
+2017.07.15 11:44:41.143183700	Enabling loading screen for 4, 4
+2017.07.15 11:44:41.143459300	Initializing client world trOut_Tristram_Inn...
+2017.07.15 11:44:41.143568300	Enabling loading screen for 4, 4
+2017.07.15 11:44:41.146264000	Disposing UI for World
+2017.07.15 11:44:41.200729300	Disabling loading screen for 1, 4
+2017.07.15 11:44:41.385404000	Disabling loading screen for 2, 4
+2017.07.15 11:44:41.385607300	Disabling loading screen for 4, 0
+2017.07.15 11:44:57.378217000	Enabling loading screen for 4, 4
+2017.07.15 11:44:57.378426300	Initializing client world trOut_Tristram_LeahsRoom...
+2017.07.15 11:44:57.378532700	Enabling loading screen for 4, 4
+2017.07.15 11:44:57.379387000	Disposing UI for World
+2017.07.15 11:44:57.391899300	Disabling loading screen for 1, 4
+2017.07.15 11:44:57.395882700	Disabling loading screen for 2, 4
+2017.07.15 11:44:57.396052700	Disabling loading screen for 4, 0
+2017.07.15 11:45:04.287365700	Enabling loading screen for 4, 4
+2017.07.15 11:45:04.287573000	Enabling loading screen for 4, 4
+2017.07.15 11:45:04.288157300	Disposing UI for World
+2017.07.15 11:45:04.297695300	Disabling loading screen for 1, 4
+2017.07.15 11:45:04.305640700	Disabling loading screen for 2, 4
+2017.07.15 11:45:04.305855700	Disabling loading screen for 4, 0
+2017.07.15 11:45:11.050769000	Enabling loading screen for 4, 4
+2017.07.15 11:45:11.050983000	Enabling loading screen for 4, 4
+2017.07.15 11:45:11.051860700	Disposing UI for World
+2017.07.15 11:45:11.062410700	Disabling loading screen for 1, 4
+2017.07.15 11:45:11.132550000	Disabling loading screen for 2, 4
+2017.07.15 11:45:11.132760000	Disabling loading screen for 4, 0
+2017.07.15 11:46:23.652659300	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:46:28.192384300	Enabling loading screen for 4, 4
+2017.07.15 11:46:28.192596000	Initializing client world trOut_Oldtistram_Cellar...
+2017.07.15 11:46:28.192719000	Enabling loading screen for 4, 4
+2017.07.15 11:46:28.194154300	Disposing UI for World
+2017.07.15 11:46:28.247555700	Disabling loading screen for 1, 4
+2017.07.15 11:46:29.254977300	Disabling loading screen for 2, 4
+2017.07.15 11:46:29.255215300	Disabling loading screen for 4, 0
+2017.07.15 11:47:19.691770000	Enabling loading screen for 4, 4
+2017.07.15 11:47:19.692001700	Enabling loading screen for 4, 4
+2017.07.15 11:47:19.692579300	Disposing UI for World
+2017.07.15 11:47:19.705784700	Disabling loading screen for 1, 4
+2017.07.15 11:47:19.719022700	Disabling loading screen for 2, 4
+2017.07.15 11:47:19.719217000	Disabling loading screen for 4, 0
+2017.07.15 11:48:17.480315700	Enabling loading screen for 4, 4
+2017.07.15 11:48:17.480533700	Initializing client world trOut_Oldtistram_Cellar_2...
+2017.07.15 11:48:17.480639300	Enabling loading screen for 4, 4
+2017.07.15 11:48:17.490791300	Disposing UI for World
+2017.07.15 11:48:17.507732000	Disabling loading screen for 1, 4
+2017.07.15 11:48:17.525503700	Disabling loading screen for 2, 4
+2017.07.15 11:48:17.525696000	Disabling loading screen for 4, 0
+2017.07.15 11:48:23.653722700	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:48:58.052628700	Enabling loading screen for 4, 4
+2017.07.15 11:48:58.052844700	Enabling loading screen for 4, 4
+2017.07.15 11:48:58.053459700	Disposing UI for World
+2017.07.15 11:48:58.067226000	Disabling loading screen for 1, 4
+2017.07.15 11:48:58.082496300	Disabling loading screen for 2, 4
+2017.07.15 11:48:58.082827700	Disabling loading screen for 4, 0
+2017.07.15 11:50:18.765792000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:52:18.766889300	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:53:50.684952300	Enabling loading screen for 4, 4
+2017.07.15 11:53:51.139892000	Disabling loading screen for 2, 4
+2017.07.15 11:53:51.140218000	Disabling loading screen for 4, 0
+2017.07.15 11:54:07.914387700	Enabling loading screen for 4, 4
+2017.07.15 11:54:07.952517300	Disabling loading screen for 2, 4
+2017.07.15 11:54:07.952721000	Disabling loading screen for 4, 0
+2017.07.15 11:54:23.668917300	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:54:49.972970700	Enabling loading screen for 4, 4
+2017.07.15 11:54:49.973189000	Initializing client world trOut_AdriasCellar...
+2017.07.15 11:54:49.973290700	Enabling loading screen for 4, 4
+2017.07.15 11:54:49.974561000	Disposing UI for World
+2017.07.15 11:54:49.999869700	Disabling loading screen for 1, 4
+2017.07.15 11:54:50.014181300	Disabling loading screen for 2, 4
+2017.07.15 11:54:50.014370000	Disabling loading screen for 4, 0
+2017.07.15 11:55:37.291116300	Enabling loading screen for 4, 4
+2017.07.15 11:55:37.291349000	Enabling loading screen for 4, 4
+2017.07.15 11:55:37.292119700	Disposing UI for World
+2017.07.15 11:55:37.320898000	Disabling loading screen for 1, 4
+2017.07.15 11:55:37.884220000	Disabling loading screen for 2, 4
+2017.07.15 11:55:37.884446000	Disabling loading screen for 4, 0
+2017.07.15 11:56:16.997599300	Enabling loading screen for 4, 4
+2017.07.15 11:56:16.997851700	Initializing client world trOut_oldTristram_TreeCave...
+2017.07.15 11:56:17.011204700	Enabling loading screen for 4, 4
+2017.07.15 11:56:17.012167000	Disposing UI for World
+2017.07.15 11:56:17.203054000	Disabling loading screen for 1, 4
+2017.07.15 11:56:18.530111700	Disabling loading screen for 2, 4
+2017.07.15 11:56:18.530359300	Disabling loading screen for 4, 0
+2017.07.15 11:56:23.662006300	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:56:43.098606300	Enabling loading screen for 4, 4
+2017.07.15 11:56:43.098825300	Enabling loading screen for 4, 4
+2017.07.15 11:56:43.099229000	Disposing UI for World
+2017.07.15 11:56:43.111209700	Disabling loading screen for 1, 4
+2017.07.15 11:56:43.238245700	Disabling loading screen for 2, 4
+2017.07.15 11:56:43.238473300	Disabling loading screen for 4, 0
+2017.07.15 11:58:07.560059700	Enabling loading screen for 4, 4
+2017.07.15 11:58:07.560320300	Initializing client world a1trDun_Level01...
+2017.07.15 11:58:07.560558000	Enabling loading screen for 4, 4
+2017.07.15 11:58:07.561290300	Disposing UI for World
+2017.07.15 11:58:07.577292700	Disabling loading screen for 1, 4
+2017.07.15 11:58:18.303141700	Disabling loading screen for 2, 4
+2017.07.15 11:58:18.303445000	Disabling loading screen for 4, 0
+2017.07.15 11:58:28.358535300	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 11:59:23.869515700	Received achievement awarded notification for 125921086
+2017.07.15 12:00:23.480294700	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 12:02:28.372564000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 12:04:28.383741300	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 12:06:16.666589300	Received achievement awarded notification for 125921086
+2017.07.15 12:06:28.375662000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 12:08:28.388313000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 12:09:02.840302300	Initializing client world trDun_Cain_Intro...
+2017.07.15 12:09:02.840525700	Enabling loading screen for 4, 4
+2017.07.15 12:09:02.841644300	Disposing UI for World
+2017.07.15 12:09:02.856499000	Disabling loading screen for 1, 4
+2017.07.15 12:09:03.029526000	Disabling loading screen for 2, 4
+2017.07.15 12:09:03.029731300	Disabling loading screen for 4, 0
+2017.07.15 12:10:03.754007000	Enabling loading screen for 4, 4
+2017.07.15 12:10:03.754209300	Enabling loading screen for 4, 4
+2017.07.15 12:10:03.755127300	Disposing UI for World
+2017.07.15 12:10:04.033089000	Disabling loading screen for 1, 4
+2017.07.15 12:10:04.190992700	Disabling loading screen for 2, 4
+2017.07.15 12:10:04.191216000	Disabling loading screen for 4, 0
+2017.07.15 12:10:25.048802700	Enabling loading screen for 4, 4
+2017.07.15 12:10:28.396407300	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 12:10:29.507793700	Disabling loading screen for 2, 4
+2017.07.15 12:10:29.508005700	Disabling loading screen for 4, 0
+2017.07.15 12:10:30.823117000	ptCutscene->m_eCutsceneState: PRELOADING
+2017.07.15 12:10:30.827363300	Ogg logical stream 1b94 is Theora 1280x720 29.97 fps 1280 720
+2017.07.15 12:10:30.827546000	 4:2:0 video
+2017.07.15 12:10:30.829322000	Ogg logical stream 2903 is Vorbis 2 channel 44100 Hz audio.
+2017.07.15 12:10:30.886828700	ptCutscene->m_eCutsceneState: PLAYBACK
+2017.07.15 12:10:30.889211300	OpenOVTStream
+2017.07.15 12:10:30.889445000	PlayOVTStream
+2017.07.15 12:10:33.467722300	StopOVTStream
+2017.07.15 12:10:41.742057000	Received achievement awarded notification for 125921086
+2017.07.15 12:11:26.739818000	Received achievement awarded notification for 125921086
+2017.07.15 12:11:41.379855000	SendStoreMessage hero:Yuudachi id:211 attribute { name: "Version" value { string_value: "2.6.0.46006" } } attribute { name: "CustomMessageId" value { int_value: 211 } } attribute { name: "CustomMessage" value { message_value: "\010\n\020\320\346\272\352\212\312\263\326\007" } } attribute { name: "CustomMessageDestination" value { uint_value: 4 } } count:3
+2017.07.15 12:11:53.030326000	GameDisposeGames()
+2017.07.15 12:11:53.030535300	ENDING GAME
+2017.07.15 12:11:53.032110000	Disposing UI for World
+2017.07.15 12:11:53.040616000	Client Disposed world.
+2017.07.15 12:11:54.466871000	>>> Yuudachi OnGameLeft
+2017.07.15 12:11:54.501891000	ClientSocket Disconnect
+2017.07.15 12:11:54.626863300	>>> Yuudachi OnlineService::BnetService::LogoutSynchronously
+2017.07.15 12:11:54.684260700	Disposing UI root!
+2017.07.15 12:11:54.883919300	Client Disposed world.
+2017.07.15 12:11:54.884158700	Client Disposed world.
+2017.07.15 12:11:54.884280700	Client Disposed world.
+2017.07.15 12:11:54.884388300	Client Disposed world.
+2017.07.15 12:11:54.884457700	Client Disposed world.
+2017.07.15 12:11:54.884523700	Client Disposed world.
+2017.07.15 12:11:54.884589300	Client Disposed world.
+2017.07.15 12:11:54.884656300	Client Disposed world.
+2017.07.15 12:11:54.884723700	Client Disposed world.
+2017.07.15 12:11:55.945726300	Disposing sound subsystem...
+2017.07.15 12:11:55.946189700	Start SoundPlatform::Dispose()
+2017.07.15 12:11:55.946320000	StopOVTStream
+2017.07.15 12:11:56.058582700	- Releasing DSP effects
+2017.07.15 12:11:56.058937700	- Releasing FMOD System
+2017.07.15 12:11:56.507994000	Finish SoundPlatform::Dispose()
+2017.07.15 12:11:56.508408000	Closing Direct3D window...0D2F7940
+2017.07.15 12:11:56.796530300	...Direct3D window closed
+2017.07.15 12:11:56.817259700	de activate app 0 iconic 0
+2017.07.15 12:11:57.005522700	Disposing graphics subsystem...
+2017.07.15 12:11:57.665467700	>>> Yuudachi ===== Battle.net BnetService : Shutdown =====
+2017.07.15 12:11:57.839826000	>>> Settings::ResetGameAccountSettings
+2017.07.15 12:11:58.041284000	===== Battle.net Client Service Shutdown =====
+2017.07.15 12:11:58.182378000	[Telemetry] (TELE): Requested sending batch messages by multi-part http POST messages count 1
+2017.07.15 12:12:03.460884300	SNOFilesDispose()
+2017.07.15 12:12:03.918580000	SNOFilesAsyncDispose()
+2017.07.15 12:12:08.785533300	WinSock cleaned up successfully!
