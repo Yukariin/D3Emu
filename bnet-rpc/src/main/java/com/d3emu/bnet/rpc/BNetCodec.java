@@ -11,8 +11,6 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.websocketx.BinaryWebSocketFrame;
 import io.netty.handler.codec.MessageToMessageCodec;
 
-import static io.netty.buffer.Unpooled.*;
-
 public class BNetCodec extends MessageToMessageCodec<BinaryWebSocketFrame, BNetPacket> {
 
     @Override
@@ -50,7 +48,7 @@ public class BNetCodec extends MessageToMessageCodec<BinaryWebSocketFrame, BNetP
         int headerSize = header.getSerializedSize();
         int payloadSize = payload.getSerializedSize();
 
-        ByteBuf packet = buffer(2 + headerSize + payloadSize);
+        ByteBuf packet = ctx.alloc().buffer(2 + headerSize + payloadSize);
         packet.writeShort(headerSize);
         packet.writeBytes(header.toByteArray());
         packet.writeBytes(payload.toByteArray());
