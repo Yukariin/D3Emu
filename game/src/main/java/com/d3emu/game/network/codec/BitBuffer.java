@@ -21,8 +21,6 @@ public class BitBuffer {
 
     public BitBuffer(ByteBuf buf) {
         buffer = buf;
-        readBuffer = 0;
-        readCount = 0;
     }
 
     public int readInt(int length) {
@@ -60,18 +58,20 @@ public class BitBuffer {
             throw new IllegalArgumentException("length: " + length + " (expected: 0-32)");
         }
 
-//         while (length > 0) {
-//             int off = bitPos & 7;
-//             int count = 8 - off;
-//             if (count > length)
-//                 count = length;
-//             int mask = (1 << count) - 1;
-//             buffer[bitPos >> 3] = (byte)((buffer[bitPos >> 3] & (~(mask << off))) | (((value >> (length - count)) & mask) << off));
-//             length -= count;
-//             bitPos += count;
-//             if (bitPos > bitLen)
-//                 bitLen = bitPos;
-//         }
+        while (length > 0) {
+            if (writeCount == 8) {
+                buffer.writeByte(writeBuffer);
+                writeBuffer = 0;
+                writeCount = 0;
+            }
+            int remaining = 8 - writeCount;
+            if (remaining > length)
+                remaining = length;
+            int mask = (1 << remaining) - 1;
+            writeBuffer |= ((value >> (length - remaining)) & mask) << writeCount;
+            writeCount += remaining;
+            length -= remaining;
+        }
     }
 
     public long readInt64(int length) {
@@ -122,13 +122,10 @@ public class BitBuffer {
     }
 
     public void writeCharArray(int sizeBits, String value) {
-//         byte[] result = value.getBytes();
-//         writeInt(sizeBits, result.length);
-//         bitPos = (bitPos + 7) & (~7);
-//         System.arraycopy(result, 0, result, bitPos >> 3, result.length);
-//         bitPos += result.length * 8;
-//         if (bitPos > bitLen)
-//             bitLen = bitPos;
+         byte[] result = value.getBytes();
+         writeInt(sizeBits, result.length);
+         flush();
+         buffer.writeBytes(result);
     }
 
     public byte[] readBlob(int sizeBits) {
@@ -142,12 +139,9 @@ public class BitBuffer {
     }
 
     public void writeBlob(int sizeBits, byte[] data) {
-//         writeInt(sizeBits, data.length);
-//         bitPos = (bitPos + 7) & (~7);
-//         System.arraycopy(data, 0, buffer, bitPos >> 3, data.length);
-//         bitPos += data.length * 8;
-//         if (bitPos > bitLen)
-//             bitLen = bitPos;
+         writeInt(sizeBits, data.length);
+         flush();
+         buffer.writeBytes(data);
     }
 
     public boolean readBoolean() {
@@ -156,6 +150,14 @@ public class BitBuffer {
 
     public void writeBoolean(boolean value) {
         writeInt(1, value ? 1 : 0);
+    }
+    
+    public void flush() {
+        if (writeCount > 0) {
+            buffer.writeByte(writeBuffer);
+            writeBuffer = 0;
+            writeCount = 0;
+        }
     }
 
     public static int getBitCount(int value) {
