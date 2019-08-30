@@ -4,12 +4,7 @@ import java.nio.charset.StandardCharsets;
 
 import io.netty.buffer.ByteBuf;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class BitBuffer {
-
-    private static final Logger logger = LoggerFactory.getLogger(BitBuffer.class);
 
     private ByteBuf buffer;
 
